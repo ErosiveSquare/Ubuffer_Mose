@@ -1,0 +1,808 @@
+日志保存至: /root/autodl-tmp/MOSE-master/MOSE-master/logs/cifar10_mose_bs1000_20260105_085600.log
+开始时间: 2026-01-05 08:56:00
+====================================================================================================
+Arguments =
+	dataset: cifar10
+	n_tasks: 10
+	n_classes: None
+	buffer_size: 1000
+	method: mose
+	seed: 0
+	run_nums: 5
+	epoch: 1
+	lr: 0.001
+	wd: 0.0001
+	batch_size: 10
+	buffer_batch_size: 64
+	continual: on
+	ins_t: 0.07
+	expert: 3
+	expert1: 2
+	expert2: 3
+	n_experts: 4
+	classifier: ncm
+	augmentation: ocm
+	lambda_uncert: 15.0
+	distill_temperature: 2.0
+	distill_weight: 1.0
+	u_buffer_capacity: 64
+	align_weight: 1.0
+	teacher_student_l2_weight: 5.0
+	T_min: 0.5
+	topk_ratio: 0.2
+	topk_min: 1
+	topk_max: 64
+	gpu_id: 0
+	n_workers: 8
+	confusion_temperature: None
+	teacher_confusion_top_k: 3
+	teacher_confusion_top_n: 5
+	diag_attn: False
+	exp_name: tmp
+	wandb_project: ocl
+	wandb_entity: None
+	wandb_log: off
+	cuda: True
+====================================================================================================
+-----------------------------run 0 start--------------------------
+2026-01-05 08:56:00
+====================================================================================================
+Task order = [0, 1, 2, 3, 4]
+Data and loader is prepared
+
+Run 0: tmp run_00 **************************************************
+
+buffer has 1000 slots
+bx torch.Size([1000, 3, 32, 32])
+路径二中main_u>u_u给我换成随机采样，给我删除第二次更新时候合并当前任务流样本，只使用buffer内的样本18.07/22.66，同时feature蒸馏屏蔽ubuffer
+number of classifier parameters:	 12.64M
+buffer parameters (image size prod):	 3.07M
+
+-----------------------------run 0 task id:0 start training-----------------------------
+==>>> it: 1, round: 1, loss: ins 18.22 + ce 9.235 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 27.460396, main_u 0.000, u_u 0.035, 0.2%
+==>>> it: 1, round: 2, loss: ins 17.49 + ce 6.888 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 24.374685, main_u 0.000, u_u 0.035, 0.2%
+==>>> it: 199, round: 1, loss: ins 20.80 + ce 0.435 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 21.236752, main_u 0.051, u_u 0.158, 20.0%
+==>>> it: 199, round: 2, loss: ins 20.72 + ce 0.359 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 21.077103, main_u 0.051, u_u 0.158, 20.0%
+==>>> it: 399, round: 1, loss: ins 20.33 + ce 0.155 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.480537, main_u 0.051, u_u 0.195, 40.0%
+==>>> it: 399, round: 2, loss: ins 20.32 + ce 0.147 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.461905, main_u 0.051, u_u 0.195, 40.0%
+==>>> it: 599, round: 1, loss: ins 20.23 + ce 0.103 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.332041, main_u 0.048, u_u 0.232, 60.0%
+==>>> it: 599, round: 2, loss: ins 20.60 + ce 0.360 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.956192, main_u 0.048, u_u 0.232, 60.0%
+==>>> it: 799, round: 1, loss: ins 20.23 + ce 0.120 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.345913, main_u 0.044, u_u 0.257, 80.0%
+==>>> it: 799, round: 2, loss: ins 21.01 + ce 0.596 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 21.606476, main_u 0.044, u_u 0.257, 80.0%
+==>>> it: 999, round: 1, loss: ins 20.33 + ce 0.206 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.540731, main_u 0.044, u_u 0.263, 100.0%
+==>>> it: 999, round: 2, loss: ins 20.37 + ce 0.167 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.541162, main_u 0.044, u_u 0.263, 100.0%
+
+-----------------------------run 0 task id:1 start training-----------------------------
+==>>> it: 1, round: 1, loss: ins 21.10 + ce 16.672 + distill 1.452 + align 44.199 + ts_feat 0.330 + view_cons 0.000 = 83.749573, main_u 0.042, u_u 0.066, 0.2%
+==>>> it: 1, round: 2, loss: ins 20.92 + ce 7.323 + distill 1.552 + align 33.516 + ts_feat 0.000 + view_cons 0.369 = 63.678589, main_u 0.042, u_u 0.011, ρ=0.00, 0.2%
+==>>> it: 199, round: 1, loss: ins 19.32 + ce 4.103 + distill 0.650 + align 33.570 + ts_feat 0.206 + view_cons 0.000 = 57.853718, main_u 0.018, u_u 0.024, 20.0%
+==>>> it: 199, round: 2, loss: ins 21.37 + ce 4.275 + distill 1.049 + align 25.966 + ts_feat 0.000 + view_cons 0.682 = 53.342907, main_u 0.018, u_u 0.020, ρ=0.00, 20.0%
+==>>> it: 399, round: 1, loss: ins 19.07 + ce 3.980 + distill 0.518 + align 33.794 + ts_feat 0.146 + view_cons 0.000 = 57.503651, main_u 0.023, u_u 0.020, 40.0%
+==>>> it: 399, round: 2, loss: ins 18.34 + ce 2.792 + distill 0.595 + align 31.205 + ts_feat 0.175 + view_cons 0.000 = 53.102001, main_u 0.023, u_u 0.020, ρ=0.00, 40.0%
+==>>> it: 599, round: 1, loss: ins 19.00 + ce 4.073 + distill 0.631 + align 34.789 + ts_feat 0.160 + view_cons 0.000 = 58.651550, main_u 0.021, u_u 0.021, 60.0%
+==>>> it: 599, round: 2, loss: ins 18.14 + ce 3.081 + distill 0.489 + align 31.844 + ts_feat 0.139 + view_cons 0.000 = 53.695816, main_u 0.022, u_u 0.021, ρ=0.00, 60.0%
+==>>> it: 799, round: 1, loss: ins 18.97 + ce 2.931 + distill 0.475 + align 34.512 + ts_feat 0.111 + view_cons 0.000 = 57.000038, main_u 0.023, u_u 0.022, 80.0%
+==>>> it: 799, round: 2, loss: ins 18.59 + ce 3.013 + distill 0.854 + align 31.854 + ts_feat 0.179 + view_cons 0.000 = 54.490505, main_u 0.023, u_u 0.022, ρ=0.00, 80.0%
+==>>> it: 999, round: 1, loss: ins 19.30 + ce 3.956 + distill 0.495 + align 34.447 + ts_feat 0.144 + view_cons 0.000 = 58.340092, main_u 0.023, u_u 0.019, 100.0%
+==>>> it: 999, round: 2, loss: ins 17.61 + ce 2.645 + distill 0.437 + align 32.153 + ts_feat 0.107 + view_cons 0.000 = 52.947582, main_u 0.022, u_u 0.019, ρ=0.00, 100.0%
+
+-----------------------------run 0 task id:2 start training-----------------------------
+==>>> it: 1, round: 1, loss: ins 18.86 + ce 24.318 + distill 0.121 + align 34.341 + ts_feat 0.025 + view_cons 0.000 = 77.667908, main_u 0.022, u_u 0.021, 0.2%
+==>>> it: 1, round: 2, loss: ins 18.03 + ce 5.099 + distill 0.266 + align 31.990 + ts_feat 0.042 + view_cons 0.000 = 55.429356, main_u 0.022, u_u 0.021, ρ=0.00, 0.2%
+==>>> it: 199, round: 1, loss: ins 18.23 + ce 5.644 + distill 0.721 + align 35.404 + ts_feat 0.189 + view_cons 0.000 = 60.189705, main_u 0.024, u_u 0.024, 20.0%
+==>>> it: 199, round: 2, loss: ins 20.82 + ce 2.962 + distill 1.203 + align 24.916 + ts_feat 0.000 + view_cons 0.545 = 50.445908, main_u 0.024, u_u 0.017, ρ=0.00, 20.0%
+==>>> it: 399, round: 1, loss: ins 17.38 + ce 3.162 + distill 0.758 + align 36.077 + ts_feat 0.183 + view_cons 0.000 = 57.564316, main_u 0.025, u_u 0.022, 40.0%
+==>>> it: 399, round: 2, loss: ins 16.26 + ce 1.551 + distill 0.583 + align 33.379 + ts_feat 0.142 + view_cons 0.000 = 51.913239, main_u 0.025, u_u 0.022, ρ=0.00, 40.0%
+==>>> it: 599, round: 1, loss: ins 18.04 + ce 4.027 + distill 0.833 + align 35.600 + ts_feat 0.197 + view_cons 0.000 = 58.696884, main_u 0.024, u_u 0.020, 60.0%
+==>>> it: 599, round: 2, loss: ins 16.58 + ce 2.543 + distill 0.635 + align 33.838 + ts_feat 0.142 + view_cons 0.000 = 53.737843, main_u 0.024, u_u 0.020, ρ=0.00, 60.0%
+==>>> it: 799, round: 1, loss: ins 16.96 + ce 1.528 + distill 0.868 + align 35.322 + ts_feat 0.162 + view_cons 0.000 = 54.836094, main_u 0.025, u_u 0.022, 80.0%
+==>>> it: 799, round: 2, loss: ins 16.04 + ce 1.201 + distill 0.737 + align 33.453 + ts_feat 0.148 + view_cons 0.000 = 51.583233, main_u 0.025, u_u 0.022, ρ=0.00, 80.0%
+==>>> it: 999, round: 1, loss: ins 18.40 + ce 3.884 + distill 0.696 + align 36.051 + ts_feat 0.136 + view_cons 0.000 = 59.169239, main_u 0.025, u_u 0.023, 100.0%
+==>>> it: 999, round: 2, loss: ins 16.66 + ce 2.926 + distill 0.635 + align 33.585 + ts_feat 0.132 + view_cons 0.000 = 53.935074, main_u 0.026, u_u 0.023, ρ=0.00, 100.0%
+
+-----------------------------run 0 task id:3 start training-----------------------------
+==>>> it: 1, round: 1, loss: ins 17.65 + ce 23.774 + distill 0.482 + align 35.782 + ts_feat 0.066 + view_cons 0.000 = 77.749680, main_u 0.025, u_u 0.029, 0.2%
+==>>> it: 1, round: 2, loss: ins 20.91 + ce 19.927 + distill 2.502 + align 26.231 + ts_feat 0.000 + view_cons 0.445 = 70.014267, main_u 0.025, u_u 0.014, ρ=0.00, 0.2%
+==>>> it: 199, round: 1, loss: ins 16.08 + ce 1.699 + distill 0.813 + align 36.909 + ts_feat 0.175 + view_cons 0.000 = 55.675201, main_u 0.025, u_u 0.026, 20.0%
+==>>> it: 199, round: 2, loss: ins 20.66 + ce 1.257 + distill 1.540 + align 26.516 + ts_feat 0.000 + view_cons 0.464 = 50.442295, main_u 0.025, u_u 0.015, ρ=0.00, 20.0%
+==>>> it: 399, round: 1, loss: ins 15.72 + ce 1.452 + distill 0.836 + align 37.149 + ts_feat 0.141 + view_cons 0.000 = 55.296207, main_u 0.025, u_u 0.023, 40.0%
+==>>> it: 399, round: 2, loss: ins 15.18 + ce 1.375 + distill 0.679 + align 34.413 + ts_feat 0.148 + view_cons 0.000 = 51.793724, main_u 0.024, u_u 0.023, ρ=0.00, 40.0%
+==>>> it: 599, round: 1, loss: ins 15.62 + ce 1.025 + distill 0.887 + align 36.636 + ts_feat 0.136 + view_cons 0.000 = 54.303501, main_u 0.025, u_u 0.024, 60.0%
+==>>> it: 599, round: 2, loss: ins 14.60 + ce 0.680 + distill 0.747 + align 33.982 + ts_feat 0.117 + view_cons 0.000 = 50.128319, main_u 0.025, u_u 0.024, ρ=0.00, 60.0%
+==>>> it: 799, round: 1, loss: ins 16.22 + ce 1.837 + distill 0.978 + align 36.650 + ts_feat 0.142 + view_cons 0.000 = 55.828583, main_u 0.024, u_u 0.023, 80.0%
+==>>> it: 799, round: 2, loss: ins 14.75 + ce 0.977 + distill 0.692 + align 34.013 + ts_feat 0.111 + view_cons 0.000 = 50.545059, main_u 0.024, u_u 0.023, ρ=0.00, 80.0%
+==>>> it: 999, round: 1, loss: ins 16.08 + ce 1.414 + distill 0.800 + align 36.351 + ts_feat 0.156 + view_cons 0.000 = 54.803570, main_u 0.023, u_u 0.017, 100.0%
+==>>> it: 999, round: 2, loss: ins 15.19 + ce 1.159 + distill 0.777 + align 32.938 + ts_feat 0.162 + view_cons 0.000 = 50.224937, main_u 0.023, u_u 0.017, ρ=0.00, 100.0%
+
+-----------------------------run 0 task id:4 start training-----------------------------
+==>>> it: 1, round: 1, loss: ins 16.94 + ce 19.455 + distill 1.126 + align 35.230 + ts_feat 0.055 + view_cons 0.000 = 72.801804, main_u 0.024, u_u 0.033, 0.2%
+==>>> it: 1, round: 2, loss: ins 19.81 + ce 18.446 + distill 1.789 + align 31.250 + ts_feat 0.000 + view_cons 0.887 = 72.183327, main_u 0.024, u_u 0.027, ρ=0.00, 0.2%
+==>>> it: 199, round: 1, loss: ins 15.40 + ce 1.867 + distill 1.704 + align 36.382 + ts_feat 0.209 + view_cons 0.000 = 55.561787, main_u 0.021, u_u 0.022, 20.0%
+==>>> it: 199, round: 2, loss: ins 20.37 + ce 1.243 + distill 1.664 + align 29.229 + ts_feat 0.000 + view_cons 0.546 = 53.051365, main_u 0.021, u_u 0.017, ρ=0.00, 20.0%
+==>>> it: 399, round: 1, loss: ins 14.90 + ce 1.384 + distill 1.196 + align 36.663 + ts_feat 0.172 + view_cons 0.000 = 54.310669, main_u 0.021, u_u 0.022, 40.0%
+==>>> it: 399, round: 2, loss: ins 20.09 + ce 0.743 + distill 1.546 + align 29.331 + ts_feat 0.000 + view_cons 0.591 = 52.301914, main_u 0.021, u_u 0.018, ρ=0.00, 40.0%
+==>>> it: 599, round: 1, loss: ins 14.56 + ce 1.251 + distill 1.193 + align 37.156 + ts_feat 0.132 + view_cons 0.000 = 54.294289, main_u 0.023, u_u 0.022, 60.0%
+==>>> it: 599, round: 2, loss: ins 14.14 + ce 1.400 + distill 0.902 + align 34.540 + ts_feat 0.142 + view_cons 0.000 = 51.125877, main_u 0.023, u_u 0.022, ρ=0.00, 60.0%
+==>>> it: 799, round: 1, loss: ins 14.88 + ce 0.829 + distill 0.767 + align 36.271 + ts_feat 0.125 + view_cons 0.000 = 52.876049, main_u 0.024, u_u 0.024, 80.0%
+==>>> it: 799, round: 2, loss: ins 20.44 + ce 0.785 + distill 1.156 + align 27.515 + ts_feat 0.000 + view_cons 0.544 = 50.440895, main_u 0.024, u_u 0.017, ρ=0.00, 80.0%
+==>>> it: 999, round: 1, loss: ins 15.04 + ce 1.138 + distill 1.119 + align 36.468 + ts_feat 0.142 + view_cons 0.000 = 53.909893, main_u 0.024, u_u 0.018, 100.0%
+==>>> it: 999, round: 2, loss: ins 13.88 + ce 1.045 + distill 0.765 + align 34.124 + ts_feat 0.141 + view_cons 0.000 = 49.954025, main_u 0.024, u_u 0.018, ρ=0.00, 100.0%
+
+Calculating class means for NCM classifier...
+
+****************************************************************************************************
+Test with the output of layer: 1
+
+Test Task 0: Accuracy: 1418/2000 (70.90%)
+Test Task 1: Accuracy: 945/2000 (47.25%)
+Test Task 2: Accuracy: 1427/2000 (71.35%)
+Test Task 3: Accuracy: 1715/2000 (85.75%)
+Test Task 4: Accuracy: 1862/2000 (93.10%)
+Tasks Acc: [70.90000153 47.25       71.34999847 85.75       93.09999847]
+Tasks Avg Acc: 73.67%
+****************************************************************************************************
+Test with the output of layer: 2
+
+Test Task 0: Accuracy: 1357/2000 (67.85%)
+Test Task 1: Accuracy: 932/2000 (46.60%)
+Test Task 2: Accuracy: 1425/2000 (71.25%)
+Test Task 3: Accuracy: 1796/2000 (89.80%)
+Test Task 4: Accuracy: 1909/2000 (95.45%)
+Tasks Acc: [67.84999847 46.59999847 71.25       89.80000305 95.44999695]
+Tasks Avg Acc: 74.19%
+****************************************************************************************************
+Test with the output of layer: 3
+
+Test Task 0: Accuracy: 1301/2000 (65.05%)
+Test Task 1: Accuracy: 762/2000 (38.10%)
+Test Task 2: Accuracy: 1355/2000 (67.75%)
+Test Task 3: Accuracy: 1854/2000 (92.70%)
+Test Task 4: Accuracy: 1919/2000 (95.95%)
+Tasks Acc: [65.05000305 38.09999847 67.75       92.69999695 95.94999695]
+Tasks Avg Acc: 71.91%
+****************************************************************************************************
+Test with the output of layer: 4
+
+Test Task 0: Accuracy: 1587/2000 (79.35%)
+Test Task 1: Accuracy: 963/2000 (48.15%)
+Test Task 2: Accuracy: 1482/2000 (74.10%)
+Test Task 3: Accuracy: 1785/2000 (89.25%)
+Test Task 4: Accuracy: 1878/2000 (93.90%)
+Tasks Acc: [79.34999847 48.15000153 74.09999847 89.25       93.90000153]
+Tasks Avg Acc: 76.95%
+****************************************************************************************************
+Test with the mean dists output of each layer:
+
+Test Task 0 (Mean): Accuracy: 1447/2000 (72.35%)
+Test Task 1 (Mean): Accuracy: 916/2000 (45.80%)
+Test Task 2 (Mean): Accuracy: 1459/2000 (72.95%)
+Test Task 3 (Mean): Accuracy: 1838/2000 (91.90%)
+Test Task 4 (Mean): Accuracy: 1914/2000 (95.70%)
+Tasks Acc: [72.34999847 45.79999924 72.94999695 91.90000153 95.69999695]
+Tasks Avg Acc: 75.74%
+{'test/final_avg_acc': 75.73999862670898, 'test/final_avg_fgt': 0.0, 'test/final_avg_bwt': 0.0, 'metrics/buffer_n_bits': 24.61206, 'metrics/model_n_params': 12.644466}
+task_accs_table
+accs_array shape: (1, 5)
+          task0      task1      task2      task3      task4
+row0  72.349998  45.799999  72.949997  91.900002  95.699997
+{'test/last_final_avg_acc': 76.95, 'test/last_final_avg_fgt': 0.0, 'test/last_final_avg_bwt': 0.0}
+last_task_accs_table
+accs_array shape: (1, 5)
+          task0      task1      task2  task3      task4
+row0  79.349998  48.150002  74.099998  89.25  93.900002
+====================================================================================================
+0th run's Test result: Accuracy: 75.74%
+====================================================================================================
+====================================================================================================
+-----------------------------run 1 start--------------------------
+2026-01-05 10:32:53
+====================================================================================================
+Task order = [0, 1, 2, 3, 4]
+Data and loader is prepared
+
+Run 1: tmp run_01 **************************************************
+
+buffer has 1000 slots
+bx torch.Size([1000, 3, 32, 32])
+路径二中main_u>u_u给我换成随机采样，给我删除第二次更新时候合并当前任务流样本，只使用buffer内的样本18.07/22.66，同时feature蒸馏屏蔽ubuffer
+number of classifier parameters:	 12.64M
+buffer parameters (image size prod):	 3.07M
+
+-----------------------------run 1 task id:0 start training-----------------------------
+==>>> it: 1, round: 1, loss: ins 18.42 + ce 10.032 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 28.450186, main_u 0.000, u_u 0.036, 0.2%
+==>>> it: 1, round: 2, loss: ins 17.51 + ce 7.596 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 25.108553, main_u 0.000, u_u 0.036, 0.2%
+==>>> it: 199, round: 1, loss: ins 21.25 + ce 0.688 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 21.941044, main_u 0.043, u_u 0.156, 20.0%
+==>>> it: 199, round: 2, loss: ins 21.21 + ce 0.712 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 21.917919, main_u 0.043, u_u 0.156, 20.0%
+==>>> it: 399, round: 1, loss: ins 20.64 + ce 0.348 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.986948, main_u 0.041, u_u 0.204, 40.0%
+==>>> it: 399, round: 2, loss: ins 20.41 + ce 0.205 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.614246, main_u 0.041, u_u 0.204, 40.0%
+==>>> it: 599, round: 1, loss: ins 20.27 + ce 0.107 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.381195, main_u 0.042, u_u 0.224, 60.0%
+==>>> it: 599, round: 2, loss: ins 20.33 + ce 0.199 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.530478, main_u 0.042, u_u 0.224, 60.0%
+==>>> it: 799, round: 1, loss: ins 20.60 + ce 0.322 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.926418, main_u 0.042, u_u 0.242, 80.0%
+==>>> it: 799, round: 2, loss: ins 20.53 + ce 0.259 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.784586, main_u 0.042, u_u 0.242, 80.0%
+==>>> it: 999, round: 1, loss: ins 20.41 + ce 0.178 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.583578, main_u 0.045, u_u 0.264, 100.0%
+==>>> it: 999, round: 2, loss: ins 20.16 + ce 0.092 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.255180, main_u 0.045, u_u 0.264, 100.0%
+
+-----------------------------run 1 task id:1 start training-----------------------------
+==>>> it: 1, round: 1, loss: ins 20.61 + ce 16.080 + distill 0.193 + align 41.926 + ts_feat 0.357 + view_cons 0.000 = 79.169853, main_u 0.043, u_u 0.052, 0.2%
+==>>> it: 1, round: 2, loss: ins 20.64 + ce 5.497 + distill 1.339 + align 33.364 + ts_feat 0.000 + view_cons 0.476 = 61.319881, main_u 0.043, u_u 0.014, ρ=0.00, 0.2%
+==>>> it: 199, round: 1, loss: ins 19.50 + ce 3.010 + distill 0.520 + align 31.362 + ts_feat 0.255 + view_cons 0.000 = 54.649117, main_u 0.016, u_u 0.015, 20.0%
+==>>> it: 199, round: 2, loss: ins 18.72 + ce 2.594 + distill 0.563 + align 29.526 + ts_feat 0.238 + view_cons 0.000 = 51.644272, main_u 0.016, u_u 0.015, ρ=0.00, 20.0%
+==>>> it: 399, round: 1, loss: ins 19.61 + ce 7.106 + distill 0.394 + align 32.185 + ts_feat 0.153 + view_cons 0.000 = 59.451393, main_u 0.021, u_u 0.022, 40.0%
+==>>> it: 399, round: 2, loss: ins 20.98 + ce 3.747 + distill 0.752 + align 25.242 + ts_feat 0.000 + view_cons 0.609 = 51.331547, main_u 0.021, u_u 0.018, ρ=0.00, 40.0%
+==>>> it: 599, round: 1, loss: ins 19.15 + ce 3.048 + distill 0.782 + align 32.874 + ts_feat 0.129 + view_cons 0.000 = 55.987556, main_u 0.020, u_u 0.020, 60.0%
+==>>> it: 599, round: 2, loss: ins 20.59 + ce 2.042 + distill 0.860 + align 25.670 + ts_feat 0.000 + view_cons 0.493 = 49.655777, main_u 0.020, u_u 0.015, ρ=0.00, 60.0%
+==>>> it: 799, round: 1, loss: ins 19.01 + ce 3.120 + distill 0.510 + align 32.585 + ts_feat 0.128 + view_cons 0.000 = 55.352226, main_u 0.021, u_u 0.022, 80.0%
+==>>> it: 799, round: 2, loss: ins 20.48 + ce 2.137 + distill 0.834 + align 25.938 + ts_feat 0.000 + view_cons 0.550 = 49.941166, main_u 0.021, u_u 0.017, ρ=0.00, 80.0%
+==>>> it: 999, round: 1, loss: ins 19.09 + ce 2.757 + distill 0.587 + align 32.713 + ts_feat 0.125 + view_cons 0.000 = 55.277142, main_u 0.021, u_u 0.019, 100.0%
+==>>> it: 999, round: 2, loss: ins 17.44 + ce 1.348 + distill 0.647 + align 30.872 + ts_feat 0.092 + view_cons 0.000 = 50.401787, main_u 0.021, u_u 0.019, ρ=0.00, 100.0%
+
+-----------------------------run 1 task id:2 start training-----------------------------
+==>>> it: 1, round: 1, loss: ins 19.13 + ce 19.561 + distill 0.559 + align 32.935 + ts_feat 0.080 + view_cons 0.000 = 72.269173, main_u 0.022, u_u 0.023, 0.2%
+==>>> it: 1, round: 2, loss: ins 21.00 + ce 12.811 + distill 2.500 + align 26.289 + ts_feat 0.000 + view_cons 0.698 = 63.294800, main_u 0.022, u_u 0.021, ρ=0.00, 0.2%
+==>>> it: 199, round: 1, loss: ins 18.27 + ce 4.351 + distill 0.922 + align 35.178 + ts_feat 0.215 + view_cons 0.000 = 58.938320, main_u 0.024, u_u 0.022, 20.0%
+==>>> it: 199, round: 2, loss: ins 17.33 + ce 2.706 + distill 0.867 + align 31.572 + ts_feat 0.217 + view_cons 0.000 = 52.692719, main_u 0.024, u_u 0.022, ρ=0.00, 20.0%
+==>>> it: 399, round: 1, loss: ins 17.90 + ce 3.148 + distill 0.937 + align 35.285 + ts_feat 0.141 + view_cons 0.000 = 57.413963, main_u 0.024, u_u 0.026, 40.0%
+==>>> it: 399, round: 2, loss: ins 20.84 + ce 2.161 + distill 1.201 + align 26.067 + ts_feat 0.000 + view_cons 0.519 = 50.785904, main_u 0.024, u_u 0.016, ρ=0.00, 40.0%
+==>>> it: 599, round: 1, loss: ins 17.43 + ce 2.184 + distill 1.016 + align 35.910 + ts_feat 0.183 + view_cons 0.000 = 56.726547, main_u 0.026, u_u 0.020, 60.0%
+==>>> it: 599, round: 2, loss: ins 16.48 + ce 1.731 + distill 1.023 + align 32.930 + ts_feat 0.135 + view_cons 0.000 = 52.295120, main_u 0.026, u_u 0.020, ρ=0.00, 60.0%
+==>>> it: 799, round: 1, loss: ins 17.64 + ce 3.562 + distill 1.004 + align 35.289 + ts_feat 0.164 + view_cons 0.000 = 57.658680, main_u 0.025, u_u 0.022, 80.0%
+==>>> it: 799, round: 2, loss: ins 16.64 + ce 3.445 + distill 1.039 + align 32.656 + ts_feat 0.177 + view_cons 0.000 = 53.959862, main_u 0.025, u_u 0.022, ρ=0.00, 80.0%
+==>>> it: 999, round: 1, loss: ins 16.63 + ce 1.197 + distill 0.587 + align 35.428 + ts_feat 0.133 + view_cons 0.000 = 53.970833, main_u 0.025, u_u 0.022, 100.0%
+==>>> it: 999, round: 2, loss: ins 15.69 + ce 1.174 + distill 0.907 + align 32.523 + ts_feat 0.170 + view_cons 0.000 = 50.459782, main_u 0.025, u_u 0.022, ρ=0.00, 100.0%
+
+-----------------------------run 1 task id:3 start training-----------------------------
+==>>> it: 1, round: 1, loss: ins 17.82 + ce 23.189 + distill 0.495 + align 36.135 + ts_feat 0.043 + view_cons 0.000 = 77.683281, main_u 0.024, u_u 0.028, 0.2%
+==>>> it: 1, round: 2, loss: ins 21.04 + ce 21.420 + distill 2.743 + align 26.921 + ts_feat 0.000 + view_cons 0.577 = 72.698807, main_u 0.024, u_u 0.018, ρ=0.00, 0.2%
+==>>> it: 199, round: 1, loss: ins 16.57 + ce 2.594 + distill 0.870 + align 36.758 + ts_feat 0.156 + view_cons 0.000 = 56.944687, main_u 0.025, u_u 0.019, 20.0%
+==>>> it: 199, round: 2, loss: ins 15.29 + ce 1.329 + distill 0.753 + align 34.076 + ts_feat 0.161 + view_cons 0.000 = 51.612354, main_u 0.025, u_u 0.019, ρ=0.00, 20.0%
+==>>> it: 399, round: 1, loss: ins 16.52 + ce 2.120 + distill 1.163 + align 36.443 + ts_feat 0.168 + view_cons 0.000 = 56.417976, main_u 0.024, u_u 0.025, 40.0%
+==>>> it: 399, round: 2, loss: ins 19.86 + ce 0.638 + distill 1.234 + align 27.843 + ts_feat 0.000 + view_cons 0.467 = 50.045094, main_u 0.024, u_u 0.015, ρ=0.00, 40.0%
+==>>> it: 599, round: 1, loss: ins 15.94 + ce 1.624 + distill 0.885 + align 36.067 + ts_feat 0.131 + view_cons 0.000 = 54.645283, main_u 0.024, u_u 0.019, 60.0%
+==>>> it: 599, round: 2, loss: ins 15.13 + ce 1.928 + distill 0.743 + align 34.025 + ts_feat 0.141 + view_cons 0.000 = 51.968086, main_u 0.025, u_u 0.019, ρ=0.00, 60.0%
+==>>> it: 799, round: 1, loss: ins 15.42 + ce 0.684 + distill 0.747 + align 35.977 + ts_feat 0.130 + view_cons 0.000 = 52.960831, main_u 0.024, u_u 0.018, 80.0%
+==>>> it: 799, round: 2, loss: ins 14.74 + ce 0.728 + distill 0.678 + align 33.953 + ts_feat 0.115 + view_cons 0.000 = 50.215843, main_u 0.025, u_u 0.018, ρ=0.00, 80.0%
+==>>> it: 999, round: 1, loss: ins 16.01 + ce 1.166 + distill 1.062 + align 35.931 + ts_feat 0.127 + view_cons 0.000 = 54.295021, main_u 0.024, u_u 0.016, 100.0%
+==>>> it: 999, round: 2, loss: ins 14.64 + ce 0.616 + distill 0.826 + align 33.653 + ts_feat 0.109 + view_cons 0.000 = 49.848370, main_u 0.024, u_u 0.016, ρ=0.00, 100.0%
+
+-----------------------------run 1 task id:4 start training-----------------------------
+==>>> it: 1, round: 1, loss: ins 17.22 + ce 20.222 + distill 0.520 + align 36.346 + ts_feat 0.055 + view_cons 0.000 = 74.363319, main_u 0.024, u_u 0.025, 0.2%
+==>>> it: 1, round: 2, loss: ins 19.95 + ce 22.849 + distill 2.399 + align 28.792 + ts_feat 0.000 + view_cons 0.639 = 74.632202, main_u 0.024, u_u 0.019, ρ=0.00, 0.2%
+==>>> it: 199, round: 1, loss: ins 14.93 + ce 1.516 + distill 1.037 + align 36.707 + ts_feat 0.180 + view_cons 0.000 = 54.369160, main_u 0.021, u_u 0.020, 20.0%
+==>>> it: 199, round: 2, loss: ins 14.41 + ce 1.383 + distill 0.868 + align 34.630 + ts_feat 0.200 + view_cons 0.000 = 51.494839, main_u 0.021, u_u 0.020, ρ=0.00, 20.0%
+==>>> it: 399, round: 1, loss: ins 14.68 + ce 1.079 + distill 0.868 + align 36.714 + ts_feat 0.148 + view_cons 0.000 = 53.488331, main_u 0.022, u_u 0.019, 40.0%
+==>>> it: 399, round: 2, loss: ins 14.00 + ce 1.107 + distill 0.829 + align 35.010 + ts_feat 0.158 + view_cons 0.000 = 51.102333, main_u 0.022, u_u 0.019, ρ=0.00, 40.0%
+==>>> it: 599, round: 1, loss: ins 15.19 + ce 1.895 + distill 0.887 + align 36.955 + ts_feat 0.144 + view_cons 0.000 = 55.070938, main_u 0.023, u_u 0.021, 60.0%
+==>>> it: 599, round: 2, loss: ins 13.82 + ce 0.763 + distill 0.790 + align 34.364 + ts_feat 0.146 + view_cons 0.000 = 49.879063, main_u 0.023, u_u 0.021, ρ=0.00, 60.0%
+==>>> it: 799, round: 1, loss: ins 15.46 + ce 2.137 + distill 0.996 + align 35.532 + ts_feat 0.180 + view_cons 0.000 = 54.309021, main_u 0.024, u_u 0.024, 80.0%
+==>>> it: 799, round: 2, loss: ins 13.92 + ce 1.266 + distill 0.805 + align 34.600 + ts_feat 0.131 + view_cons 0.000 = 50.724098, main_u 0.024, u_u 0.024, ρ=0.00, 80.0%
+==>>> it: 999, round: 1, loss: ins 14.72 + ce 0.965 + distill 1.216 + align 36.865 + ts_feat 0.131 + view_cons 0.000 = 53.894157, main_u 0.024, u_u 0.026, 100.0%
+==>>> it: 999, round: 2, loss: ins 19.73 + ce 0.419 + distill 1.326 + align 30.088 + ts_feat 0.000 + view_cons 0.530 = 52.088810, main_u 0.024, u_u 0.016, ρ=0.00, 100.0%
+
+Calculating class means for NCM classifier...
+
+****************************************************************************************************
+Test with the output of layer: 1
+
+Test Task 0: Accuracy: 1377/2000 (68.85%)
+Test Task 1: Accuracy: 1004/2000 (50.20%)
+Test Task 2: Accuracy: 1352/2000 (67.60%)
+Test Task 3: Accuracy: 1752/2000 (87.60%)
+Test Task 4: Accuracy: 1855/2000 (92.75%)
+Tasks Acc: [68.84999847 50.20000076 67.59999847 87.59999847 92.75      ]
+Tasks Avg Acc: 73.40%
+****************************************************************************************************
+Test with the output of layer: 2
+
+Test Task 0: Accuracy: 1372/2000 (68.60%)
+Test Task 1: Accuracy: 1059/2000 (52.95%)
+Test Task 2: Accuracy: 1389/2000 (69.45%)
+Test Task 3: Accuracy: 1806/2000 (90.30%)
+Test Task 4: Accuracy: 1888/2000 (94.40%)
+Tasks Acc: [68.59999847 52.95000076 69.44999695 90.30000305 94.40000153]
+Tasks Avg Acc: 75.14%
+****************************************************************************************************
+Test with the output of layer: 3
+
+Test Task 0: Accuracy: 1246/2000 (62.30%)
+Test Task 1: Accuracy: 897/2000 (44.85%)
+Test Task 2: Accuracy: 1309/2000 (65.45%)
+Test Task 3: Accuracy: 1854/2000 (92.70%)
+Test Task 4: Accuracy: 1916/2000 (95.80%)
+Tasks Acc: [62.29999924 44.84999847 65.44999695 92.69999695 95.80000305]
+Tasks Avg Acc: 72.22%
+****************************************************************************************************
+Test with the output of layer: 4
+
+Test Task 0: Accuracy: 1537/2000 (76.85%)
+Test Task 1: Accuracy: 1116/2000 (55.80%)
+Test Task 2: Accuracy: 1445/2000 (72.25%)
+Test Task 3: Accuracy: 1784/2000 (89.20%)
+Test Task 4: Accuracy: 1872/2000 (93.60%)
+Tasks Acc: [76.84999847 55.79999924 72.25       89.19999695 93.59999847]
+Tasks Avg Acc: 77.54%
+****************************************************************************************************
+Test with the mean dists output of each layer:
+
+Test Task 0 (Mean): Accuracy: 1391/2000 (69.55%)
+Test Task 1 (Mean): Accuracy: 1036/2000 (51.80%)
+Test Task 2 (Mean): Accuracy: 1433/2000 (71.65%)
+Test Task 3 (Mean): Accuracy: 1835/2000 (91.75%)
+Test Task 4 (Mean): Accuracy: 1907/2000 (95.35%)
+Tasks Acc: [69.55000305 51.79999924 71.65000153 91.75       95.34999847]
+Tasks Avg Acc: 76.02%
+{'test/final_avg_acc': 76.02000045776367, 'test/final_avg_fgt': 0.0, 'test/final_avg_bwt': 0.0, 'metrics/buffer_n_bits': 24.61206, 'metrics/model_n_params': 12.644466}
+task_accs_table
+accs_array shape: (1, 5)
+          task0      task1      task2  task3      task4
+row0  69.550003  51.799999  71.650002  91.75  95.349998
+{'test/last_final_avg_acc': 77.53999862670898, 'test/last_final_avg_fgt': 0.0, 'test/last_final_avg_bwt': 0.0}
+last_task_accs_table
+accs_array shape: (1, 5)
+          task0      task1  task2      task3      task4
+row0  76.849998  55.799999  72.25  89.199997  93.599998
+====================================================================================================
+1th run's Test result: Accuracy: 76.02%
+====================================================================================================
+====================================================================================================
+-----------------------------run 2 start--------------------------
+2026-01-05 11:02:35
+====================================================================================================
+Task order = [0, 1, 2, 3, 4]
+Data and loader is prepared
+
+Run 2: tmp run_02 **************************************************
+
+buffer has 1000 slots
+bx torch.Size([1000, 3, 32, 32])
+路径二中main_u>u_u给我换成随机采样，给我删除第二次更新时候合并当前任务流样本，只使用buffer内的样本18.07/22.66，同时feature蒸馏屏蔽ubuffer
+number of classifier parameters:	 12.64M
+buffer parameters (image size prod):	 3.07M
+
+-----------------------------run 2 task id:0 start training-----------------------------
+==>>> it: 1, round: 1, loss: ins 18.04 + ce 9.442 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 27.480360, main_u 0.000, u_u 0.033, 0.2%
+==>>> it: 1, round: 2, loss: ins 18.15 + ce 9.436 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 27.586910, main_u 0.000, u_u 0.033, 0.2%
+==>>> it: 199, round: 1, loss: ins 20.80 + ce 0.407 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 21.206964, main_u 0.045, u_u 0.154, 20.0%
+==>>> it: 199, round: 2, loss: ins 20.86 + ce 0.476 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 21.333975, main_u 0.045, u_u 0.154, 20.0%
+==>>> it: 399, round: 1, loss: ins 20.50 + ce 0.255 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.752563, main_u 0.044, u_u 0.175, 40.0%
+==>>> it: 399, round: 2, loss: ins 20.49 + ce 0.254 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.741138, main_u 0.044, u_u 0.175, 40.0%
+==>>> it: 599, round: 1, loss: ins 20.30 + ce 0.165 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.469208, main_u 0.043, u_u 0.196, 60.0%
+==>>> it: 599, round: 2, loss: ins 20.52 + ce 0.226 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.742880, main_u 0.043, u_u 0.196, 60.0%
+==>>> it: 799, round: 1, loss: ins 20.19 + ce 0.095 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.285318, main_u 0.043, u_u 0.211, 80.0%
+==>>> it: 799, round: 2, loss: ins 20.31 + ce 0.166 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.478733, main_u 0.043, u_u 0.211, 80.0%
+==>>> it: 999, round: 1, loss: ins 20.26 + ce 0.120 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.381826, main_u 0.042, u_u 0.229, 100.0%
+==>>> it: 999, round: 2, loss: ins 20.24 + ce 0.109 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.351789, main_u 0.042, u_u 0.229, 100.0%
+
+-----------------------------run 2 task id:1 start training-----------------------------
+==>>> it: 1, round: 1, loss: ins 20.75 + ce 12.574 + distill 0.313 + align 43.417 + ts_feat 0.311 + view_cons 0.000 = 77.367638, main_u 0.041, u_u 0.032, 0.2%
+==>>> it: 1, round: 2, loss: ins 19.82 + ce 2.820 + distill 0.614 + align 34.814 + ts_feat 0.600 + view_cons 0.000 = 58.669540, main_u 0.039, u_u 0.032, ρ=0.00, 0.2%
+==>>> it: 199, round: 1, loss: ins 19.30 + ce 2.706 + distill 1.019 + align 32.588 + ts_feat 0.211 + view_cons 0.000 = 55.828991, main_u 0.021, u_u 0.022, 20.0%
+==>>> it: 199, round: 2, loss: ins 21.15 + ce 3.676 + distill 1.096 + align 25.119 + ts_feat 0.000 + view_cons 0.574 = 51.614468, main_u 0.021, u_u 0.017, ρ=0.00, 20.0%
+==>>> it: 399, round: 1, loss: ins 19.00 + ce 3.194 + distill 0.608 + align 33.538 + ts_feat 0.162 + view_cons 0.000 = 56.501244, main_u 0.022, u_u 0.017, 40.0%
+==>>> it: 399, round: 2, loss: ins 18.51 + ce 2.485 + distill 0.554 + align 31.704 + ts_feat 0.173 + view_cons 0.000 = 53.426018, main_u 0.022, u_u 0.017, ρ=0.00, 40.0%
+==>>> it: 599, round: 1, loss: ins 18.30 + ce 1.397 + distill 0.476 + align 34.488 + ts_feat 0.123 + view_cons 0.000 = 54.786777, main_u 0.024, u_u 0.024, 60.0%
+==>>> it: 599, round: 2, loss: ins 17.78 + ce 1.580 + distill 0.459 + align 31.723 + ts_feat 0.117 + view_cons 0.000 = 51.654808, main_u 0.024, u_u 0.024, ρ=0.00, 60.0%
+==>>> it: 799, round: 1, loss: ins 18.14 + ce 1.497 + distill 0.657 + align 34.750 + ts_feat 0.115 + view_cons 0.000 = 55.160572, main_u 0.024, u_u 0.024, 80.0%
+==>>> it: 799, round: 2, loss: ins 20.89 + ce 3.253 + distill 1.160 + align 26.258 + ts_feat 0.000 + view_cons 0.627 = 52.191818, main_u 0.024, u_u 0.019, ρ=0.00, 80.0%
+==>>> it: 999, round: 1, loss: ins 19.06 + ce 3.045 + distill 0.546 + align 35.113 + ts_feat 0.133 + view_cons 0.000 = 57.893860, main_u 0.024, u_u 0.024, 100.0%
+==>>> it: 999, round: 2, loss: ins 18.25 + ce 2.607 + distill 0.638 + align 32.189 + ts_feat 0.130 + view_cons 0.000 = 53.818657, main_u 0.024, u_u 0.024, ρ=0.00, 100.0%
+
+-----------------------------run 2 task id:2 start training-----------------------------
+==>>> it: 1, round: 1, loss: ins 18.93 + ce 22.467 + distill 1.138 + align 34.792 + ts_feat 0.121 + view_cons 0.000 = 77.446938, main_u 0.024, u_u 0.022, 0.2%
+==>>> it: 1, round: 2, loss: ins 18.68 + ce 4.031 + distill 1.884 + align 32.243 + ts_feat 0.195 + view_cons 0.000 = 57.034237, main_u 0.025, u_u 0.022, ρ=0.00, 0.2%
+==>>> it: 199, round: 1, loss: ins 17.49 + ce 2.651 + distill 0.921 + align 35.441 + ts_feat 0.200 + view_cons 0.000 = 56.707302, main_u 0.024, u_u 0.024, 20.0%
+==>>> it: 199, round: 2, loss: ins 20.22 + ce 1.311 + distill 0.794 + align 24.370 + ts_feat 0.000 + view_cons 0.459 = 47.151917, main_u 0.024, u_u 0.014, ρ=0.00, 20.0%
+==>>> it: 399, round: 1, loss: ins 18.09 + ce 5.285 + distill 1.199 + align 34.962 + ts_feat 0.196 + view_cons 0.000 = 59.732693, main_u 0.026, u_u 0.018, 40.0%
+==>>> it: 399, round: 2, loss: ins 17.16 + ce 3.671 + distill 0.959 + align 33.661 + ts_feat 0.180 + view_cons 0.000 = 55.631748, main_u 0.026, u_u 0.018, ρ=0.00, 40.0%
+==>>> it: 599, round: 1, loss: ins 16.88 + ce 2.619 + distill 0.762 + align 36.572 + ts_feat 0.161 + view_cons 0.000 = 56.993526, main_u 0.025, u_u 0.019, 60.0%
+==>>> it: 599, round: 2, loss: ins 15.77 + ce 1.293 + distill 0.816 + align 34.136 + ts_feat 0.149 + view_cons 0.000 = 52.165150, main_u 0.025, u_u 0.019, ρ=0.00, 60.0%
+==>>> it: 799, round: 1, loss: ins 17.16 + ce 2.088 + distill 0.854 + align 36.681 + ts_feat 0.165 + view_cons 0.000 = 56.944981, main_u 0.026, u_u 0.019, 80.0%
+==>>> it: 799, round: 2, loss: ins 16.68 + ce 2.523 + distill 0.836 + align 34.094 + ts_feat 0.185 + view_cons 0.000 = 54.321461, main_u 0.026, u_u 0.019, ρ=0.00, 80.0%
+==>>> it: 999, round: 1, loss: ins 17.14 + ce 1.719 + distill 0.842 + align 35.732 + ts_feat 0.131 + view_cons 0.000 = 55.560402, main_u 0.024, u_u 0.025, 100.0%
+==>>> it: 999, round: 2, loss: ins 20.29 + ce 1.318 + distill 0.712 + align 25.588 + ts_feat 0.000 + view_cons 0.448 = 48.354507, main_u 0.024, u_u 0.014, ρ=0.00, 100.0%
+
+-----------------------------run 2 task id:3 start training-----------------------------
+==>>> it: 1, round: 1, loss: ins 18.08 + ce 25.440 + distill 0.289 + align 37.139 + ts_feat 0.031 + view_cons 0.000 = 80.976311, main_u 0.025, u_u 0.025, 0.2%
+==>>> it: 1, round: 2, loss: ins 16.68 + ce 4.346 + distill 0.487 + align 34.128 + ts_feat 0.056 + view_cons 0.000 = 55.693344, main_u 0.025, u_u 0.025, ρ=0.00, 0.2%
+==>>> it: 199, round: 1, loss: ins 15.89 + ce 1.593 + distill 0.887 + align 37.411 + ts_feat 0.158 + view_cons 0.000 = 55.942806, main_u 0.024, u_u 0.020, 20.0%
+==>>> it: 199, round: 2, loss: ins 15.89 + ce 1.636 + distill 0.867 + align 34.895 + ts_feat 0.185 + view_cons 0.000 = 53.476707, main_u 0.024, u_u 0.020, ρ=0.00, 20.0%
+==>>> it: 399, round: 1, loss: ins 16.47 + ce 2.137 + distill 1.053 + align 36.573 + ts_feat 0.153 + view_cons 0.000 = 56.390270, main_u 0.024, u_u 0.020, 40.0%
+==>>> it: 399, round: 2, loss: ins 15.06 + ce 1.569 + distill 0.741 + align 34.216 + ts_feat 0.120 + view_cons 0.000 = 51.706142, main_u 0.024, u_u 0.020, ρ=0.00, 40.0%
+==>>> it: 599, round: 1, loss: ins 15.61 + ce 1.535 + distill 0.770 + align 36.824 + ts_feat 0.116 + view_cons 0.000 = 54.850525, main_u 0.025, u_u 0.024, 60.0%
+==>>> it: 599, round: 2, loss: ins 14.94 + ce 1.113 + distill 0.939 + align 34.245 + ts_feat 0.127 + view_cons 0.000 = 51.359367, main_u 0.025, u_u 0.024, ρ=0.00, 60.0%
+==>>> it: 799, round: 1, loss: ins 15.66 + ce 0.973 + distill 0.800 + align 36.133 + ts_feat 0.109 + view_cons 0.000 = 53.673370, main_u 0.025, u_u 0.023, 80.0%
+==>>> it: 799, round: 2, loss: ins 14.73 + ce 1.017 + distill 0.878 + align 33.879 + ts_feat 0.127 + view_cons 0.000 = 50.631359, main_u 0.024, u_u 0.023, ρ=0.00, 80.0%
+==>>> it: 999, round: 1, loss: ins 15.43 + ce 0.641 + distill 1.058 + align 36.274 + ts_feat 0.118 + view_cons 0.000 = 53.523285, main_u 0.024, u_u 0.022, 100.0%
+==>>> it: 999, round: 2, loss: ins 14.70 + ce 1.161 + distill 0.977 + align 34.142 + ts_feat 0.123 + view_cons 0.000 = 51.100613, main_u 0.024, u_u 0.022, ρ=0.00, 100.0%
+
+-----------------------------run 2 task id:4 start training-----------------------------
+==>>> it: 1, round: 1, loss: ins 17.09 + ce 19.128 + distill 0.302 + align 36.614 + ts_feat 0.035 + view_cons 0.000 = 73.168503, main_u 0.024, u_u 0.021, 0.2%
+==>>> it: 1, round: 2, loss: ins 15.53 + ce 4.219 + distill 0.501 + align 34.353 + ts_feat 0.051 + view_cons 0.000 = 54.653206, main_u 0.023, u_u 0.021, ρ=0.00, 0.2%
+==>>> it: 199, round: 1, loss: ins 15.66 + ce 1.908 + distill 1.137 + align 37.315 + ts_feat 0.205 + view_cons 0.000 = 56.227589, main_u 0.022, u_u 0.021, 20.0%
+==>>> it: 199, round: 2, loss: ins 13.76 + ce 0.820 + distill 0.998 + align 35.110 + ts_feat 0.178 + view_cons 0.000 = 50.869247, main_u 0.022, u_u 0.021, ρ=0.00, 20.0%
+==>>> it: 399, round: 1, loss: ins 14.77 + ce 1.202 + distill 0.896 + align 36.685 + ts_feat 0.136 + view_cons 0.000 = 53.684895, main_u 0.024, u_u 0.023, 40.0%
+==>>> it: 399, round: 2, loss: ins 14.03 + ce 1.173 + distill 0.880 + align 34.748 + ts_feat 0.142 + view_cons 0.000 = 50.974911, main_u 0.024, u_u 0.023, ρ=0.00, 40.0%
+==>>> it: 599, round: 1, loss: ins 14.98 + ce 1.696 + distill 0.927 + align 37.345 + ts_feat 0.139 + view_cons 0.000 = 55.090611, main_u 0.023, u_u 0.020, 60.0%
+==>>> it: 599, round: 2, loss: ins 13.77 + ce 0.672 + distill 1.044 + align 34.896 + ts_feat 0.146 + view_cons 0.000 = 50.525654, main_u 0.023, u_u 0.020, ρ=0.00, 60.0%
+==>>> it: 799, round: 1, loss: ins 15.66 + ce 2.630 + distill 1.021 + align 37.145 + ts_feat 0.163 + view_cons 0.000 = 56.622749, main_u 0.024, u_u 0.024, 80.0%
+==>>> it: 799, round: 2, loss: ins 14.82 + ce 2.300 + distill 1.056 + align 34.055 + ts_feat 0.153 + view_cons 0.000 = 52.384716, main_u 0.024, u_u 0.024, ρ=0.00, 80.0%
+==>>> it: 999, round: 1, loss: ins 15.16 + ce 0.557 + distill 0.991 + align 37.165 + ts_feat 0.157 + view_cons 0.000 = 54.027489, main_u 0.024, u_u 0.022, 100.0%
+==>>> it: 999, round: 2, loss: ins 13.94 + ce 0.550 + distill 0.896 + align 34.611 + ts_feat 0.140 + view_cons 0.000 = 50.137562, main_u 0.024, u_u 0.022, ρ=0.00, 100.0%
+
+Calculating class means for NCM classifier...
+
+****************************************************************************************************
+Test with the output of layer: 1
+
+Test Task 0: Accuracy: 1329/2000 (66.45%)
+Test Task 1: Accuracy: 914/2000 (45.70%)
+Test Task 2: Accuracy: 1337/2000 (66.85%)
+Test Task 3: Accuracy: 1827/2000 (91.35%)
+Test Task 4: Accuracy: 1867/2000 (93.35%)
+Tasks Acc: [66.44999695 45.70000076 66.84999847 91.34999847 93.34999847]
+Tasks Avg Acc: 72.74%
+****************************************************************************************************
+Test with the output of layer: 2
+
+Test Task 0: Accuracy: 1438/2000 (71.90%)
+Test Task 1: Accuracy: 956/2000 (47.80%)
+Test Task 2: Accuracy: 1273/2000 (63.65%)
+Test Task 3: Accuracy: 1858/2000 (92.90%)
+Test Task 4: Accuracy: 1875/2000 (93.75%)
+Tasks Acc: [71.90000153 47.79999924 63.65000153 92.90000153 93.75      ]
+Tasks Avg Acc: 74.00%
+****************************************************************************************************
+Test with the output of layer: 3
+
+Test Task 0: Accuracy: 1345/2000 (67.25%)
+Test Task 1: Accuracy: 754/2000 (37.70%)
+Test Task 2: Accuracy: 1111/2000 (55.55%)
+Test Task 3: Accuracy: 1913/2000 (95.65%)
+Test Task 4: Accuracy: 1890/2000 (94.50%)
+Tasks Acc: [67.25       37.70000076 55.54999924 95.65000153 94.5       ]
+Tasks Avg Acc: 70.13%
+****************************************************************************************************
+Test with the output of layer: 4
+
+Test Task 0: Accuracy: 1573/2000 (78.65%)
+Test Task 1: Accuracy: 952/2000 (47.60%)
+Test Task 2: Accuracy: 1300/2000 (65.00%)
+Test Task 3: Accuracy: 1881/2000 (94.05%)
+Test Task 4: Accuracy: 1843/2000 (92.15%)
+Tasks Acc: [78.65000153 47.59999847 65.         94.05000305 92.15000153]
+Tasks Avg Acc: 75.49%
+****************************************************************************************************
+Test with the mean dists output of each layer:
+
+Test Task 0 (Mean): Accuracy: 1442/2000 (72.10%)
+Test Task 1 (Mean): Accuracy: 925/2000 (46.25%)
+Test Task 2 (Mean): Accuracy: 1277/2000 (63.85%)
+Test Task 3 (Mean): Accuracy: 1911/2000 (95.55%)
+Test Task 4 (Mean): Accuracy: 1896/2000 (94.80%)
+Tasks Acc: [72.09999847 46.25       63.84999847 95.55000305 94.80000305]
+Tasks Avg Acc: 74.51%
+{'test/final_avg_acc': 74.51000061035157, 'test/final_avg_fgt': 0.0, 'test/final_avg_bwt': 0.0, 'metrics/buffer_n_bits': 24.61206, 'metrics/model_n_params': 12.644466}
+task_accs_table
+accs_array shape: (1, 5)
+          task0  task1      task2      task3      task4
+row0  72.099998  46.25  63.849998  95.550003  94.800003
+{'test/last_final_avg_acc': 75.49000091552735, 'test/last_final_avg_fgt': 0.0, 'test/last_final_avg_bwt': 0.0}
+last_task_accs_table
+accs_array shape: (1, 5)
+          task0      task1  task2      task3      task4
+row0  78.650002  47.599998   65.0  94.050003  92.150002
+====================================================================================================
+2th run's Test result: Accuracy: 74.51%
+====================================================================================================
+====================================================================================================
+-----------------------------run 3 start--------------------------
+2026-01-05 11:32:14
+====================================================================================================
+Task order = [0, 1, 2, 3, 4]
+Data and loader is prepared
+
+Run 3: tmp run_03 **************************************************
+
+buffer has 1000 slots
+bx torch.Size([1000, 3, 32, 32])
+路径二中main_u>u_u给我换成随机采样，给我删除第二次更新时候合并当前任务流样本，只使用buffer内的样本18.07/22.66，同时feature蒸馏屏蔽ubuffer
+number of classifier parameters:	 12.64M
+buffer parameters (image size prod):	 3.07M
+
+-----------------------------run 3 task id:0 start training-----------------------------
+==>>> it: 1, round: 1, loss: ins 18.04 + ce 8.753 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 26.790522, main_u 0.000, u_u 0.045, 0.2%
+==>>> it: 1, round: 2, loss: ins 17.39 + ce 6.469 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 23.856415, main_u 0.000, u_u 0.045, 0.2%
+==>>> it: 199, round: 1, loss: ins 20.59 + ce 0.308 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.901028, main_u 0.047, u_u 0.161, 20.0%
+==>>> it: 199, round: 2, loss: ins 20.82 + ce 0.446 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 21.265251, main_u 0.047, u_u 0.161, 20.0%
+==>>> it: 399, round: 1, loss: ins 20.69 + ce 0.352 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 21.038464, main_u 0.048, u_u 0.222, 40.0%
+==>>> it: 399, round: 2, loss: ins 20.56 + ce 0.266 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.827805, main_u 0.048, u_u 0.222, 40.0%
+==>>> it: 599, round: 1, loss: ins 20.30 + ce 0.144 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.442068, main_u 0.051, u_u 0.250, 60.0%
+==>>> it: 599, round: 2, loss: ins 20.42 + ce 0.181 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.599276, main_u 0.051, u_u 0.250, 60.0%
+==>>> it: 799, round: 1, loss: ins 20.11 + ce 0.068 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.179544, main_u 0.048, u_u 0.274, 80.0%
+==>>> it: 799, round: 2, loss: ins 20.18 + ce 0.092 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.269516, main_u 0.048, u_u 0.274, 80.0%
+==>>> it: 999, round: 1, loss: ins 20.22 + ce 0.098 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.319469, main_u 0.048, u_u 0.280, 100.0%
+==>>> it: 999, round: 2, loss: ins 20.21 + ce 0.095 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.306368, main_u 0.048, u_u 0.280, 100.0%
+
+-----------------------------run 3 task id:1 start training-----------------------------
+==>>> it: 1, round: 1, loss: ins 20.71 + ce 12.191 + distill 0.326 + align 43.248 + ts_feat 0.277 + view_cons 0.000 = 76.755798, main_u 0.046, u_u 0.071, 0.2%
+==>>> it: 1, round: 2, loss: ins 20.66 + ce 4.293 + distill 1.524 + align 34.566 + ts_feat 0.000 + view_cons 0.465 = 61.511005, main_u 0.046, u_u 0.014, ρ=0.00, 0.2%
+==>>> it: 199, round: 1, loss: ins 19.45 + ce 4.037 + distill 0.906 + align 31.125 + ts_feat 0.193 + view_cons 0.000 = 55.706535, main_u 0.018, u_u 0.018, 20.0%
+==>>> it: 199, round: 2, loss: ins 21.49 + ce 4.986 + distill 1.220 + align 25.086 + ts_feat 0.000 + view_cons 0.593 = 53.375381, main_u 0.018, u_u 0.017, ρ=0.00, 20.0%
+==>>> it: 399, round: 1, loss: ins 19.83 + ce 4.036 + distill 0.592 + align 32.617 + ts_feat 0.176 + view_cons 0.000 = 57.251030, main_u 0.020, u_u 0.017, 40.0%
+==>>> it: 399, round: 2, loss: ins 18.24 + ce 1.855 + distill 0.650 + align 30.255 + ts_feat 0.174 + view_cons 0.000 = 51.175346, main_u 0.021, u_u 0.017, ρ=0.00, 40.0%
+==>>> it: 599, round: 1, loss: ins 18.78 + ce 2.798 + distill 0.734 + align 33.240 + ts_feat 0.092 + view_cons 0.000 = 55.643551, main_u 0.022, u_u 0.023, 60.0%
+==>>> it: 599, round: 2, loss: ins 21.15 + ce 4.394 + distill 0.954 + align 25.785 + ts_feat 0.000 + view_cons 0.557 = 52.836456, main_u 0.022, u_u 0.017, ρ=0.00, 60.0%
+==>>> it: 799, round: 1, loss: ins 19.19 + ce 2.900 + distill 0.577 + align 33.122 + ts_feat 0.118 + view_cons 0.000 = 55.910358, main_u 0.022, u_u 0.017, 80.0%
+==>>> it: 799, round: 2, loss: ins 18.08 + ce 2.350 + distill 0.460 + align 30.943 + ts_feat 0.152 + view_cons 0.000 = 51.987980, main_u 0.022, u_u 0.017, ρ=0.00, 80.0%
+==>>> it: 999, round: 1, loss: ins 19.04 + ce 2.774 + distill 0.642 + align 32.522 + ts_feat 0.129 + view_cons 0.000 = 55.102760, main_u 0.023, u_u 0.023, 100.0%
+==>>> it: 999, round: 2, loss: ins 20.73 + ce 2.600 + distill 0.872 + align 26.086 + ts_feat 0.000 + view_cons 0.569 = 50.861629, main_u 0.023, u_u 0.017, ρ=0.00, 100.0%
+
+-----------------------------run 3 task id:2 start training-----------------------------
+==>>> it: 1, round: 1, loss: ins 18.91 + ce 19.923 + distill 0.245 + align 33.596 + ts_feat 0.042 + view_cons 0.000 = 72.716026, main_u 0.023, u_u 0.020, 0.2%
+==>>> it: 1, round: 2, loss: ins 18.14 + ce 3.396 + distill 0.243 + align 31.464 + ts_feat 0.056 + view_cons 0.000 = 53.297009, main_u 0.023, u_u 0.020, ρ=0.00, 0.2%
+==>>> it: 199, round: 1, loss: ins 18.68 + ce 4.421 + distill 0.781 + align 35.125 + ts_feat 0.158 + view_cons 0.000 = 59.165512, main_u 0.024, u_u 0.021, 20.0%
+==>>> it: 199, round: 2, loss: ins 17.55 + ce 2.934 + distill 0.652 + align 32.211 + ts_feat 0.184 + view_cons 0.000 = 53.535053, main_u 0.024, u_u 0.021, ρ=0.00, 20.0%
+==>>> it: 399, round: 1, loss: ins 17.05 + ce 1.497 + distill 0.587 + align 35.576 + ts_feat 0.146 + view_cons 0.000 = 54.857864, main_u 0.024, u_u 0.017, 40.0%
+==>>> it: 399, round: 2, loss: ins 16.78 + ce 1.910 + distill 0.699 + align 32.632 + ts_feat 0.187 + view_cons 0.000 = 52.206566, main_u 0.024, u_u 0.017, ρ=0.00, 40.0%
+==>>> it: 599, round: 1, loss: ins 16.99 + ce 1.931 + distill 0.835 + align 35.247 + ts_feat 0.125 + view_cons 0.000 = 55.124702, main_u 0.025, u_u 0.023, 60.0%
+==>>> it: 599, round: 2, loss: ins 16.09 + ce 1.206 + distill 0.567 + align 32.250 + ts_feat 0.133 + view_cons 0.000 = 50.243519, main_u 0.025, u_u 0.023, ρ=0.00, 60.0%
+==>>> it: 799, round: 1, loss: ins 16.93 + ce 1.721 + distill 0.663 + align 35.345 + ts_feat 0.137 + view_cons 0.000 = 54.793308, main_u 0.024, u_u 0.025, 80.0%
+==>>> it: 799, round: 2, loss: ins 20.46 + ce 1.484 + distill 0.887 + align 27.276 + ts_feat 0.000 + view_cons 0.528 = 50.640068, main_u 0.024, u_u 0.016, ρ=0.00, 80.0%
+==>>> it: 999, round: 1, loss: ins 17.17 + ce 1.863 + distill 0.686 + align 35.432 + ts_feat 0.126 + view_cons 0.000 = 55.276730, main_u 0.025, u_u 0.022, 100.0%
+==>>> it: 999, round: 2, loss: ins 16.15 + ce 1.629 + distill 0.615 + align 33.167 + ts_feat 0.140 + view_cons 0.000 = 51.704189, main_u 0.024, u_u 0.022, ρ=0.00, 100.0%
+
+-----------------------------run 3 task id:3 start training-----------------------------
+==>>> it: 1, round: 1, loss: ins 18.23 + ce 23.788 + distill 0.747 + align 35.731 + ts_feat 0.081 + view_cons 0.000 = 78.576164, main_u 0.024, u_u 0.032, 0.2%
+==>>> it: 1, round: 2, loss: ins 21.45 + ce 33.831 + distill 1.723 + align 28.868 + ts_feat 0.000 + view_cons 0.683 = 86.558968, main_u 0.024, u_u 0.021, ρ=0.00, 0.2%
+==>>> it: 199, round: 1, loss: ins 16.24 + ce 1.614 + distill 1.170 + align 36.786 + ts_feat 0.223 + view_cons 0.000 = 56.034424, main_u 0.026, u_u 0.019, 20.0%
+==>>> it: 199, round: 2, loss: ins 15.28 + ce 1.440 + distill 1.005 + align 34.469 + ts_feat 0.194 + view_cons 0.000 = 52.391953, main_u 0.026, u_u 0.019, ρ=0.00, 20.0%
+==>>> it: 399, round: 1, loss: ins 15.80 + ce 1.305 + distill 0.985 + align 36.627 + ts_feat 0.163 + view_cons 0.000 = 54.881348, main_u 0.025, u_u 0.022, 40.0%
+==>>> it: 399, round: 2, loss: ins 15.18 + ce 1.523 + distill 0.853 + align 34.271 + ts_feat 0.208 + view_cons 0.000 = 52.032906, main_u 0.025, u_u 0.022, ρ=0.00, 40.0%
+==>>> it: 599, round: 1, loss: ins 16.92 + ce 3.859 + distill 1.238 + align 35.592 + ts_feat 0.277 + view_cons 0.000 = 57.885891, main_u 0.026, u_u 0.019, 60.0%
+==>>> it: 599, round: 2, loss: ins 14.97 + ce 1.220 + distill 0.931 + align 33.913 + ts_feat 0.178 + view_cons 0.000 = 51.216290, main_u 0.025, u_u 0.019, ρ=0.00, 60.0%
+==>>> it: 799, round: 1, loss: ins 15.60 + ce 1.282 + distill 0.941 + align 37.027 + ts_feat 0.141 + view_cons 0.000 = 54.996525, main_u 0.025, u_u 0.020, 80.0%
+==>>> it: 799, round: 2, loss: ins 14.82 + ce 1.047 + distill 0.802 + align 34.414 + ts_feat 0.125 + view_cons 0.000 = 51.211292, main_u 0.025, u_u 0.020, ρ=0.00, 80.0%
+==>>> it: 999, round: 1, loss: ins 16.44 + ce 2.178 + distill 1.001 + align 36.743 + ts_feat 0.151 + view_cons 0.000 = 56.509167, main_u 0.024, u_u 0.025, 100.0%
+==>>> it: 999, round: 2, loss: ins 20.32 + ce 1.061 + distill 1.045 + align 31.200 + ts_feat 0.000 + view_cons 0.444 = 54.073631, main_u 0.024, u_u 0.014, ρ=0.00, 100.0%
+
+-----------------------------run 3 task id:4 start training-----------------------------
+==>>> it: 1, round: 1, loss: ins 17.20 + ce 16.523 + distill 1.166 + align 36.358 + ts_feat 0.073 + view_cons 0.000 = 71.318092, main_u 0.024, u_u 0.025, 0.2%
+==>>> it: 1, round: 2, loss: ins 20.52 + ce 27.016 + distill 2.657 + align 31.337 + ts_feat 0.000 + view_cons 0.807 = 82.334801, main_u 0.024, u_u 0.024, ρ=0.00, 0.2%
+==>>> it: 199, round: 1, loss: ins 15.35 + ce 2.206 + distill 1.304 + align 37.307 + ts_feat 0.197 + view_cons 0.000 = 56.360279, main_u 0.021, u_u 0.022, 20.0%
+==>>> it: 199, round: 2, loss: ins 20.29 + ce 1.599 + distill 1.398 + align 30.272 + ts_feat 0.000 + view_cons 0.614 = 54.172646, main_u 0.021, u_u 0.019, ρ=0.00, 20.0%
+==>>> it: 399, round: 1, loss: ins 14.70 + ce 1.083 + distill 0.829 + align 36.817 + ts_feat 0.144 + view_cons 0.000 = 53.575314, main_u 0.024, u_u 0.023, 40.0%
+==>>> it: 399, round: 2, loss: ins 14.15 + ce 0.957 + distill 0.785 + align 34.479 + ts_feat 0.156 + view_cons 0.000 = 50.524975, main_u 0.024, u_u 0.023, ρ=0.00, 40.0%
+==>>> it: 599, round: 1, loss: ins 15.25 + ce 1.656 + distill 0.907 + align 36.533 + ts_feat 0.153 + view_cons 0.000 = 54.497772, main_u 0.022, u_u 0.022, 60.0%
+==>>> it: 599, round: 2, loss: ins 19.94 + ce 1.017 + distill 1.185 + align 30.999 + ts_feat 0.000 + view_cons 0.465 = 53.601055, main_u 0.022, u_u 0.014, ρ=0.00, 60.0%
+==>>> it: 799, round: 1, loss: ins 15.91 + ce 3.217 + distill 0.773 + align 36.374 + ts_feat 0.139 + view_cons 0.000 = 56.407852, main_u 0.023, u_u 0.025, 80.0%
+==>>> it: 799, round: 2, loss: ins 20.27 + ce 1.478 + distill 1.070 + align 30.099 + ts_feat 0.000 + view_cons 0.517 = 53.434612, main_u 0.023, u_u 0.016, ρ=0.00, 80.0%
+==>>> it: 999, round: 1, loss: ins 15.20 + ce 1.228 + distill 1.076 + align 36.572 + ts_feat 0.136 + view_cons 0.000 = 54.209991, main_u 0.022, u_u 0.019, 100.0%
+==>>> it: 999, round: 2, loss: ins 14.17 + ce 1.290 + distill 0.874 + align 34.241 + ts_feat 0.136 + view_cons 0.000 = 50.710331, main_u 0.023, u_u 0.019, ρ=0.00, 100.0%
+
+Calculating class means for NCM classifier...
+
+****************************************************************************************************
+Test with the output of layer: 1
+
+Test Task 0: Accuracy: 1478/2000 (73.90%)
+Test Task 1: Accuracy: 931/2000 (46.55%)
+Test Task 2: Accuracy: 1328/2000 (66.40%)
+Test Task 3: Accuracy: 1785/2000 (89.25%)
+Test Task 4: Accuracy: 1836/2000 (91.80%)
+Tasks Acc: [73.90000153 46.54999924 66.40000153 89.25       91.80000305]
+Tasks Avg Acc: 73.58%
+****************************************************************************************************
+Test with the output of layer: 2
+
+Test Task 0: Accuracy: 1433/2000 (71.65%)
+Test Task 1: Accuracy: 894/2000 (44.70%)
+Test Task 2: Accuracy: 1398/2000 (69.90%)
+Test Task 3: Accuracy: 1802/2000 (90.10%)
+Test Task 4: Accuracy: 1896/2000 (94.80%)
+Tasks Acc: [71.65000153 44.70000076 69.90000153 90.09999847 94.80000305]
+Tasks Avg Acc: 74.23%
+****************************************************************************************************
+Test with the output of layer: 3
+
+Test Task 0: Accuracy: 1433/2000 (71.65%)
+Test Task 1: Accuracy: 706/2000 (35.30%)
+Test Task 2: Accuracy: 1177/2000 (58.85%)
+Test Task 3: Accuracy: 1904/2000 (95.20%)
+Test Task 4: Accuracy: 1905/2000 (95.25%)
+Tasks Acc: [71.65000153 35.29999924 58.84999847 95.19999695 95.25      ]
+Tasks Avg Acc: 71.25%
+****************************************************************************************************
+Test with the output of layer: 4
+
+Test Task 0: Accuracy: 1653/2000 (82.65%)
+Test Task 1: Accuracy: 925/2000 (46.25%)
+Test Task 2: Accuracy: 1342/2000 (67.10%)
+Test Task 3: Accuracy: 1820/2000 (91.00%)
+Test Task 4: Accuracy: 1847/2000 (92.35%)
+Tasks Acc: [82.65000153 46.25       67.09999847 91.         92.34999847]
+Tasks Avg Acc: 75.87%
+****************************************************************************************************
+Test with the mean dists output of each layer:
+
+Test Task 0 (Mean): Accuracy: 1526/2000 (76.30%)
+Test Task 1 (Mean): Accuracy: 885/2000 (44.25%)
+Test Task 2 (Mean): Accuracy: 1374/2000 (68.70%)
+Test Task 3 (Mean): Accuracy: 1881/2000 (94.05%)
+Test Task 4 (Mean): Accuracy: 1893/2000 (94.65%)
+Tasks Acc: [76.30000305 44.25       68.69999695 94.05000305 94.65000153]
+Tasks Avg Acc: 75.59%
+{'test/final_avg_acc': 75.59000091552734, 'test/final_avg_fgt': 0.0, 'test/final_avg_bwt': 0.0, 'metrics/buffer_n_bits': 24.61206, 'metrics/model_n_params': 12.644466}
+task_accs_table
+accs_array shape: (1, 5)
+          task0  task1      task2      task3      task4
+row0  76.300003  44.25  68.699997  94.050003  94.650002
+{'test/last_final_avg_acc': 75.86999969482422, 'test/last_final_avg_fgt': 0.0, 'test/last_final_avg_bwt': 0.0}
+last_task_accs_table
+accs_array shape: (1, 5)
+          task0  task1      task2  task3      task4
+row0  82.650002  46.25  67.099998   91.0  92.349998
+====================================================================================================
+3th run's Test result: Accuracy: 75.59%
+====================================================================================================
+====================================================================================================
+-----------------------------run 4 start--------------------------
+2026-01-05 12:01:53
+====================================================================================================
+Task order = [0, 1, 2, 3, 4]
+Data and loader is prepared
+
+Run 4: tmp run_04 **************************************************
+
+buffer has 1000 slots
+bx torch.Size([1000, 3, 32, 32])
+路径二中main_u>u_u给我换成随机采样，给我删除第二次更新时候合并当前任务流样本，只使用buffer内的样本18.07/22.66，同时feature蒸馏屏蔽ubuffer
+number of classifier parameters:	 12.64M
+buffer parameters (image size prod):	 3.07M
+
+-----------------------------run 4 task id:0 start training-----------------------------
+==>>> it: 1, round: 1, loss: ins 17.63 + ce 9.312 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 26.937819, main_u 0.000, u_u 0.032, 0.2%
+==>>> it: 1, round: 2, loss: ins 17.09 + ce 6.545 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 23.630421, main_u 0.000, u_u 0.032, 0.2%
+==>>> it: 199, round: 1, loss: ins 21.07 + ce 0.595 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 21.665573, main_u 0.041, u_u 0.143, 20.0%
+==>>> it: 199, round: 2, loss: ins 20.83 + ce 0.472 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 21.298943, main_u 0.041, u_u 0.143, 20.0%
+==>>> it: 399, round: 1, loss: ins 20.52 + ce 0.244 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.762564, main_u 0.038, u_u 0.187, 40.0%
+==>>> it: 399, round: 2, loss: ins 20.56 + ce 0.296 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.856171, main_u 0.038, u_u 0.187, 40.0%
+==>>> it: 599, round: 1, loss: ins 20.16 + ce 0.097 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.256710, main_u 0.039, u_u 0.219, 60.0%
+==>>> it: 599, round: 2, loss: ins 20.26 + ce 0.140 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.404324, main_u 0.039, u_u 0.219, 60.0%
+==>>> it: 799, round: 1, loss: ins 20.44 + ce 0.228 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.671207, main_u 0.038, u_u 0.245, 80.0%
+==>>> it: 799, round: 2, loss: ins 20.74 + ce 0.441 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 21.183628, main_u 0.038, u_u 0.245, 80.0%
+==>>> it: 999, round: 1, loss: ins 20.17 + ce 0.087 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.255177, main_u 0.036, u_u 0.266, 100.0%
+==>>> it: 999, round: 2, loss: ins 20.28 + ce 0.138 + align 0.000 + ts_feat 0.000 + view_cons 0.000 = 20.418032, main_u 0.036, u_u 0.266, 100.0%
+
+-----------------------------run 4 task id:1 start training-----------------------------
+==>>> it: 1, round: 1, loss: ins 21.06 + ce 13.616 + distill 0.602 + align 44.908 + ts_feat 0.252 + view_cons 0.000 = 80.433319, main_u 0.034, u_u 0.051, 0.2%
+==>>> it: 1, round: 2, loss: ins 20.46 + ce 3.759 + distill 1.221 + align 34.568 + ts_feat 0.000 + view_cons 0.397 = 60.403767, main_u 0.034, u_u 0.012, ρ=0.00, 0.2%
+==>>> it: 199, round: 1, loss: ins 20.55 + ce 6.771 + distill 0.742 + align 31.419 + ts_feat 0.262 + view_cons 0.000 = 59.747318, main_u 0.019, u_u 0.020, 20.0%
+==>>> it: 199, round: 2, loss: ins 21.28 + ce 4.856 + distill 1.428 + align 26.097 + ts_feat 0.000 + view_cons 0.686 = 54.348900, main_u 0.019, u_u 0.020, ρ=0.00, 20.0%
+==>>> it: 399, round: 1, loss: ins 18.81 + ce 2.998 + distill 0.504 + align 33.138 + ts_feat 0.163 + view_cons 0.000 = 55.610619, main_u 0.021, u_u 0.017, 40.0%
+==>>> it: 399, round: 2, loss: ins 18.60 + ce 2.644 + distill 0.605 + align 30.704 + ts_feat 0.174 + view_cons 0.000 = 52.722984, main_u 0.021, u_u 0.017, ρ=0.00, 40.0%
+==>>> it: 599, round: 1, loss: ins 18.97 + ce 2.524 + distill 0.661 + align 33.499 + ts_feat 0.120 + view_cons 0.000 = 55.774952, main_u 0.022, u_u 0.021, 60.0%
+==>>> it: 599, round: 2, loss: ins 17.65 + ce 1.557 + distill 0.555 + align 31.650 + ts_feat 0.140 + view_cons 0.000 = 51.547966, main_u 0.022, u_u 0.021, ρ=0.00, 60.0%
+==>>> it: 799, round: 1, loss: ins 18.39 + ce 1.554 + distill 0.461 + align 34.173 + ts_feat 0.136 + view_cons 0.000 = 54.712746, main_u 0.022, u_u 0.020, 80.0%
+==>>> it: 799, round: 2, loss: ins 17.82 + ce 1.567 + distill 0.550 + align 31.450 + ts_feat 0.114 + view_cons 0.000 = 51.501968, main_u 0.022, u_u 0.020, ρ=0.00, 80.0%
+==>>> it: 999, round: 1, loss: ins 18.92 + ce 2.219 + distill 0.533 + align 33.738 + ts_feat 0.100 + view_cons 0.000 = 55.505280, main_u 0.023, u_u 0.025, 100.0%
+==>>> it: 999, round: 2, loss: ins 20.79 + ce 2.396 + distill 0.741 + align 26.943 + ts_feat 0.000 + view_cons 0.662 = 51.532921, main_u 0.023, u_u 0.020, ρ=0.00, 100.0%
+
+-----------------------------run 4 task id:2 start training-----------------------------
+==>>> it: 1, round: 1, loss: ins 18.48 + ce 18.714 + distill 0.559 + align 34.022 + ts_feat 0.077 + view_cons 0.000 = 71.848801, main_u 0.023, u_u 0.025, 0.2%
+==>>> it: 1, round: 2, loss: ins 20.75 + ce 15.657 + distill 2.507 + align 27.061 + ts_feat 0.000 + view_cons 0.607 = 66.580116, main_u 0.023, u_u 0.018, ρ=0.00, 0.2%
+==>>> it: 199, round: 1, loss: ins 17.97 + ce 3.245 + distill 0.713 + align 35.892 + ts_feat 0.176 + view_cons 0.000 = 57.994164, main_u 0.021, u_u 0.021, 20.0%
+==>>> it: 199, round: 2, loss: ins 17.56 + ce 3.336 + distill 0.928 + align 33.560 + ts_feat 0.181 + view_cons 0.000 = 55.569530, main_u 0.022, u_u 0.021, ρ=0.00, 20.0%
+==>>> it: 399, round: 1, loss: ins 17.38 + ce 2.070 + distill 0.687 + align 34.247 + ts_feat 0.182 + view_cons 0.000 = 54.566563, main_u 0.023, u_u 0.017, 40.0%
+==>>> it: 399, round: 2, loss: ins 16.56 + ce 1.631 + distill 0.853 + align 32.775 + ts_feat 0.163 + view_cons 0.000 = 51.983868, main_u 0.023, u_u 0.017, ρ=0.00, 40.0%
+==>>> it: 599, round: 1, loss: ins 17.50 + ce 2.169 + distill 0.850 + align 35.805 + ts_feat 0.160 + view_cons 0.000 = 56.485157, main_u 0.024, u_u 0.025, 60.0%
+==>>> it: 599, round: 2, loss: ins 20.47 + ce 1.576 + distill 0.986 + align 26.237 + ts_feat 0.000 + view_cons 0.483 = 49.748306, main_u 0.024, u_u 0.015, ρ=0.00, 60.0%
+==>>> it: 799, round: 1, loss: ins 16.88 + ce 1.669 + distill 0.613 + align 36.603 + ts_feat 0.119 + view_cons 0.000 = 55.887405, main_u 0.024, u_u 0.019, 80.0%
+==>>> it: 799, round: 2, loss: ins 16.05 + ce 1.346 + distill 0.824 + align 33.961 + ts_feat 0.122 + view_cons 0.000 = 52.298729, main_u 0.024, u_u 0.019, ρ=0.00, 80.0%
+==>>> it: 999, round: 1, loss: ins 17.13 + ce 1.536 + distill 1.063 + align 35.796 + ts_feat 0.152 + view_cons 0.000 = 55.673782, main_u 0.023, u_u 0.023, 100.0%
+==>>> it: 999, round: 2, loss: ins 20.48 + ce 1.532 + distill 0.925 + align 26.815 + ts_feat 0.000 + view_cons 0.498 = 50.252705, main_u 0.023, u_u 0.015, ρ=0.00, 100.0%
+
+-----------------------------run 4 task id:3 start training-----------------------------
+==>>> it: 1, round: 1, loss: ins 17.95 + ce 17.355 + distill 0.422 + align 36.747 + ts_feat 0.099 + view_cons 0.000 = 72.575027, main_u 0.023, u_u 0.027, 0.2%
+==>>> it: 1, round: 2, loss: ins 20.88 + ce 31.325 + distill 8.710 + align 27.192 + ts_feat 0.000 + view_cons 0.554 = 88.661140, main_u 0.023, u_u 0.017, ρ=0.00, 0.2%
+==>>> it: 199, round: 1, loss: ins 15.94 + ce 2.042 + distill 0.849 + align 38.501 + ts_feat 0.168 + view_cons 0.000 = 57.497025, main_u 0.023, u_u 0.025, 20.0%
+==>>> it: 199, round: 2, loss: ins 20.46 + ce 0.799 + distill 1.447 + align 28.686 + ts_feat 0.000 + view_cons 0.478 = 51.872051, main_u 0.023, u_u 0.015, ρ=0.00, 20.0%
+==>>> it: 399, round: 1, loss: ins 15.95 + ce 1.686 + distill 0.975 + align 38.274 + ts_feat 0.159 + view_cons 0.000 = 57.044418, main_u 0.024, u_u 0.025, 40.0%
+==>>> it: 399, round: 2, loss: ins 19.93 + ce 0.859 + distill 1.240 + align 28.962 + ts_feat 0.000 + view_cons 0.467 = 51.452782, main_u 0.024, u_u 0.015, ρ=0.00, 40.0%
+==>>> it: 599, round: 1, loss: ins 15.96 + ce 1.791 + distill 0.863 + align 37.993 + ts_feat 0.129 + view_cons 0.000 = 56.739098, main_u 0.024, u_u 0.025, 60.0%
+==>>> it: 599, round: 2, loss: ins 20.00 + ce 0.761 + distill 1.220 + align 28.528 + ts_feat 0.000 + view_cons 0.472 = 50.979965, main_u 0.024, u_u 0.015, ρ=0.00, 60.0%
+==>>> it: 799, round: 1, loss: ins 15.44 + ce 1.167 + distill 0.921 + align 37.675 + ts_feat 0.152 + view_cons 0.000 = 55.358837, main_u 0.024, u_u 0.021, 80.0%
+==>>> it: 799, round: 2, loss: ins 14.63 + ce 0.873 + distill 0.834 + align 34.384 + ts_feat 0.154 + view_cons 0.000 = 50.875477, main_u 0.024, u_u 0.021, ρ=0.00, 80.0%
+==>>> it: 999, round: 1, loss: ins 16.03 + ce 1.315 + distill 1.149 + align 37.841 + ts_feat 0.164 + view_cons 0.000 = 56.497875, main_u 0.025, u_u 0.024, 100.0%
+==>>> it: 999, round: 2, loss: ins 14.79 + ce 0.875 + distill 0.812 + align 34.941 + ts_feat 0.138 + view_cons 0.000 = 51.550896, main_u 0.024, u_u 0.024, ρ=0.00, 100.0%
+
+-----------------------------run 4 task id:4 start training-----------------------------
+==>>> it: 1, round: 1, loss: ins 17.19 + ce 22.890 + distill 5.678 + align 34.508 + ts_feat 0.187 + view_cons 0.000 = 80.455765, main_u 0.024, u_u 0.028, 0.2%
+==>>> it: 1, round: 2, loss: ins 19.91 + ce 13.042 + distill 1.015 + align 32.708 + ts_feat 0.000 + view_cons 0.813 = 67.489021, main_u 0.024, u_u 0.024, ρ=0.00, 0.2%
+==>>> it: 199, round: 1, loss: ins 15.12 + ce 1.577 + distill 0.950 + align 37.188 + ts_feat 0.150 + view_cons 0.000 = 54.985218, main_u 0.021, u_u 0.018, 20.0%
+==>>> it: 199, round: 2, loss: ins 14.15 + ce 1.337 + distill 0.663 + align 34.433 + ts_feat 0.168 + view_cons 0.000 = 50.748829, main_u 0.021, u_u 0.018, ρ=0.00, 20.0%
+==>>> it: 399, round: 1, loss: ins 14.72 + ce 0.767 + distill 0.897 + align 36.954 + ts_feat 0.138 + view_cons 0.000 = 53.480377, main_u 0.022, u_u 0.017, 40.0%
+==>>> it: 399, round: 2, loss: ins 13.57 + ce 0.746 + distill 0.914 + align 34.678 + ts_feat 0.144 + view_cons 0.000 = 50.054409, main_u 0.022, u_u 0.017, ρ=0.00, 40.0%
+==>>> it: 599, round: 1, loss: ins 14.77 + ce 0.927 + distill 0.885 + align 37.056 + ts_feat 0.140 + view_cons 0.000 = 53.779930, main_u 0.022, u_u 0.018, 60.0%
+==>>> it: 599, round: 2, loss: ins 13.88 + ce 1.054 + distill 0.947 + align 35.542 + ts_feat 0.165 + view_cons 0.000 = 51.585266, main_u 0.022, u_u 0.018, ρ=0.00, 60.0%
+==>>> it: 799, round: 1, loss: ins 15.15 + ce 1.313 + distill 0.795 + align 37.000 + ts_feat 0.140 + view_cons 0.000 = 54.393143, main_u 0.022, u_u 0.020, 80.0%
+==>>> it: 799, round: 2, loss: ins 13.95 + ce 1.323 + distill 0.625 + align 34.644 + ts_feat 0.139 + view_cons 0.000 = 50.685120, main_u 0.022, u_u 0.020, ρ=0.00, 80.0%
+==>>> it: 999, round: 1, loss: ins 15.19 + ce 0.790 + distill 0.871 + align 36.929 + ts_feat 0.128 + view_cons 0.000 = 53.910530, main_u 0.023, u_u 0.024, 100.0%
+==>>> it: 999, round: 2, loss: ins 19.89 + ce 0.540 + distill 1.168 + align 29.766 + ts_feat 0.000 + view_cons 0.522 = 51.883629, main_u 0.023, u_u 0.016, ρ=0.00, 100.0%
+
+Calculating class means for NCM classifier...
+
+****************************************************************************************************
+Test with the output of layer: 1
+
+Test Task 0: Accuracy: 1445/2000 (72.25%)
+Test Task 1: Accuracy: 913/2000 (45.65%)
+Test Task 2: Accuracy: 1300/2000 (65.00%)
+Test Task 3: Accuracy: 1772/2000 (88.60%)
+Test Task 4: Accuracy: 1860/2000 (93.00%)
+Tasks Acc: [72.25       45.65000153 65.         88.59999847 93.        ]
+Tasks Avg Acc: 72.90%
+****************************************************************************************************
+Test with the output of layer: 2
+
+Test Task 0: Accuracy: 1398/2000 (69.90%)
+Test Task 1: Accuracy: 944/2000 (47.20%)
+Test Task 2: Accuracy: 1341/2000 (67.05%)
+Test Task 3: Accuracy: 1822/2000 (91.10%)
+Test Task 4: Accuracy: 1859/2000 (92.95%)
+Tasks Acc: [69.90000153 47.20000076 67.05000305 91.09999847 92.94999695]
+Tasks Avg Acc: 73.64%
+****************************************************************************************************
+Test with the output of layer: 3
+
+Test Task 0: Accuracy: 1308/2000 (65.40%)
+Test Task 1: Accuracy: 778/2000 (38.90%)
+Test Task 2: Accuracy: 1271/2000 (63.55%)
+Test Task 3: Accuracy: 1863/2000 (93.15%)
+Test Task 4: Accuracy: 1889/2000 (94.45%)
+Tasks Acc: [65.40000153 38.90000153 63.54999924 93.15000153 94.44999695]
+Tasks Avg Acc: 71.09%
+****************************************************************************************************
+Test with the output of layer: 4
+
+Test Task 0: Accuracy: 1614/2000 (80.70%)
+Test Task 1: Accuracy: 982/2000 (49.10%)
+Test Task 2: Accuracy: 1392/2000 (69.60%)
+Test Task 3: Accuracy: 1755/2000 (87.75%)
+Test Task 4: Accuracy: 1811/2000 (90.55%)
+Tasks Acc: [80.69999695 49.09999847 69.59999847 87.75       90.55000305]
+Tasks Avg Acc: 75.54%
+****************************************************************************************************
+Test with the mean dists output of each layer:
+
+Test Task 0 (Mean): Accuracy: 1460/2000 (73.00%)
+Test Task 1 (Mean): Accuracy: 908/2000 (45.40%)
+Test Task 2 (Mean): Accuracy: 1383/2000 (69.15%)
+Test Task 3 (Mean): Accuracy: 1844/2000 (92.20%)
+Test Task 4 (Mean): Accuracy: 1876/2000 (93.80%)
+Tasks Acc: [73.         45.40000153 69.15000153 92.19999695 93.80000305]
+Tasks Avg Acc: 74.71%
+{'test/final_avg_acc': 74.71000061035156, 'test/final_avg_fgt': 0.0, 'test/final_avg_bwt': 0.0, 'metrics/buffer_n_bits': 24.61206, 'metrics/model_n_params': 12.644466}
+task_accs_table
+accs_array shape: (1, 5)
+      task0      task1      task2      task3      task4
+row0   73.0  45.400002  69.150002  92.199997  93.800003
+{'test/last_final_avg_acc': 75.53999938964844, 'test/last_final_avg_fgt': 0.0, 'test/last_final_avg_bwt': 0.0}
+last_task_accs_table
+accs_array shape: (1, 5)
+          task0      task1      task2  task3      task4
+row0  80.699997  49.099998  69.599998  87.75  90.550003
+====================================================================================================
+4th run's Test result: Accuracy: 74.71%
+====================================================================================================
+
+====================================================================================================
+total 5runs last test acc results: tensor([76.9500, 77.5400, 75.4900, 75.8700, 75.5400])
+----------- Avg_End_Acc (76.2779997253418, 1.1407568351880704) Avg_End_Fgt (0.0, 0.0) Avg_Acc (79.63999938964844, 2.708422491444742) Avg_Bwtp (nan, nan) Avg_Fwt (inf, nan)-----------
+====================================================================================================
+
+====================================================================================================
+total 5runs test acc results: tensor([75.7400, 76.0200, 74.5100, 75.5900, 74.7100])
+----------- Avg_End_Acc (75.31400024414063, 0.8253373059483085) Avg_End_Fgt (0.0, 0.0) Avg_Acc (72.66000061035156, 3.0061994404151737) Avg_Bwtp (nan, nan) Avg_Fwt (inf, nan)-----------
+====================================================================================================
+====================================================================================================
+结束时间: 2026-01-05 12:31:31
+日志已保存至: /root/autodl-tmp/MOSE-master/MOSE-master/logs/cifar10_mose_bs1000_20260105_085600.log
