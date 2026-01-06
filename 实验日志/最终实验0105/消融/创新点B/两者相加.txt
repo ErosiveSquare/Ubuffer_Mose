@@ -1,0 +1,1254 @@
+日志保存至: /root/autodl-tmp/MOSE-master/MOSE-master/logs/cifar100_mose_bs1000_20260105_170353.log
+开始时间: 2026-01-05 17:03:53
+====================================================================================================
+Arguments =
+	dataset: cifar100
+	n_tasks: 10
+	n_classes: None
+	buffer_size: 1000
+	method: mose
+	seed: 0
+	run_nums: 5
+	epoch: 1
+	lr: 0.001
+	wd: 0.0001
+	batch_size: 10
+	buffer_batch_size: 64
+	continual: on
+	ins_t: 0.07
+	expert: 3
+	expert1: 2
+	expert2: 3
+	n_experts: 4
+	classifier: ncm
+	augmentation: ocm
+	lambda_uncert: 5.0
+	distill_temperature: 2.0
+	distill_weight: 1.0
+	align_weight: 1.0
+	teacher_student_l2_weight: 5.0
+	T_min: 0.5
+	topk_ratio: 0.2
+	topk_min: 1
+	topk_max: 64
+	gpu_id: 0
+	n_workers: 8
+	diag_attn: False
+	exp_name: tmp
+	wandb_project: ocl
+	wandb_entity: None
+	wandb_log: off
+	cuda: True
+====================================================================================================
+-----------------------------run 0 start--------------------------
+2026-01-05 17:03:53
+====================================================================================================
+Task order = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Data and loader is prepared
+
+Run 0: tmp run_00 **************************************************
+
+buffer has 1000 slots
+bx torch.Size([1000, 3, 32, 32])
+创新点C
+number of classifier parameters:	 13.01M
+buffer parameters (image size prod):	 3.07M
+
+-----------------------------run 0 task id:0 start training-----------------------------
+==>>> it: 1, loss: ins 16.93 + ce 18.565 + align 0.000 + ts_feat 0.000 = 35.493137, main_u 0.000, 0.4%
+==>>> it: 49, loss: ins 20.38 + ce 4.956 + align 0.000 + ts_feat 0.000 = 25.334867, main_u 0.061, 10.0%
+==>>> it: 99, loss: ins 20.83 + ce 5.678 + align 0.000 + ts_feat 0.000 = 26.511024, main_u 0.065, 20.0%
+==>>> it: 149, loss: ins 20.30 + ce 4.478 + align 0.000 + ts_feat 0.000 = 24.780928, main_u 0.068, 30.0%
+==>>> it: 199, loss: ins 19.56 + ce 4.122 + align 0.000 + ts_feat 0.000 = 23.684359, main_u 0.070, 40.0%
+==>>> it: 249, loss: ins 19.75 + ce 3.937 + align 0.000 + ts_feat 0.000 = 23.684303, main_u 0.070, 50.0%
+==>>> it: 299, loss: ins 18.64 + ce 2.853 + align 0.000 + ts_feat 0.000 = 21.493036, main_u 0.069, 60.0%
+==>>> it: 349, loss: ins 17.32 + ce 2.116 + align 0.000 + ts_feat 0.000 = 19.431938, main_u 0.069, 70.0%
+==>>> it: 399, loss: ins 16.45 + ce 1.434 + align 0.000 + ts_feat 0.000 = 17.886992, main_u 0.069, 80.0%
+==>>> it: 449, loss: ins 17.15 + ce 2.106 + align 0.000 + ts_feat 0.000 = 19.254742, main_u 0.070, 90.0%
+==>>> it: 499, loss: ins 16.33 + ce 1.346 + align 0.000 + ts_feat 0.000 = 17.673861, main_u 0.070, 100.0%
+
+-----------------------------run 0 task id:1 start training-----------------------------
+==>>> it: 1, loss: ins 17.01 + ce 27.117 + distill 2.543 + align 57.348 + ts_feat 0.325 = 104.347412, main_u 0.068, 0.4%
+==>>> it: 49, loss: ins 17.99 + ce 17.328 + distill 3.895 + align 36.139 + ts_feat 0.841 = 76.190834, main_u 0.016, 10.0%
+==>>> it: 99, loss: ins 18.42 + ce 16.423 + distill 3.300 + align 35.853 + ts_feat 0.676 = 74.668762, main_u 0.025, 20.0%
+==>>> it: 149, loss: ins 17.49 + ce 13.024 + distill 2.735 + align 35.727 + ts_feat 0.551 = 69.525139, main_u 0.027, 30.0%
+==>>> it: 199, loss: ins 17.77 + ce 16.156 + distill 2.774 + align 35.845 + ts_feat 0.474 = 73.019554, main_u 0.026, 40.0%
+==>>> it: 249, loss: ins 16.95 + ce 10.395 + distill 3.516 + align 35.388 + ts_feat 0.484 = 66.732475, main_u 0.029, 50.0%
+==>>> it: 299, loss: ins 16.51 + ce 12.817 + distill 2.599 + align 35.531 + ts_feat 0.396 = 67.856758, main_u 0.028, 60.0%
+==>>> it: 349, loss: ins 15.98 + ce 9.912 + distill 2.581 + align 35.687 + ts_feat 0.423 = 64.587105, main_u 0.027, 70.0%
+==>>> it: 399, loss: ins 16.87 + ce 12.863 + distill 2.608 + align 35.143 + ts_feat 0.409 = 67.896790, main_u 0.029, 80.0%
+==>>> it: 449, loss: ins 16.79 + ce 12.115 + distill 2.533 + align 35.310 + ts_feat 0.387 = 67.137566, main_u 0.028, 90.0%
+==>>> it: 499, loss: ins 16.11 + ce 11.045 + distill 2.650 + align 35.409 + ts_feat 0.396 = 65.613937, main_u 0.029, 100.0%
+
+-----------------------------run 0 task id:2 start training-----------------------------
+==>>> it: 1, loss: ins 15.63 + ce 29.367 + distill 0.568 + align 35.387 + ts_feat 0.075 = 81.029800, main_u 0.029, 0.4%
+==>>> it: 49, loss: ins 15.36 + ce 14.303 + distill 2.042 + align 36.097 + ts_feat 0.237 = 68.036285, main_u 0.029, 10.0%
+==>>> it: 99, loss: ins 14.74 + ce 13.881 + distill 2.069 + align 36.095 + ts_feat 0.247 = 67.030876, main_u 0.029, 20.0%
+==>>> it: 149, loss: ins 15.53 + ce 13.848 + distill 1.991 + align 36.183 + ts_feat 0.252 = 67.801628, main_u 0.030, 30.0%
+==>>> it: 199, loss: ins 15.12 + ce 10.168 + distill 1.983 + align 35.827 + ts_feat 0.250 = 63.350113, main_u 0.031, 40.0%
+==>>> it: 249, loss: ins 15.04 + ce 10.747 + distill 1.757 + align 35.696 + ts_feat 0.244 = 63.486820, main_u 0.028, 50.0%
+==>>> it: 299, loss: ins 14.84 + ce 9.906 + distill 1.742 + align 35.724 + ts_feat 0.239 = 62.454021, main_u 0.028, 60.0%
+==>>> it: 349, loss: ins 15.00 + ce 9.737 + distill 2.195 + align 35.666 + ts_feat 0.274 = 62.871254, main_u 0.029, 70.0%
+==>>> it: 399, loss: ins 14.12 + ce 7.176 + distill 2.355 + align 35.745 + ts_feat 0.287 = 59.680126, main_u 0.028, 80.0%
+==>>> it: 449, loss: ins 14.43 + ce 6.903 + distill 2.009 + align 35.777 + ts_feat 0.256 = 59.377983, main_u 0.029, 90.0%
+==>>> it: 499, loss: ins 14.50 + ce 8.469 + distill 1.962 + align 35.570 + ts_feat 0.285 = 60.790592, main_u 0.028, 100.0%
+
+-----------------------------run 0 task id:3 start training-----------------------------
+==>>> it: 1, loss: ins 13.95 + ce 31.462 + distill 0.635 + align 35.361 + ts_feat 0.092 = 81.497826, main_u 0.028, 0.4%
+==>>> it: 49, loss: ins 13.45 + ce 12.338 + distill 1.284 + align 36.601 + ts_feat 0.213 = 63.891239, main_u 0.029, 10.0%
+==>>> it: 99, loss: ins 13.67 + ce 12.657 + distill 1.938 + align 36.390 + ts_feat 0.260 = 64.913528, main_u 0.030, 20.0%
+==>>> it: 149, loss: ins 14.15 + ce 10.297 + distill 1.866 + align 36.559 + ts_feat 0.258 = 63.126560, main_u 0.031, 30.0%
+==>>> it: 199, loss: ins 12.73 + ce 9.530 + distill 1.814 + align 36.687 + ts_feat 0.265 = 61.027969, main_u 0.030, 40.0%
+==>>> it: 249, loss: ins 13.47 + ce 11.521 + distill 1.954 + align 36.319 + ts_feat 0.257 = 63.520508, main_u 0.030, 50.0%
+==>>> it: 299, loss: ins 13.07 + ce 8.046 + distill 1.391 + align 36.268 + ts_feat 0.226 = 59.003723, main_u 0.029, 60.0%
+==>>> it: 349, loss: ins 13.08 + ce 7.331 + distill 1.947 + align 36.258 + ts_feat 0.253 = 58.874912, main_u 0.029, 70.0%
+==>>> it: 399, loss: ins 14.02 + ce 11.449 + distill 1.970 + align 35.959 + ts_feat 0.283 = 63.676552, main_u 0.030, 80.0%
+==>>> it: 449, loss: ins 13.93 + ce 8.377 + distill 1.924 + align 36.127 + ts_feat 0.276 = 60.631664, main_u 0.030, 90.0%
+==>>> it: 499, loss: ins 15.33 + ce 12.528 + distill 1.897 + align 36.134 + ts_feat 0.274 = 66.167496, main_u 0.028, 100.0%
+
+-----------------------------run 0 task id:4 start training-----------------------------
+==>>> it: 1, loss: ins 12.72 + ce 32.025 + distill 0.849 + align 36.037 + ts_feat 0.106 = 81.732193, main_u 0.029, 0.4%
+==>>> it: 49, loss: ins 12.94 + ce 11.043 + distill 1.539 + align 37.125 + ts_feat 0.260 = 62.910614, main_u 0.029, 10.0%
+==>>> it: 99, loss: ins 12.63 + ce 8.605 + distill 1.424 + align 37.283 + ts_feat 0.242 = 60.186012, main_u 0.031, 20.0%
+==>>> it: 149, loss: ins 12.80 + ce 11.912 + distill 1.423 + align 37.001 + ts_feat 0.230 = 63.363998, main_u 0.030, 30.0%
+==>>> it: 199, loss: ins 12.09 + ce 8.979 + distill 1.665 + align 36.843 + ts_feat 0.249 = 59.826897, main_u 0.030, 40.0%
+==>>> it: 249, loss: ins 12.24 + ce 6.537 + distill 1.600 + align 36.690 + ts_feat 0.243 = 57.310368, main_u 0.030, 50.0%
+==>>> it: 299, loss: ins 11.72 + ce 6.191 + distill 1.856 + align 36.575 + ts_feat 0.251 = 56.597260, main_u 0.029, 60.0%
+==>>> it: 349, loss: ins 12.32 + ce 5.834 + distill 1.690 + align 36.835 + ts_feat 0.233 = 56.911968, main_u 0.030, 70.0%
+==>>> it: 399, loss: ins 11.54 + ce 6.487 + distill 1.523 + align 36.639 + ts_feat 0.233 = 56.418785, main_u 0.029, 80.0%
+==>>> it: 449, loss: ins 12.08 + ce 7.056 + distill 1.648 + align 36.516 + ts_feat 0.232 = 57.528320, main_u 0.029, 90.0%
+==>>> it: 499, loss: ins 12.70 + ce 6.487 + distill 1.752 + align 36.652 + ts_feat 0.263 = 57.850803, main_u 0.029, 100.0%
+
+-----------------------------run 0 task id:5 start training-----------------------------
+==>>> it: 1, loss: ins 12.00 + ce 30.663 + distill 0.814 + align 36.507 + ts_feat 0.095 = 80.080872, main_u 0.029, 0.4%
+==>>> it: 49, loss: ins 12.20 + ce 11.365 + distill 1.329 + align 37.455 + ts_feat 0.187 = 62.538860, main_u 0.030, 10.0%
+==>>> it: 99, loss: ins 12.35 + ce 9.774 + distill 1.729 + align 37.373 + ts_feat 0.250 = 61.473694, main_u 0.029, 20.0%
+==>>> it: 149, loss: ins 12.36 + ce 12.281 + distill 1.510 + align 37.349 + ts_feat 0.242 = 63.744751, main_u 0.029, 30.0%
+==>>> it: 199, loss: ins 11.85 + ce 6.904 + distill 1.559 + align 37.496 + ts_feat 0.213 = 58.024387, main_u 0.028, 40.0%
+==>>> it: 249, loss: ins 12.75 + ce 7.415 + distill 1.561 + align 37.200 + ts_feat 0.221 = 59.145863, main_u 0.029, 50.0%
+==>>> it: 299, loss: ins 12.92 + ce 7.175 + distill 1.605 + align 37.137 + ts_feat 0.254 = 59.095047, main_u 0.029, 60.0%
+==>>> it: 349, loss: ins 11.79 + ce 7.941 + distill 1.986 + align 37.274 + ts_feat 0.276 = 59.264652, main_u 0.029, 70.0%
+==>>> it: 399, loss: ins 11.60 + ce 5.619 + distill 1.481 + align 36.939 + ts_feat 0.224 = 55.862896, main_u 0.029, 80.0%
+==>>> it: 449, loss: ins 11.90 + ce 7.158 + distill 1.620 + align 37.046 + ts_feat 0.230 = 57.951836, main_u 0.029, 90.0%
+==>>> it: 499, loss: ins 11.92 + ce 7.684 + distill 1.584 + align 37.137 + ts_feat 0.237 = 58.557617, main_u 0.028, 100.0%
+
+-----------------------------run 0 task id:6 start training-----------------------------
+==>>> it: 1, loss: ins 11.07 + ce 28.810 + distill 0.398 + align 37.006 + ts_feat 0.053 = 77.341347, main_u 0.028, 0.4%
+==>>> it: 49, loss: ins 10.67 + ce 10.959 + distill 1.340 + align 37.947 + ts_feat 0.189 = 61.103977, main_u 0.028, 10.0%
+==>>> it: 99, loss: ins 11.51 + ce 8.627 + distill 1.417 + align 37.841 + ts_feat 0.215 = 59.614838, main_u 0.029, 20.0%
+==>>> it: 149, loss: ins 12.02 + ce 9.917 + distill 1.510 + align 37.607 + ts_feat 0.192 = 61.244240, main_u 0.028, 30.0%
+==>>> it: 199, loss: ins 11.30 + ce 8.695 + distill 1.518 + align 37.695 + ts_feat 0.223 = 59.432400, main_u 0.028, 40.0%
+==>>> it: 249, loss: ins 12.08 + ce 9.863 + distill 1.466 + align 37.412 + ts_feat 0.221 = 61.040508, main_u 0.028, 50.0%
+==>>> it: 299, loss: ins 11.02 + ce 7.285 + distill 1.600 + align 37.438 + ts_feat 0.224 = 57.569771, main_u 0.029, 60.0%
+==>>> it: 349, loss: ins 11.14 + ce 6.790 + distill 1.550 + align 37.780 + ts_feat 0.237 = 57.498737, main_u 0.028, 70.0%
+==>>> it: 399, loss: ins 10.62 + ce 7.606 + distill 1.711 + align 37.312 + ts_feat 0.227 = 57.472542, main_u 0.028, 80.0%
+==>>> it: 449, loss: ins 10.31 + ce 4.512 + distill 1.408 + align 37.640 + ts_feat 0.217 = 54.087376, main_u 0.027, 90.0%
+==>>> it: 499, loss: ins 11.01 + ce 5.224 + distill 1.572 + align 37.524 + ts_feat 0.227 = 55.551556, main_u 0.028, 100.0%
+
+-----------------------------run 0 task id:7 start training-----------------------------
+==>>> it: 1, loss: ins 11.38 + ce 26.292 + distill 0.551 + align 37.409 + ts_feat 0.064 = 75.696342, main_u 0.028, 0.4%
+==>>> it: 49, loss: ins 10.77 + ce 11.068 + distill 1.359 + align 38.250 + ts_feat 0.207 = 61.648956, main_u 0.028, 10.0%
+==>>> it: 99, loss: ins 11.79 + ce 9.207 + distill 1.581 + align 37.948 + ts_feat 0.243 = 60.769669, main_u 0.028, 20.0%
+==>>> it: 149, loss: ins 11.40 + ce 10.360 + distill 1.753 + align 38.048 + ts_feat 0.234 = 61.795567, main_u 0.029, 30.0%
+==>>> it: 199, loss: ins 10.51 + ce 5.976 + distill 1.522 + align 38.012 + ts_feat 0.201 = 56.223789, main_u 0.030, 40.0%
+==>>> it: 249, loss: ins 9.77 + ce 5.704 + distill 1.585 + align 38.275 + ts_feat 0.216 = 55.554955, main_u 0.029, 50.0%
+==>>> it: 299, loss: ins 10.01 + ce 6.997 + distill 1.533 + align 37.889 + ts_feat 0.222 = 56.647118, main_u 0.028, 60.0%
+==>>> it: 349, loss: ins 10.50 + ce 8.145 + distill 1.573 + align 37.692 + ts_feat 0.219 = 58.133217, main_u 0.028, 70.0%
+==>>> it: 399, loss: ins 10.75 + ce 5.129 + distill 1.320 + align 37.929 + ts_feat 0.193 = 55.317436, main_u 0.029, 80.0%
+==>>> it: 449, loss: ins 10.00 + ce 3.808 + distill 1.657 + align 37.833 + ts_feat 0.228 = 53.527966, main_u 0.028, 90.0%
+==>>> it: 499, loss: ins 11.05 + ce 6.935 + distill 1.447 + align 37.838 + ts_feat 0.199 = 57.466480, main_u 0.028, 100.0%
+
+-----------------------------run 0 task id:8 start training-----------------------------
+==>>> it: 1, loss: ins 9.76 + ce 20.988 + distill 0.645 + align 37.511 + ts_feat 0.081 = 68.985725, main_u 0.028, 0.4%
+==>>> it: 49, loss: ins 10.00 + ce 9.056 + distill 1.282 + align 38.478 + ts_feat 0.220 = 59.034149, main_u 0.028, 10.0%
+==>>> it: 99, loss: ins 10.95 + ce 7.929 + distill 1.560 + align 38.411 + ts_feat 0.227 = 59.072983, main_u 0.029, 20.0%
+==>>> it: 149, loss: ins 10.63 + ce 8.509 + distill 1.716 + align 38.428 + ts_feat 0.243 = 59.527962, main_u 0.029, 30.0%
+==>>> it: 199, loss: ins 10.15 + ce 6.376 + distill 1.520 + align 38.307 + ts_feat 0.237 = 56.585503, main_u 0.028, 40.0%
+==>>> it: 249, loss: ins 9.49 + ce 5.150 + distill 1.480 + align 38.174 + ts_feat 0.224 = 54.522636, main_u 0.028, 50.0%
+==>>> it: 299, loss: ins 10.66 + ce 7.779 + distill 1.837 + align 37.979 + ts_feat 0.245 = 58.504753, main_u 0.029, 60.0%
+==>>> it: 349, loss: ins 10.08 + ce 6.673 + distill 1.483 + align 38.017 + ts_feat 0.206 = 56.460766, main_u 0.028, 70.0%
+==>>> it: 399, loss: ins 10.21 + ce 7.467 + distill 1.663 + align 37.991 + ts_feat 0.215 = 57.545174, main_u 0.029, 80.0%
+==>>> it: 449, loss: ins 11.47 + ce 7.765 + distill 1.841 + align 37.885 + ts_feat 0.234 = 59.190926, main_u 0.029, 90.0%
+==>>> it: 499, loss: ins 9.98 + ce 4.355 + distill 1.470 + align 37.988 + ts_feat 0.220 = 54.011570, main_u 0.028, 100.0%
+
+-----------------------------run 0 task id:9 start training-----------------------------
+==>>> it: 1, loss: ins 9.55 + ce 21.517 + distill 0.651 + align 37.939 + ts_feat 0.077 = 69.736938, main_u 0.028, 0.4%
+==>>> it: 49, loss: ins 10.03 + ce 10.187 + distill 1.069 + align 38.280 + ts_feat 0.193 = 59.757187, main_u 0.026, 10.0%
+==>>> it: 99, loss: ins 10.70 + ce 13.661 + distill 1.521 + align 38.667 + ts_feat 0.242 = 64.792183, main_u 0.028, 20.0%
+==>>> it: 149, loss: ins 9.97 + ce 5.549 + distill 1.420 + align 38.281 + ts_feat 0.217 = 55.439732, main_u 0.028, 30.0%
+==>>> it: 199, loss: ins 9.82 + ce 4.316 + distill 1.623 + align 38.325 + ts_feat 0.209 = 54.294857, main_u 0.029, 40.0%
+==>>> it: 249, loss: ins 8.96 + ce 3.847 + distill 1.275 + align 38.238 + ts_feat 0.192 = 52.509918, main_u 0.028, 50.0%
+==>>> it: 299, loss: ins 10.16 + ce 5.059 + distill 1.572 + align 38.017 + ts_feat 0.232 = 55.046074, main_u 0.028, 60.0%
+==>>> it: 349, loss: ins 11.18 + ce 7.128 + distill 1.320 + align 37.842 + ts_feat 0.196 = 57.662857, main_u 0.028, 70.0%
+==>>> it: 399, loss: ins 10.00 + ce 4.392 + distill 1.450 + align 37.913 + ts_feat 0.215 = 53.966736, main_u 0.028, 80.0%
+==>>> it: 449, loss: ins 10.52 + ce 6.999 + distill 1.404 + align 37.933 + ts_feat 0.211 = 57.066975, main_u 0.027, 90.0%
+==>>> it: 499, loss: ins 9.96 + ce 5.123 + distill 1.630 + align 38.047 + ts_feat 0.221 = 54.978771, main_u 0.028, 100.0%
+
+Calculating class means for NCM classifier...
+
+****************************************************************************************************
+Test with the output of layer: 1
+
+Test Task 0: Accuracy: 275/1000 (27.50%)
+Test Task 1: Accuracy: 193/1000 (19.30%)
+Test Task 2: Accuracy: 363/1000 (36.30%)
+Test Task 3: Accuracy: 221/1000 (22.10%)
+Test Task 4: Accuracy: 329/1000 (32.90%)
+Test Task 5: Accuracy: 354/1000 (35.40%)
+Test Task 6: Accuracy: 380/1000 (38.00%)
+Test Task 7: Accuracy: 373/1000 (37.30%)
+Test Task 8: Accuracy: 413/1000 (41.30%)
+Test Task 9: Accuracy: 542/1000 (54.20%)
+Tasks Acc: [27.5        19.29999924 36.29999924 22.10000038 32.90000153 35.40000153
+ 38.         37.29999924 41.29999924 54.20000076]
+Tasks Avg Acc: 34.43%
+****************************************************************************************************
+Test with the output of layer: 2
+
+Test Task 0: Accuracy: 309/1000 (30.90%)
+Test Task 1: Accuracy: 246/1000 (24.60%)
+Test Task 2: Accuracy: 375/1000 (37.50%)
+Test Task 3: Accuracy: 266/1000 (26.60%)
+Test Task 4: Accuracy: 353/1000 (35.30%)
+Test Task 5: Accuracy: 426/1000 (42.60%)
+Test Task 6: Accuracy: 404/1000 (40.40%)
+Test Task 7: Accuracy: 388/1000 (38.80%)
+Test Task 8: Accuracy: 476/1000 (47.60%)
+Test Task 9: Accuracy: 593/1000 (59.30%)
+Tasks Acc: [30.89999962 24.60000038 37.5        26.60000038 35.29999924 42.59999847
+ 40.40000153 38.79999924 47.59999847 59.29999924]
+Tasks Avg Acc: 38.36%
+****************************************************************************************************
+Test with the output of layer: 3
+
+Test Task 0: Accuracy: 317/1000 (31.70%)
+Test Task 1: Accuracy: 201/1000 (20.10%)
+Test Task 2: Accuracy: 337/1000 (33.70%)
+Test Task 3: Accuracy: 252/1000 (25.20%)
+Test Task 4: Accuracy: 323/1000 (32.30%)
+Test Task 5: Accuracy: 442/1000 (44.20%)
+Test Task 6: Accuracy: 409/1000 (40.90%)
+Test Task 7: Accuracy: 451/1000 (45.10%)
+Test Task 8: Accuracy: 531/1000 (53.10%)
+Test Task 9: Accuracy: 668/1000 (66.80%)
+Tasks Acc: [31.70000076 20.10000038 33.70000076 25.20000076 32.29999924 44.20000076
+ 40.90000153 45.09999847 53.09999847 66.80000305]
+Tasks Avg Acc: 39.31%
+****************************************************************************************************
+Test with the output of layer: 4
+
+Test Task 0: Accuracy: 304/1000 (30.40%)
+Test Task 1: Accuracy: 203/1000 (20.30%)
+Test Task 2: Accuracy: 344/1000 (34.40%)
+Test Task 3: Accuracy: 213/1000 (21.30%)
+Test Task 4: Accuracy: 304/1000 (30.40%)
+Test Task 5: Accuracy: 460/1000 (46.00%)
+Test Task 6: Accuracy: 419/1000 (41.90%)
+Test Task 7: Accuracy: 452/1000 (45.20%)
+Test Task 8: Accuracy: 529/1000 (52.90%)
+Test Task 9: Accuracy: 701/1000 (70.10%)
+Tasks Acc: [30.39999962 20.29999924 34.40000153 21.29999924 30.39999962 46.
+ 41.90000153 45.20000076 52.90000153 70.09999847]
+Tasks Avg Acc: 39.29%
+****************************************************************************************************
+Test with the mean dists output of each layer:
+
+Test Task 0 (Mean): Accuracy: 313/1000 (31.30%)
+Test Task 1 (Mean): Accuracy: 222/1000 (22.20%)
+Test Task 2 (Mean): Accuracy: 371/1000 (37.10%)
+Test Task 3 (Mean): Accuracy: 258/1000 (25.80%)
+Test Task 4 (Mean): Accuracy: 340/1000 (34.00%)
+Test Task 5 (Mean): Accuracy: 461/1000 (46.10%)
+Test Task 6 (Mean): Accuracy: 437/1000 (43.70%)
+Test Task 7 (Mean): Accuracy: 465/1000 (46.50%)
+Test Task 8 (Mean): Accuracy: 538/1000 (53.80%)
+Test Task 9 (Mean): Accuracy: 684/1000 (68.40%)
+Tasks Acc: [31.29999924 22.20000076 37.09999847 25.79999924 34.         46.09999847
+ 43.70000076 46.5        53.79999924 68.40000153]
+Tasks Avg Acc: 40.89%
+{'test/final_avg_acc': 40.88999977111816, 'test/final_avg_fgt': 0.0, 'test/final_avg_bwt': 0.0, 'metrics/buffer_n_bits': 24.6154, 'metrics/model_n_params': 13.013556}
+task_accs_table
+accs_array shape: (1, 10)
+          task0      task1      task2      task3  task4      task5      task6  task7      task8      task9
+row0  31.299999  22.200001  37.099998  25.799999   34.0  46.099998  43.700001   46.5  53.799999  68.400002
+{'test/last_final_avg_acc': 39.29000015258789, 'test/last_final_avg_fgt': 0.0, 'test/last_final_avg_bwt': 0.0}
+last_task_accs_table
+accs_array shape: (1, 10)
+      task0      task1      task2      task3  task4  task5      task6      task7      task8      task9
+row0   30.4  20.299999  34.400002  21.299999   30.4   46.0  41.900002  45.200001  52.900002  70.099998
+====================================================================================================
+0th run's Test result: Accuracy: 40.89%
+====================================================================================================
+====================================================================================================
+-----------------------------run 1 start--------------------------
+2026-01-05 17:22:11
+====================================================================================================
+Task order = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Data and loader is prepared
+
+Run 1: tmp run_01 **************************************************
+
+buffer has 1000 slots
+bx torch.Size([1000, 3, 32, 32])
+创新点C
+number of classifier parameters:	 13.01M
+buffer parameters (image size prod):	 3.07M
+
+-----------------------------run 1 task id:0 start training-----------------------------
+==>>> it: 1, loss: ins 17.21 + ce 18.876 + align 0.000 + ts_feat 0.000 = 36.089668, main_u 0.000, 0.4%
+==>>> it: 49, loss: ins 20.81 + ce 5.079 + align 0.000 + ts_feat 0.000 = 25.886036, main_u 0.064, 10.0%
+==>>> it: 99, loss: ins 20.41 + ce 4.394 + align 0.000 + ts_feat 0.000 = 24.809059, main_u 0.066, 20.0%
+==>>> it: 149, loss: ins 19.83 + ce 4.251 + align 0.000 + ts_feat 0.000 = 24.076942, main_u 0.067, 30.0%
+==>>> it: 199, loss: ins 19.48 + ce 4.030 + align 0.000 + ts_feat 0.000 = 23.510868, main_u 0.071, 40.0%
+==>>> it: 249, loss: ins 18.74 + ce 3.046 + align 0.000 + ts_feat 0.000 = 21.785006, main_u 0.072, 50.0%
+==>>> it: 299, loss: ins 18.69 + ce 2.897 + align 0.000 + ts_feat 0.000 = 21.585533, main_u 0.073, 60.0%
+==>>> it: 349, loss: ins 18.68 + ce 3.037 + align 0.000 + ts_feat 0.000 = 21.719795, main_u 0.074, 70.0%
+==>>> it: 399, loss: ins 17.41 + ce 2.190 + align 0.000 + ts_feat 0.000 = 19.600908, main_u 0.073, 80.0%
+==>>> it: 449, loss: ins 17.30 + ce 2.022 + align 0.000 + ts_feat 0.000 = 19.325222, main_u 0.073, 90.0%
+==>>> it: 499, loss: ins 17.25 + ce 2.017 + align 0.000 + ts_feat 0.000 = 19.268751, main_u 0.074, 100.0%
+
+-----------------------------run 1 task id:1 start training-----------------------------
+==>>> it: 1, loss: ins 16.88 + ce 26.699 + distill 2.017 + align 58.283 + ts_feat 0.249 = 104.121384, main_u 0.072, 0.4%
+==>>> it: 49, loss: ins 18.11 + ce 19.576 + distill 4.149 + align 36.434 + ts_feat 0.946 = 79.213806, main_u 0.018, 10.0%
+==>>> it: 99, loss: ins 17.95 + ce 15.673 + distill 3.551 + align 35.974 + ts_feat 0.645 = 73.789909, main_u 0.026, 20.0%
+==>>> it: 149, loss: ins 17.50 + ce 15.375 + distill 2.714 + align 36.052 + ts_feat 0.496 = 72.137794, main_u 0.029, 30.0%
+==>>> it: 199, loss: ins 17.49 + ce 19.487 + distill 2.317 + align 35.854 + ts_feat 0.444 = 75.593941, main_u 0.027, 40.0%
+==>>> it: 249, loss: ins 17.06 + ce 11.642 + distill 2.235 + align 35.749 + ts_feat 0.375 = 67.065475, main_u 0.028, 50.0%
+==>>> it: 299, loss: ins 16.89 + ce 11.632 + distill 2.160 + align 35.403 + ts_feat 0.413 = 66.501640, main_u 0.029, 60.0%
+==>>> it: 349, loss: ins 16.19 + ce 11.596 + distill 2.830 + align 35.617 + ts_feat 0.378 = 66.613525, main_u 0.029, 70.0%
+==>>> it: 399, loss: ins 17.19 + ce 9.621 + distill 2.436 + align 34.954 + ts_feat 0.479 = 64.681931, main_u 0.030, 80.0%
+==>>> it: 449, loss: ins 16.05 + ce 11.890 + distill 2.154 + align 35.416 + ts_feat 0.365 = 65.873528, main_u 0.030, 90.0%
+==>>> it: 499, loss: ins 16.61 + ce 10.606 + distill 2.233 + align 35.172 + ts_feat 0.363 = 64.982071, main_u 0.030, 100.0%
+
+-----------------------------run 1 task id:2 start training-----------------------------
+==>>> it: 1, loss: ins 16.46 + ce 32.131 + distill 0.680 + align 34.956 + ts_feat 0.096 = 84.321922, main_u 0.030, 0.4%
+==>>> it: 49, loss: ins 14.87 + ce 13.498 + distill 1.661 + align 36.216 + ts_feat 0.255 = 66.504517, main_u 0.030, 10.0%
+==>>> it: 99, loss: ins 15.03 + ce 11.895 + distill 2.045 + align 36.039 + ts_feat 0.303 = 65.314369, main_u 0.031, 20.0%
+==>>> it: 149, loss: ins 15.41 + ce 9.187 + distill 2.135 + align 35.857 + ts_feat 0.291 = 62.883274, main_u 0.032, 30.0%
+==>>> it: 199, loss: ins 14.47 + ce 8.113 + distill 1.790 + align 35.898 + ts_feat 0.256 = 60.526562, main_u 0.031, 40.0%
+==>>> it: 249, loss: ins 15.55 + ce 15.509 + distill 1.838 + align 35.722 + ts_feat 0.249 = 68.863518, main_u 0.030, 50.0%
+==>>> it: 299, loss: ins 15.37 + ce 10.326 + distill 1.815 + align 35.348 + ts_feat 0.301 = 63.156334, main_u 0.032, 60.0%
+==>>> it: 349, loss: ins 14.43 + ce 7.950 + distill 1.659 + align 35.497 + ts_feat 0.276 = 59.816788, main_u 0.030, 70.0%
+==>>> it: 399, loss: ins 14.74 + ce 11.048 + distill 1.935 + align 35.440 + ts_feat 0.263 = 63.428776, main_u 0.031, 80.0%
+==>>> it: 449, loss: ins 15.17 + ce 8.489 + distill 1.924 + align 35.371 + ts_feat 0.322 = 61.272648, main_u 0.031, 90.0%
+==>>> it: 499, loss: ins 15.31 + ce 12.823 + distill 2.232 + align 35.521 + ts_feat 0.297 = 66.178444, main_u 0.030, 100.0%
+
+-----------------------------run 1 task id:3 start training-----------------------------
+==>>> it: 1, loss: ins 14.70 + ce 30.443 + distill 0.977 + align 35.167 + ts_feat 0.095 = 81.380791, main_u 0.030, 0.4%
+==>>> it: 49, loss: ins 14.43 + ce 16.157 + distill 1.575 + align 36.490 + ts_feat 0.231 = 68.886658, main_u 0.032, 10.0%
+==>>> it: 99, loss: ins 13.96 + ce 12.117 + distill 1.656 + align 36.609 + ts_feat 0.249 = 64.590767, main_u 0.031, 20.0%
+==>>> it: 149, loss: ins 13.40 + ce 8.526 + distill 1.754 + align 36.450 + ts_feat 0.272 = 60.401554, main_u 0.030, 30.0%
+==>>> it: 199, loss: ins 13.13 + ce 11.219 + distill 1.943 + align 36.370 + ts_feat 0.294 = 62.961136, main_u 0.030, 40.0%
+==>>> it: 249, loss: ins 13.25 + ce 9.676 + distill 1.497 + align 36.411 + ts_feat 0.225 = 61.063080, main_u 0.031, 50.0%
+==>>> it: 299, loss: ins 13.48 + ce 6.743 + distill 1.588 + align 36.473 + ts_feat 0.222 = 58.502495, main_u 0.031, 60.0%
+==>>> it: 349, loss: ins 14.17 + ce 9.442 + distill 1.847 + align 36.181 + ts_feat 0.273 = 61.908928, main_u 0.030, 70.0%
+==>>> it: 399, loss: ins 14.13 + ce 11.637 + distill 1.879 + align 36.393 + ts_feat 0.267 = 64.303978, main_u 0.030, 80.0%
+==>>> it: 449, loss: ins 13.61 + ce 13.224 + distill 1.826 + align 36.343 + ts_feat 0.258 = 65.257355, main_u 0.031, 90.0%
+==>>> it: 499, loss: ins 13.75 + ce 8.993 + distill 1.810 + align 36.394 + ts_feat 0.272 = 61.216209, main_u 0.030, 100.0%
+
+-----------------------------run 1 task id:4 start training-----------------------------
+==>>> it: 1, loss: ins 13.43 + ce 30.157 + distill 1.039 + align 36.241 + ts_feat 0.121 = 80.991928, main_u 0.030, 0.4%
+==>>> it: 49, loss: ins 12.51 + ce 14.718 + distill 1.486 + align 37.314 + ts_feat 0.279 = 66.303108, main_u 0.032, 10.0%
+==>>> it: 99, loss: ins 12.72 + ce 13.022 + distill 1.864 + align 37.135 + ts_feat 0.280 = 65.018036, main_u 0.031, 20.0%
+==>>> it: 149, loss: ins 13.37 + ce 10.879 + distill 1.689 + align 37.282 + ts_feat 0.265 = 63.489162, main_u 0.031, 30.0%
+==>>> it: 199, loss: ins 13.10 + ce 12.127 + distill 1.608 + align 36.968 + ts_feat 0.244 = 64.044724, main_u 0.031, 40.0%
+==>>> it: 249, loss: ins 13.45 + ce 11.747 + distill 1.941 + align 36.776 + ts_feat 0.264 = 64.180504, main_u 0.030, 50.0%
+==>>> it: 299, loss: ins 13.63 + ce 10.935 + distill 1.963 + align 36.579 + ts_feat 0.275 = 63.383175, main_u 0.031, 60.0%
+==>>> it: 349, loss: ins 12.17 + ce 7.898 + distill 1.729 + align 36.698 + ts_feat 0.222 = 58.713390, main_u 0.031, 70.0%
+==>>> it: 399, loss: ins 13.39 + ce 10.435 + distill 1.791 + align 36.424 + ts_feat 0.262 = 62.300957, main_u 0.031, 80.0%
+==>>> it: 449, loss: ins 13.17 + ce 8.080 + distill 1.764 + align 36.479 + ts_feat 0.248 = 59.738693, main_u 0.031, 90.0%
+==>>> it: 499, loss: ins 12.25 + ce 5.451 + distill 1.620 + align 36.650 + ts_feat 0.247 = 56.213428, main_u 0.030, 100.0%
+
+-----------------------------run 1 task id:5 start training-----------------------------
+==>>> it: 1, loss: ins 12.11 + ce 25.725 + distill 1.022 + align 36.423 + ts_feat 0.127 = 75.411156, main_u 0.031, 0.4%
+==>>> it: 49, loss: ins 11.98 + ce 14.614 + distill 1.619 + align 37.613 + ts_feat 0.249 = 66.070793, main_u 0.031, 10.0%
+==>>> it: 99, loss: ins 12.04 + ce 9.836 + distill 2.027 + align 37.752 + ts_feat 0.263 = 61.922234, main_u 0.030, 20.0%
+==>>> it: 149, loss: ins 12.19 + ce 6.179 + distill 1.645 + align 37.399 + ts_feat 0.236 = 57.646450, main_u 0.030, 30.0%
+==>>> it: 199, loss: ins 12.09 + ce 8.302 + distill 1.721 + align 37.647 + ts_feat 0.233 = 59.993156, main_u 0.031, 40.0%
+==>>> it: 249, loss: ins 12.08 + ce 9.593 + distill 1.748 + align 37.572 + ts_feat 0.246 = 61.238426, main_u 0.031, 50.0%
+==>>> it: 299, loss: ins 11.98 + ce 6.390 + distill 1.566 + align 37.246 + ts_feat 0.231 = 57.415668, main_u 0.031, 60.0%
+==>>> it: 349, loss: ins 12.71 + ce 10.629 + distill 1.607 + align 37.144 + ts_feat 0.251 = 62.344177, main_u 0.030, 70.0%
+==>>> it: 399, loss: ins 11.23 + ce 6.089 + distill 1.654 + align 37.227 + ts_feat 0.238 = 56.432724, main_u 0.030, 80.0%
+==>>> it: 449, loss: ins 12.78 + ce 13.393 + distill 1.826 + align 36.897 + ts_feat 0.248 = 65.148064, main_u 0.029, 90.0%
+==>>> it: 499, loss: ins 11.42 + ce 9.300 + distill 1.609 + align 37.078 + ts_feat 0.212 = 59.619217, main_u 0.030, 100.0%
+
+-----------------------------run 1 task id:6 start training-----------------------------
+==>>> it: 1, loss: ins 11.36 + ce 28.353 + distill 0.745 + align 37.157 + ts_feat 0.074 = 77.685692, main_u 0.030, 0.4%
+==>>> it: 49, loss: ins 11.88 + ce 12.646 + distill 1.588 + align 37.788 + ts_feat 0.268 = 64.166718, main_u 0.029, 10.0%
+==>>> it: 99, loss: ins 11.89 + ce 8.863 + distill 1.456 + align 37.841 + ts_feat 0.225 = 60.273651, main_u 0.030, 20.0%
+==>>> it: 149, loss: ins 11.15 + ce 7.676 + distill 1.682 + align 37.580 + ts_feat 0.209 = 58.291752, main_u 0.030, 30.0%
+==>>> it: 199, loss: ins 10.60 + ce 8.162 + distill 1.671 + align 37.598 + ts_feat 0.212 = 58.244522, main_u 0.030, 40.0%
+==>>> it: 249, loss: ins 11.07 + ce 7.556 + distill 1.477 + align 37.572 + ts_feat 0.207 = 57.878880, main_u 0.030, 50.0%
+==>>> it: 299, loss: ins 11.16 + ce 8.330 + distill 1.604 + align 37.525 + ts_feat 0.236 = 58.858368, main_u 0.030, 60.0%
+==>>> it: 349, loss: ins 10.72 + ce 8.338 + distill 1.446 + align 37.486 + ts_feat 0.236 = 58.223854, main_u 0.029, 70.0%
+==>>> it: 399, loss: ins 10.15 + ce 5.400 + distill 1.585 + align 37.537 + ts_feat 0.206 = 54.881424, main_u 0.029, 80.0%
+==>>> it: 449, loss: ins 10.25 + ce 3.369 + distill 1.538 + align 37.355 + ts_feat 0.205 = 52.718933, main_u 0.029, 90.0%
+==>>> it: 499, loss: ins 11.13 + ce 6.536 + distill 2.129 + align 37.360 + ts_feat 0.270 = 57.425148, main_u 0.029, 100.0%
+
+-----------------------------run 1 task id:7 start training-----------------------------
+==>>> it: 1, loss: ins 11.79 + ce 23.085 + distill 0.610 + align 36.991 + ts_feat 0.077 = 72.554932, main_u 0.029, 0.4%
+==>>> it: 49, loss: ins 11.64 + ce 11.222 + distill 1.677 + align 37.902 + ts_feat 0.264 = 62.707386, main_u 0.029, 10.0%
+==>>> it: 99, loss: ins 10.76 + ce 7.282 + distill 1.637 + align 38.086 + ts_feat 0.242 = 58.007450, main_u 0.030, 20.0%
+==>>> it: 149, loss: ins 10.55 + ce 5.591 + distill 1.672 + align 38.019 + ts_feat 0.237 = 56.069553, main_u 0.030, 30.0%
+==>>> it: 199, loss: ins 11.28 + ce 9.351 + distill 1.782 + align 37.821 + ts_feat 0.226 = 60.456100, main_u 0.030, 40.0%
+==>>> it: 249, loss: ins 10.82 + ce 8.869 + distill 1.600 + align 37.759 + ts_feat 0.242 = 59.287468, main_u 0.030, 50.0%
+==>>> it: 299, loss: ins 11.03 + ce 6.152 + distill 1.565 + align 37.609 + ts_feat 0.241 = 56.600586, main_u 0.029, 60.0%
+==>>> it: 349, loss: ins 11.16 + ce 9.354 + distill 1.650 + align 37.681 + ts_feat 0.244 = 60.086330, main_u 0.029, 70.0%
+==>>> it: 399, loss: ins 10.98 + ce 7.652 + distill 1.754 + align 37.624 + ts_feat 0.226 = 58.230347, main_u 0.029, 80.0%
+==>>> it: 449, loss: ins 11.25 + ce 7.604 + distill 1.513 + align 37.481 + ts_feat 0.246 = 58.090843, main_u 0.028, 90.0%
+==>>> it: 499, loss: ins 11.07 + ce 7.236 + distill 1.595 + align 37.375 + ts_feat 0.236 = 57.516048, main_u 0.029, 100.0%
+
+-----------------------------run 1 task id:8 start training-----------------------------
+==>>> it: 1, loss: ins 10.48 + ce 21.923 + distill 0.363 + align 37.435 + ts_feat 0.056 = 70.260773, main_u 0.029, 0.4%
+==>>> it: 49, loss: ins 9.98 + ce 12.470 + distill 1.445 + align 38.252 + ts_feat 0.217 = 62.364922, main_u 0.028, 10.0%
+==>>> it: 99, loss: ins 10.47 + ce 9.417 + distill 1.512 + align 38.272 + ts_feat 0.235 = 59.904316, main_u 0.029, 20.0%
+==>>> it: 149, loss: ins 10.58 + ce 6.898 + distill 1.690 + align 38.259 + ts_feat 0.243 = 57.668827, main_u 0.029, 30.0%
+==>>> it: 199, loss: ins 10.34 + ce 6.762 + distill 1.662 + align 38.135 + ts_feat 0.216 = 57.111450, main_u 0.028, 40.0%
+==>>> it: 249, loss: ins 9.73 + ce 5.454 + distill 1.675 + align 38.197 + ts_feat 0.214 = 55.269543, main_u 0.029, 50.0%
+==>>> it: 299, loss: ins 10.36 + ce 7.639 + distill 1.478 + align 38.037 + ts_feat 0.226 = 57.736130, main_u 0.028, 60.0%
+==>>> it: 349, loss: ins 9.94 + ce 6.543 + distill 1.554 + align 37.972 + ts_feat 0.225 = 56.232430, main_u 0.029, 70.0%
+==>>> it: 399, loss: ins 10.11 + ce 4.140 + distill 1.625 + align 37.936 + ts_feat 0.228 = 54.040337, main_u 0.030, 80.0%
+==>>> it: 449, loss: ins 10.90 + ce 5.908 + distill 1.641 + align 37.924 + ts_feat 0.238 = 56.610233, main_u 0.029, 90.0%
+==>>> it: 499, loss: ins 11.89 + ce 6.419 + distill 1.766 + align 37.498 + ts_feat 0.242 = 57.815838, main_u 0.030, 100.0%
+
+-----------------------------run 1 task id:9 start training-----------------------------
+==>>> it: 1, loss: ins 10.10 + ce 19.869 + distill 0.661 + align 37.830 + ts_feat 0.080 = 68.540199, main_u 0.030, 0.4%
+==>>> it: 49, loss: ins 9.84 + ce 7.859 + distill 1.203 + align 38.452 + ts_feat 0.215 = 57.569336, main_u 0.028, 10.0%
+==>>> it: 99, loss: ins 10.20 + ce 5.197 + distill 1.384 + align 38.507 + ts_feat 0.216 = 55.508411, main_u 0.030, 20.0%
+==>>> it: 149, loss: ins 10.08 + ce 8.135 + distill 1.653 + align 38.344 + ts_feat 0.215 = 58.423779, main_u 0.030, 30.0%
+==>>> it: 199, loss: ins 10.24 + ce 5.801 + distill 1.352 + align 38.248 + ts_feat 0.201 = 55.839153, main_u 0.029, 40.0%
+==>>> it: 249, loss: ins 8.55 + ce 5.151 + distill 1.377 + align 38.323 + ts_feat 0.194 = 53.591930, main_u 0.029, 50.0%
+==>>> it: 299, loss: ins 10.51 + ce 4.499 + distill 1.392 + align 37.969 + ts_feat 0.219 = 54.584396, main_u 0.028, 60.0%
+==>>> it: 349, loss: ins 9.28 + ce 4.701 + distill 1.598 + align 38.079 + ts_feat 0.224 = 53.884010, main_u 0.028, 70.0%
+==>>> it: 399, loss: ins 9.82 + ce 5.708 + distill 1.536 + align 38.147 + ts_feat 0.227 = 55.440533, main_u 0.029, 80.0%
+==>>> it: 449, loss: ins 9.57 + ce 4.472 + distill 1.653 + align 38.138 + ts_feat 0.230 = 54.065067, main_u 0.029, 90.0%
+==>>> it: 499, loss: ins 10.13 + ce 6.192 + distill 1.773 + align 37.948 + ts_feat 0.247 = 56.288750, main_u 0.028, 100.0%
+
+Calculating class means for NCM classifier...
+
+****************************************************************************************************
+Test with the output of layer: 1
+
+Test Task 0: Accuracy: 287/1000 (28.70%)
+Test Task 1: Accuracy: 245/1000 (24.50%)
+Test Task 2: Accuracy: 297/1000 (29.70%)
+Test Task 3: Accuracy: 229/1000 (22.90%)
+Test Task 4: Accuracy: 351/1000 (35.10%)
+Test Task 5: Accuracy: 340/1000 (34.00%)
+Test Task 6: Accuracy: 393/1000 (39.30%)
+Test Task 7: Accuracy: 393/1000 (39.30%)
+Test Task 8: Accuracy: 498/1000 (49.80%)
+Test Task 9: Accuracy: 498/1000 (49.80%)
+Tasks Acc: [28.70000076 24.5        29.70000076 22.89999962 35.09999847 34.
+ 39.29999924 39.29999924 49.79999924 49.79999924]
+Tasks Avg Acc: 35.31%
+****************************************************************************************************
+Test with the output of layer: 2
+
+Test Task 0: Accuracy: 284/1000 (28.40%)
+Test Task 1: Accuracy: 266/1000 (26.60%)
+Test Task 2: Accuracy: 364/1000 (36.40%)
+Test Task 3: Accuracy: 289/1000 (28.90%)
+Test Task 4: Accuracy: 363/1000 (36.30%)
+Test Task 5: Accuracy: 400/1000 (40.00%)
+Test Task 6: Accuracy: 446/1000 (44.60%)
+Test Task 7: Accuracy: 436/1000 (43.60%)
+Test Task 8: Accuracy: 518/1000 (51.80%)
+Test Task 9: Accuracy: 552/1000 (55.20%)
+Tasks Acc: [28.39999962 26.60000038 36.40000153 28.89999962 36.29999924 40.
+ 44.59999847 43.59999847 51.79999924 55.20000076]
+Tasks Avg Acc: 39.18%
+****************************************************************************************************
+Test with the output of layer: 3
+
+Test Task 0: Accuracy: 280/1000 (28.00%)
+Test Task 1: Accuracy: 248/1000 (24.80%)
+Test Task 2: Accuracy: 311/1000 (31.10%)
+Test Task 3: Accuracy: 282/1000 (28.20%)
+Test Task 4: Accuracy: 335/1000 (33.50%)
+Test Task 5: Accuracy: 422/1000 (42.20%)
+Test Task 6: Accuracy: 439/1000 (43.90%)
+Test Task 7: Accuracy: 488/1000 (48.80%)
+Test Task 8: Accuracy: 583/1000 (58.30%)
+Test Task 9: Accuracy: 684/1000 (68.40%)
+Tasks Acc: [28.         24.79999924 31.10000038 28.20000076 33.5        42.20000076
+ 43.90000153 48.79999924 58.29999924 68.40000153]
+Tasks Avg Acc: 40.72%
+****************************************************************************************************
+Test with the output of layer: 4
+
+Test Task 0: Accuracy: 267/1000 (26.70%)
+Test Task 1: Accuracy: 225/1000 (22.50%)
+Test Task 2: Accuracy: 304/1000 (30.40%)
+Test Task 3: Accuracy: 241/1000 (24.10%)
+Test Task 4: Accuracy: 311/1000 (31.10%)
+Test Task 5: Accuracy: 397/1000 (39.70%)
+Test Task 6: Accuracy: 434/1000 (43.40%)
+Test Task 7: Accuracy: 490/1000 (49.00%)
+Test Task 8: Accuracy: 602/1000 (60.20%)
+Test Task 9: Accuracy: 701/1000 (70.10%)
+Tasks Acc: [26.70000076 22.5        30.39999962 24.10000038 31.10000038 39.70000076
+ 43.40000153 49.         60.20000076 70.09999847]
+Tasks Avg Acc: 39.72%
+****************************************************************************************************
+Test with the mean dists output of each layer:
+
+Test Task 0 (Mean): Accuracy: 278/1000 (27.80%)
+Test Task 1 (Mean): Accuracy: 267/1000 (26.70%)
+Test Task 2 (Mean): Accuracy: 359/1000 (35.90%)
+Test Task 3 (Mean): Accuracy: 283/1000 (28.30%)
+Test Task 4 (Mean): Accuracy: 359/1000 (35.90%)
+Test Task 5 (Mean): Accuracy: 408/1000 (40.80%)
+Test Task 6 (Mean): Accuracy: 450/1000 (45.00%)
+Test Task 7 (Mean): Accuracy: 500/1000 (50.00%)
+Test Task 8 (Mean): Accuracy: 604/1000 (60.40%)
+Test Task 9 (Mean): Accuracy: 676/1000 (67.60%)
+Tasks Acc: [27.79999924 26.70000076 35.90000153 28.29999924 35.90000153 40.79999924
+ 45.         50.         60.40000153 67.59999847]
+Tasks Avg Acc: 41.84%
+{'test/final_avg_acc': 41.84000015258789, 'test/final_avg_fgt': 0.0, 'test/final_avg_bwt': 0.0, 'metrics/buffer_n_bits': 24.6154, 'metrics/model_n_params': 13.013556}
+task_accs_table
+accs_array shape: (1, 10)
+          task0      task1      task2      task3      task4      task5  task6  task7      task8      task9
+row0  27.799999  26.700001  35.900002  28.299999  35.900002  40.799999   45.0   50.0  60.400002  67.599998
+{'test/last_final_avg_acc': 39.72000026702881, 'test/last_final_avg_fgt': 0.0, 'test/last_final_avg_bwt': 0.0}
+last_task_accs_table
+accs_array shape: (1, 10)
+          task0  task1  task2  task3  task4      task5      task6  task7      task8      task9
+row0  26.700001   22.5   30.4   24.1   31.1  39.700001  43.400002   49.0  60.200001  70.099998
+====================================================================================================
+1th run's Test result: Accuracy: 41.84%
+====================================================================================================
+====================================================================================================
+-----------------------------run 2 start--------------------------
+2026-01-05 17:40:26
+====================================================================================================
+Task order = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Data and loader is prepared
+
+Run 2: tmp run_02 **************************************************
+
+buffer has 1000 slots
+bx torch.Size([1000, 3, 32, 32])
+创新点C
+number of classifier parameters:	 13.01M
+buffer parameters (image size prod):	 3.07M
+
+-----------------------------run 2 task id:0 start training-----------------------------
+==>>> it: 1, loss: ins 17.20 + ce 18.260 + align 0.000 + ts_feat 0.000 = 35.458099, main_u 0.000, 0.4%
+==>>> it: 49, loss: ins 21.78 + ce 6.462 + align 0.000 + ts_feat 0.000 = 28.242882, main_u 0.065, 10.0%
+==>>> it: 99, loss: ins 20.54 + ce 4.850 + align 0.000 + ts_feat 0.000 = 25.391487, main_u 0.068, 20.0%
+==>>> it: 149, loss: ins 20.22 + ce 4.483 + align 0.000 + ts_feat 0.000 = 24.703819, main_u 0.070, 30.0%
+==>>> it: 199, loss: ins 19.77 + ce 3.864 + align 0.000 + ts_feat 0.000 = 23.637096, main_u 0.070, 40.0%
+==>>> it: 249, loss: ins 19.10 + ce 3.291 + align 0.000 + ts_feat 0.000 = 22.386549, main_u 0.072, 50.0%
+==>>> it: 299, loss: ins 18.32 + ce 2.609 + align 0.000 + ts_feat 0.000 = 20.931768, main_u 0.072, 60.0%
+==>>> it: 349, loss: ins 19.00 + ce 3.481 + align 0.000 + ts_feat 0.000 = 22.483547, main_u 0.071, 70.0%
+==>>> it: 399, loss: ins 18.10 + ce 2.459 + align 0.000 + ts_feat 0.000 = 20.555273, main_u 0.070, 80.0%
+==>>> it: 449, loss: ins 17.75 + ce 2.230 + align 0.000 + ts_feat 0.000 = 19.977398, main_u 0.069, 90.0%
+==>>> it: 499, loss: ins 17.08 + ce 1.778 + align 0.000 + ts_feat 0.000 = 18.855410, main_u 0.070, 100.0%
+
+-----------------------------run 2 task id:1 start training-----------------------------
+==>>> it: 1, loss: ins 17.15 + ce 26.486 + distill 1.875 + align 58.527 + ts_feat 0.228 = 104.262054, main_u 0.069, 0.4%
+==>>> it: 49, loss: ins 17.29 + ce 17.310 + distill 3.277 + align 37.023 + ts_feat 0.852 = 75.754692, main_u 0.020, 10.0%
+==>>> it: 99, loss: ins 16.94 + ce 14.059 + distill 2.598 + align 35.998 + ts_feat 0.527 = 70.123764, main_u 0.025, 20.0%
+==>>> it: 149, loss: ins 17.55 + ce 12.061 + distill 2.014 + align 35.707 + ts_feat 0.460 = 67.793938, main_u 0.027, 30.0%
+==>>> it: 199, loss: ins 16.95 + ce 12.732 + distill 2.438 + align 36.250 + ts_feat 0.453 = 68.824913, main_u 0.028, 40.0%
+==>>> it: 249, loss: ins 16.23 + ce 11.052 + distill 2.221 + align 35.598 + ts_feat 0.401 = 65.502937, main_u 0.027, 50.0%
+==>>> it: 299, loss: ins 17.24 + ce 12.067 + distill 2.321 + align 35.416 + ts_feat 0.432 = 67.476387, main_u 0.029, 60.0%
+==>>> it: 349, loss: ins 16.49 + ce 14.937 + distill 2.545 + align 35.580 + ts_feat 0.377 = 69.928101, main_u 0.029, 70.0%
+==>>> it: 399, loss: ins 16.54 + ce 8.882 + distill 1.985 + align 35.522 + ts_feat 0.351 = 63.277374, main_u 0.029, 80.0%
+==>>> it: 449, loss: ins 16.62 + ce 10.058 + distill 1.932 + align 35.256 + ts_feat 0.324 = 64.188057, main_u 0.029, 90.0%
+==>>> it: 499, loss: ins 15.96 + ce 8.543 + distill 2.054 + align 35.319 + ts_feat 0.345 = 62.225391, main_u 0.031, 100.0%
+
+-----------------------------run 2 task id:2 start training-----------------------------
+==>>> it: 1, loss: ins 15.43 + ce 30.429 + distill 0.972 + align 35.109 + ts_feat 0.109 = 82.054169, main_u 0.031, 0.4%
+==>>> it: 49, loss: ins 15.79 + ce 15.208 + distill 1.702 + align 35.838 + ts_feat 0.311 = 68.847206, main_u 0.031, 10.0%
+==>>> it: 99, loss: ins 14.70 + ce 10.031 + distill 1.994 + align 35.786 + ts_feat 0.285 = 62.798485, main_u 0.031, 20.0%
+==>>> it: 149, loss: ins 14.94 + ce 12.342 + distill 1.627 + align 35.914 + ts_feat 0.250 = 65.072708, main_u 0.032, 30.0%
+==>>> it: 199, loss: ins 15.51 + ce 12.544 + distill 2.246 + align 35.733 + ts_feat 0.312 = 66.344505, main_u 0.031, 40.0%
+==>>> it: 249, loss: ins 14.85 + ce 7.358 + distill 1.922 + align 35.684 + ts_feat 0.269 = 60.080715, main_u 0.031, 50.0%
+==>>> it: 299, loss: ins 15.19 + ce 9.683 + distill 1.793 + align 35.921 + ts_feat 0.289 = 62.879055, main_u 0.030, 60.0%
+==>>> it: 349, loss: ins 13.93 + ce 7.075 + distill 1.776 + align 35.723 + ts_feat 0.293 = 58.798622, main_u 0.031, 70.0%
+==>>> it: 399, loss: ins 14.51 + ce 9.485 + distill 1.636 + align 35.653 + ts_feat 0.269 = 61.552841, main_u 0.029, 80.0%
+==>>> it: 449, loss: ins 13.72 + ce 7.498 + distill 1.818 + align 35.644 + ts_feat 0.273 = 58.949627, main_u 0.031, 90.0%
+==>>> it: 499, loss: ins 14.57 + ce 9.805 + distill 1.928 + align 35.138 + ts_feat 0.318 = 61.757572, main_u 0.030, 100.0%
+
+-----------------------------run 2 task id:3 start training-----------------------------
+==>>> it: 1, loss: ins 15.13 + ce 26.355 + distill 0.795 + align 34.934 + ts_feat 0.101 = 77.311905, main_u 0.030, 0.4%
+==>>> it: 49, loss: ins 13.82 + ce 12.165 + distill 1.566 + align 36.434 + ts_feat 0.228 = 64.213142, main_u 0.029, 10.0%
+==>>> it: 99, loss: ins 13.97 + ce 10.566 + distill 1.326 + align 36.494 + ts_feat 0.226 = 62.581589, main_u 0.030, 20.0%
+==>>> it: 149, loss: ins 13.74 + ce 12.768 + distill 1.920 + align 36.324 + ts_feat 0.262 = 65.013344, main_u 0.031, 30.0%
+==>>> it: 199, loss: ins 14.71 + ce 14.881 + distill 1.743 + align 36.240 + ts_feat 0.252 = 67.830116, main_u 0.030, 40.0%
+==>>> it: 249, loss: ins 14.66 + ce 14.533 + distill 1.741 + align 36.088 + ts_feat 0.241 = 67.260284, main_u 0.032, 50.0%
+==>>> it: 299, loss: ins 14.57 + ce 10.157 + distill 1.687 + align 36.165 + ts_feat 0.281 = 62.857296, main_u 0.030, 60.0%
+==>>> it: 349, loss: ins 13.86 + ce 9.354 + distill 1.705 + align 35.926 + ts_feat 0.252 = 61.095654, main_u 0.030, 70.0%
+==>>> it: 399, loss: ins 13.27 + ce 6.410 + distill 1.719 + align 36.380 + ts_feat 0.216 = 57.997608, main_u 0.029, 80.0%
+==>>> it: 449, loss: ins 13.54 + ce 7.435 + distill 1.655 + align 36.279 + ts_feat 0.263 = 59.174458, main_u 0.028, 90.0%
+==>>> it: 499, loss: ins 13.08 + ce 7.741 + distill 2.155 + align 36.372 + ts_feat 0.289 = 59.641750, main_u 0.030, 100.0%
+
+-----------------------------run 2 task id:4 start training-----------------------------
+==>>> it: 1, loss: ins 13.25 + ce 29.179 + distill 1.208 + align 35.845 + ts_feat 0.123 = 79.602776, main_u 0.030, 0.4%
+==>>> it: 49, loss: ins 13.86 + ce 13.986 + distill 1.492 + align 36.705 + ts_feat 0.245 = 66.291176, main_u 0.030, 10.0%
+==>>> it: 99, loss: ins 12.14 + ce 9.511 + distill 1.784 + align 36.869 + ts_feat 0.222 = 60.521423, main_u 0.030, 20.0%
+==>>> it: 149, loss: ins 12.75 + ce 11.576 + distill 1.737 + align 36.775 + ts_feat 0.244 = 63.078629, main_u 0.031, 30.0%
+==>>> it: 199, loss: ins 12.39 + ce 10.395 + distill 1.774 + align 36.755 + ts_feat 0.267 = 61.586029, main_u 0.030, 40.0%
+==>>> it: 249, loss: ins 12.19 + ce 9.171 + distill 1.811 + align 36.605 + ts_feat 0.236 = 60.014519, main_u 0.030, 50.0%
+==>>> it: 299, loss: ins 13.31 + ce 9.415 + distill 1.770 + align 36.339 + ts_feat 0.240 = 61.073078, main_u 0.030, 60.0%
+==>>> it: 349, loss: ins 11.49 + ce 6.479 + distill 1.650 + align 36.678 + ts_feat 0.232 = 56.532017, main_u 0.029, 70.0%
+==>>> it: 399, loss: ins 12.64 + ce 8.244 + distill 1.537 + align 36.287 + ts_feat 0.228 = 58.933449, main_u 0.029, 80.0%
+==>>> it: 449, loss: ins 12.06 + ce 7.591 + distill 1.690 + align 36.321 + ts_feat 0.247 = 57.910873, main_u 0.030, 90.0%
+==>>> it: 499, loss: ins 12.82 + ce 6.521 + distill 1.958 + align 36.305 + ts_feat 0.280 = 57.881870, main_u 0.028, 100.0%
+
+-----------------------------run 2 task id:5 start training-----------------------------
+==>>> it: 1, loss: ins 11.57 + ce 26.684 + distill 0.820 + align 36.363 + ts_feat 0.088 = 75.523819, main_u 0.028, 0.4%
+==>>> it: 49, loss: ins 12.66 + ce 12.090 + distill 1.548 + align 37.195 + ts_feat 0.236 = 63.729076, main_u 0.028, 10.0%
+==>>> it: 99, loss: ins 10.55 + ce 9.539 + distill 1.738 + align 36.982 + ts_feat 0.235 = 59.046028, main_u 0.028, 20.0%
+==>>> it: 149, loss: ins 10.65 + ce 7.844 + distill 1.593 + align 37.042 + ts_feat 0.209 = 57.336502, main_u 0.029, 30.0%
+==>>> it: 199, loss: ins 11.82 + ce 7.614 + distill 1.645 + align 36.719 + ts_feat 0.228 = 58.024071, main_u 0.029, 40.0%
+==>>> it: 249, loss: ins 12.45 + ce 10.595 + distill 1.902 + align 37.085 + ts_feat 0.256 = 62.286800, main_u 0.029, 50.0%
+==>>> it: 299, loss: ins 12.75 + ce 11.701 + distill 1.576 + align 36.655 + ts_feat 0.225 = 62.903301, main_u 0.027, 60.0%
+==>>> it: 349, loss: ins 11.79 + ce 5.954 + distill 1.656 + align 36.859 + ts_feat 0.204 = 56.465973, main_u 0.029, 70.0%
+==>>> it: 399, loss: ins 12.17 + ce 9.699 + distill 1.679 + align 36.678 + ts_feat 0.221 = 60.443222, main_u 0.029, 80.0%
+==>>> it: 449, loss: ins 12.03 + ce 7.979 + distill 1.667 + align 36.511 + ts_feat 0.240 = 58.428856, main_u 0.028, 90.0%
+==>>> it: 499, loss: ins 10.73 + ce 5.328 + distill 1.820 + align 36.704 + ts_feat 0.232 = 54.807995, main_u 0.027, 100.0%
+
+-----------------------------run 2 task id:6 start training-----------------------------
+==>>> it: 1, loss: ins 11.35 + ce 25.137 + distill 0.751 + align 36.523 + ts_feat 0.090 = 73.851379, main_u 0.027, 0.4%
+==>>> it: 49, loss: ins 12.73 + ce 9.978 + distill 1.226 + align 37.206 + ts_feat 0.209 = 61.351131, main_u 0.028, 10.0%
+==>>> it: 99, loss: ins 10.98 + ce 8.695 + distill 1.281 + align 37.155 + ts_feat 0.189 = 58.300251, main_u 0.028, 20.0%
+==>>> it: 149, loss: ins 11.28 + ce 5.805 + distill 1.523 + align 37.191 + ts_feat 0.223 = 56.019161, main_u 0.028, 30.0%
+==>>> it: 199, loss: ins 11.38 + ce 6.567 + distill 1.488 + align 37.417 + ts_feat 0.197 = 57.049397, main_u 0.028, 40.0%
+==>>> it: 249, loss: ins 10.63 + ce 5.836 + distill 1.521 + align 37.133 + ts_feat 0.222 = 55.338940, main_u 0.029, 50.0%
+==>>> it: 299, loss: ins 10.65 + ce 8.898 + distill 1.395 + align 37.006 + ts_feat 0.218 = 58.165813, main_u 0.028, 60.0%
+==>>> it: 349, loss: ins 10.37 + ce 5.487 + distill 1.580 + align 37.091 + ts_feat 0.230 = 54.756992, main_u 0.028, 70.0%
+==>>> it: 399, loss: ins 11.58 + ce 8.780 + distill 1.647 + align 37.033 + ts_feat 0.219 = 59.259205, main_u 0.027, 80.0%
+==>>> it: 449, loss: ins 10.88 + ce 4.445 + distill 1.656 + align 36.982 + ts_feat 0.220 = 54.183994, main_u 0.027, 90.0%
+==>>> it: 499, loss: ins 10.67 + ce 5.430 + distill 1.722 + align 36.869 + ts_feat 0.251 = 54.940369, main_u 0.028, 100.0%
+
+-----------------------------run 2 task id:7 start training-----------------------------
+==>>> it: 1, loss: ins 10.40 + ce 20.895 + distill 0.485 + align 36.852 + ts_feat 0.070 = 68.701767, main_u 0.028, 0.4%
+==>>> it: 49, loss: ins 12.11 + ce 12.764 + distill 1.669 + align 37.583 + ts_feat 0.237 = 64.359589, main_u 0.028, 10.0%
+==>>> it: 99, loss: ins 10.47 + ce 7.757 + distill 1.521 + align 37.551 + ts_feat 0.233 = 57.529140, main_u 0.030, 20.0%
+==>>> it: 149, loss: ins 10.61 + ce 8.785 + distill 1.586 + align 37.474 + ts_feat 0.225 = 58.682198, main_u 0.029, 30.0%
+==>>> it: 199, loss: ins 10.25 + ce 5.303 + distill 1.631 + align 37.382 + ts_feat 0.213 = 54.777081, main_u 0.028, 40.0%
+==>>> it: 249, loss: ins 10.73 + ce 8.048 + distill 1.615 + align 37.400 + ts_feat 0.228 = 58.022228, main_u 0.028, 50.0%
+==>>> it: 299, loss: ins 11.97 + ce 9.406 + distill 1.465 + align 37.068 + ts_feat 0.215 = 60.121262, main_u 0.029, 60.0%
+==>>> it: 349, loss: ins 11.14 + ce 6.847 + distill 1.451 + align 37.229 + ts_feat 0.215 = 56.883869, main_u 0.028, 70.0%
+==>>> it: 399, loss: ins 10.52 + ce 7.137 + distill 1.539 + align 37.202 + ts_feat 0.231 = 56.632374, main_u 0.027, 80.0%
+==>>> it: 449, loss: ins 10.75 + ce 6.788 + distill 1.660 + align 37.244 + ts_feat 0.224 = 56.663742, main_u 0.028, 90.0%
+==>>> it: 499, loss: ins 12.57 + ce 9.533 + distill 1.638 + align 36.859 + ts_feat 0.241 = 60.842922, main_u 0.029, 100.0%
+
+-----------------------------run 2 task id:8 start training-----------------------------
+==>>> it: 1, loss: ins 9.91 + ce 23.900 + distill 0.958 + align 37.189 + ts_feat 0.094 = 72.052940, main_u 0.029, 0.4%
+==>>> it: 49, loss: ins 11.05 + ce 9.748 + distill 1.423 + align 37.933 + ts_feat 0.244 = 60.398014, main_u 0.028, 10.0%
+==>>> it: 99, loss: ins 10.08 + ce 8.671 + distill 1.567 + align 37.949 + ts_feat 0.229 = 58.493549, main_u 0.028, 20.0%
+==>>> it: 149, loss: ins 10.70 + ce 8.465 + distill 1.483 + align 37.787 + ts_feat 0.215 = 58.647724, main_u 0.029, 30.0%
+==>>> it: 199, loss: ins 10.66 + ce 5.308 + distill 1.706 + align 37.644 + ts_feat 0.242 = 55.556381, main_u 0.029, 40.0%
+==>>> it: 249, loss: ins 10.88 + ce 8.342 + distill 1.629 + align 37.619 + ts_feat 0.244 = 58.712761, main_u 0.029, 50.0%
+==>>> it: 299, loss: ins 10.49 + ce 5.516 + distill 1.736 + align 37.498 + ts_feat 0.232 = 55.476406, main_u 0.028, 60.0%
+==>>> it: 349, loss: ins 10.95 + ce 8.794 + distill 1.534 + align 37.322 + ts_feat 0.222 = 58.821278, main_u 0.028, 70.0%
+==>>> it: 399, loss: ins 11.17 + ce 10.408 + distill 1.638 + align 37.326 + ts_feat 0.228 = 60.769531, main_u 0.029, 80.0%
+==>>> it: 449, loss: ins 10.09 + ce 5.862 + distill 1.601 + align 37.325 + ts_feat 0.209 = 55.081577, main_u 0.029, 90.0%
+==>>> it: 499, loss: ins 10.51 + ce 9.062 + distill 1.543 + align 37.292 + ts_feat 0.200 = 58.611958, main_u 0.028, 100.0%
+
+-----------------------------run 2 task id:9 start training-----------------------------
+==>>> it: 1, loss: ins 10.37 + ce 17.218 + distill 0.602 + align 37.361 + ts_feat 0.081 = 65.632835, main_u 0.028, 0.4%
+==>>> it: 49, loss: ins 8.99 + ce 9.640 + distill 1.266 + align 38.021 + ts_feat 0.184 = 58.105160, main_u 0.028, 10.0%
+==>>> it: 99, loss: ins 9.56 + ce 7.614 + distill 1.611 + align 38.274 + ts_feat 0.220 = 57.282360, main_u 0.029, 20.0%
+==>>> it: 149, loss: ins 9.89 + ce 6.101 + distill 1.505 + align 38.026 + ts_feat 0.215 = 55.739445, main_u 0.029, 30.0%
+==>>> it: 199, loss: ins 11.17 + ce 9.381 + distill 1.573 + align 37.948 + ts_feat 0.224 = 60.296223, main_u 0.029, 40.0%
+==>>> it: 249, loss: ins 10.07 + ce 5.243 + distill 1.652 + align 37.873 + ts_feat 0.217 = 55.054321, main_u 0.029, 50.0%
+==>>> it: 299, loss: ins 9.70 + ce 5.920 + distill 1.365 + align 37.755 + ts_feat 0.198 = 54.933872, main_u 0.029, 60.0%
+==>>> it: 349, loss: ins 9.15 + ce 4.692 + distill 1.357 + align 37.728 + ts_feat 0.189 = 53.111656, main_u 0.028, 70.0%
+==>>> it: 399, loss: ins 9.43 + ce 5.786 + distill 1.385 + align 37.802 + ts_feat 0.193 = 54.595730, main_u 0.028, 80.0%
+==>>> it: 449, loss: ins 8.81 + ce 4.159 + distill 1.603 + align 37.571 + ts_feat 0.231 = 52.370583, main_u 0.029, 90.0%
+==>>> it: 499, loss: ins 9.49 + ce 3.667 + distill 1.434 + align 37.610 + ts_feat 0.186 = 52.389275, main_u 0.028, 100.0%
+
+Calculating class means for NCM classifier...
+
+****************************************************************************************************
+Test with the output of layer: 1
+
+Test Task 0: Accuracy: 299/1000 (29.90%)
+Test Task 1: Accuracy: 250/1000 (25.00%)
+Test Task 2: Accuracy: 371/1000 (37.10%)
+Test Task 3: Accuracy: 280/1000 (28.00%)
+Test Task 4: Accuracy: 316/1000 (31.60%)
+Test Task 5: Accuracy: 384/1000 (38.40%)
+Test Task 6: Accuracy: 375/1000 (37.50%)
+Test Task 7: Accuracy: 371/1000 (37.10%)
+Test Task 8: Accuracy: 477/1000 (47.70%)
+Test Task 9: Accuracy: 496/1000 (49.60%)
+Tasks Acc: [29.89999962 25.         37.09999847 28.         31.60000038 38.40000153
+ 37.5        37.09999847 47.70000076 49.59999847]
+Tasks Avg Acc: 36.19%
+****************************************************************************************************
+Test with the output of layer: 2
+
+Test Task 0: Accuracy: 340/1000 (34.00%)
+Test Task 1: Accuracy: 270/1000 (27.00%)
+Test Task 2: Accuracy: 381/1000 (38.10%)
+Test Task 3: Accuracy: 297/1000 (29.70%)
+Test Task 4: Accuracy: 329/1000 (32.90%)
+Test Task 5: Accuracy: 431/1000 (43.10%)
+Test Task 6: Accuracy: 416/1000 (41.60%)
+Test Task 7: Accuracy: 420/1000 (42.00%)
+Test Task 8: Accuracy: 560/1000 (56.00%)
+Test Task 9: Accuracy: 564/1000 (56.40%)
+Tasks Acc: [34.         27.         38.09999847 29.70000076 32.90000153 43.09999847
+ 41.59999847 42.         56.         56.40000153]
+Tasks Avg Acc: 40.08%
+****************************************************************************************************
+Test with the output of layer: 3
+
+Test Task 0: Accuracy: 308/1000 (30.80%)
+Test Task 1: Accuracy: 228/1000 (22.80%)
+Test Task 2: Accuracy: 364/1000 (36.40%)
+Test Task 3: Accuracy: 280/1000 (28.00%)
+Test Task 4: Accuracy: 295/1000 (29.50%)
+Test Task 5: Accuracy: 425/1000 (42.50%)
+Test Task 6: Accuracy: 404/1000 (40.40%)
+Test Task 7: Accuracy: 460/1000 (46.00%)
+Test Task 8: Accuracy: 578/1000 (57.80%)
+Test Task 9: Accuracy: 691/1000 (69.10%)
+Tasks Acc: [30.79999924 22.79999924 36.40000153 28.         29.5        42.5
+ 40.40000153 46.         57.79999924 69.09999847]
+Tasks Avg Acc: 40.33%
+****************************************************************************************************
+Test with the output of layer: 4
+
+Test Task 0: Accuracy: 290/1000 (29.00%)
+Test Task 1: Accuracy: 203/1000 (20.30%)
+Test Task 2: Accuracy: 361/1000 (36.10%)
+Test Task 3: Accuracy: 246/1000 (24.60%)
+Test Task 4: Accuracy: 310/1000 (31.00%)
+Test Task 5: Accuracy: 407/1000 (40.70%)
+Test Task 6: Accuracy: 400/1000 (40.00%)
+Test Task 7: Accuracy: 458/1000 (45.80%)
+Test Task 8: Accuracy: 612/1000 (61.20%)
+Test Task 9: Accuracy: 703/1000 (70.30%)
+Tasks Acc: [29.         20.29999924 36.09999847 24.60000038 31.         40.70000076
+ 40.         45.79999924 61.20000076 70.30000305]
+Tasks Avg Acc: 39.90%
+****************************************************************************************************
+Test with the mean dists output of each layer:
+
+Test Task 0 (Mean): Accuracy: 331/1000 (33.10%)
+Test Task 1 (Mean): Accuracy: 247/1000 (24.70%)
+Test Task 2 (Mean): Accuracy: 388/1000 (38.80%)
+Test Task 3 (Mean): Accuracy: 293/1000 (29.30%)
+Test Task 4 (Mean): Accuracy: 326/1000 (32.60%)
+Test Task 5 (Mean): Accuracy: 433/1000 (43.30%)
+Test Task 6 (Mean): Accuracy: 418/1000 (41.80%)
+Test Task 7 (Mean): Accuracy: 474/1000 (47.40%)
+Test Task 8 (Mean): Accuracy: 599/1000 (59.90%)
+Test Task 9 (Mean): Accuracy: 660/1000 (66.00%)
+Tasks Acc: [33.09999847 24.70000076 38.79999924 29.29999924 32.59999847 43.29999924
+ 41.79999924 47.40000153 59.90000153 66.        ]
+Tasks Avg Acc: 41.69%
+{'test/final_avg_acc': 41.68999977111817, 'test/final_avg_fgt': 0.0, 'test/final_avg_bwt': 0.0, 'metrics/buffer_n_bits': 24.6154, 'metrics/model_n_params': 13.013556}
+task_accs_table
+accs_array shape: (1, 10)
+          task0      task1      task2      task3      task4      task5      task6      task7      task8  task9
+row0  33.099998  24.700001  38.799999  29.299999  32.599998  43.299999  41.799999  47.400002  59.900002   66.0
+{'test/last_final_avg_acc': 39.900000190734865, 'test/last_final_avg_fgt': 0.0, 'test/last_final_avg_bwt': 0.0}
+last_task_accs_table
+accs_array shape: (1, 10)
+      task0      task1      task2  task3  task4      task5  task6      task7      task8      task9
+row0   29.0  20.299999  36.099998   24.6   31.0  40.700001   40.0  45.799999  61.200001  70.300003
+====================================================================================================
+2th run's Test result: Accuracy: 41.69%
+====================================================================================================
+====================================================================================================
+-----------------------------run 3 start--------------------------
+2026-01-05 17:58:40
+====================================================================================================
+Task order = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Data and loader is prepared
+
+Run 3: tmp run_03 **************************************************
+
+buffer has 1000 slots
+bx torch.Size([1000, 3, 32, 32])
+创新点C
+number of classifier parameters:	 13.01M
+buffer parameters (image size prod):	 3.07M
+
+-----------------------------run 3 task id:0 start training-----------------------------
+==>>> it: 1, loss: ins 17.91 + ce 18.475 + align 0.000 + ts_feat 0.000 = 36.382084, main_u 0.000, 0.4%
+==>>> it: 49, loss: ins 20.50 + ce 4.800 + align 0.000 + ts_feat 0.000 = 25.294825, main_u 0.064, 10.0%
+==>>> it: 99, loss: ins 20.94 + ce 5.228 + align 0.000 + ts_feat 0.000 = 26.171137, main_u 0.070, 20.0%
+==>>> it: 149, loss: ins 20.24 + ce 4.667 + align 0.000 + ts_feat 0.000 = 24.911533, main_u 0.071, 30.0%
+==>>> it: 199, loss: ins 18.43 + ce 3.083 + align 0.000 + ts_feat 0.000 = 21.516680, main_u 0.071, 40.0%
+==>>> it: 249, loss: ins 17.74 + ce 2.473 + align 0.000 + ts_feat 0.000 = 20.214092, main_u 0.071, 50.0%
+==>>> it: 299, loss: ins 17.54 + ce 2.158 + align 0.000 + ts_feat 0.000 = 19.700499, main_u 0.072, 60.0%
+==>>> it: 349, loss: ins 18.08 + ce 2.430 + align 0.000 + ts_feat 0.000 = 20.510929, main_u 0.072, 70.0%
+==>>> it: 399, loss: ins 17.40 + ce 2.115 + align 0.000 + ts_feat 0.000 = 19.514530, main_u 0.074, 80.0%
+==>>> it: 449, loss: ins 17.03 + ce 1.844 + align 0.000 + ts_feat 0.000 = 18.872250, main_u 0.073, 90.0%
+==>>> it: 499, loss: ins 17.00 + ce 1.936 + align 0.000 + ts_feat 0.000 = 18.937809, main_u 0.073, 100.0%
+
+-----------------------------run 3 task id:1 start training-----------------------------
+==>>> it: 1, loss: ins 17.21 + ce 25.760 + distill 2.184 + align 59.035 + ts_feat 0.220 = 104.403938, main_u 0.072, 0.4%
+==>>> it: 49, loss: ins 17.29 + ce 14.337 + distill 2.714 + align 37.267 + ts_feat 0.838 = 72.442986, main_u 0.020, 10.0%
+==>>> it: 99, loss: ins 17.93 + ce 16.254 + distill 2.176 + align 36.040 + ts_feat 0.535 = 72.938560, main_u 0.026, 20.0%
+==>>> it: 149, loss: ins 17.67 + ce 15.781 + distill 1.981 + align 35.953 + ts_feat 0.471 = 71.852219, main_u 0.028, 30.0%
+==>>> it: 199, loss: ins 16.99 + ce 12.427 + distill 2.107 + align 35.620 + ts_feat 0.440 = 67.587898, main_u 0.029, 40.0%
+==>>> it: 249, loss: ins 16.46 + ce 12.671 + distill 2.305 + align 36.038 + ts_feat 0.417 = 67.887123, main_u 0.030, 50.0%
+==>>> it: 299, loss: ins 16.83 + ce 14.085 + distill 1.599 + align 35.430 + ts_feat 0.365 = 68.312607, main_u 0.031, 60.0%
+==>>> it: 349, loss: ins 17.36 + ce 13.809 + distill 2.330 + align 35.431 + ts_feat 0.409 = 69.335335, main_u 0.028, 70.0%
+==>>> it: 399, loss: ins 16.60 + ce 9.469 + distill 2.042 + align 35.634 + ts_feat 0.349 = 64.089981, main_u 0.030, 80.0%
+==>>> it: 449, loss: ins 16.59 + ce 9.125 + distill 2.036 + align 35.222 + ts_feat 0.375 = 63.351929, main_u 0.030, 90.0%
+==>>> it: 499, loss: ins 16.20 + ce 9.361 + distill 2.272 + align 35.159 + ts_feat 0.345 = 63.332359, main_u 0.030, 100.0%
+
+-----------------------------run 3 task id:2 start training-----------------------------
+==>>> it: 1, loss: ins 16.96 + ce 31.157 + distill 3.093 + align 35.107 + ts_feat 0.270 = 86.590096, main_u 0.030, 0.4%
+==>>> it: 49, loss: ins 14.30 + ce 9.505 + distill 2.707 + align 36.214 + ts_feat 0.358 = 63.081512, main_u 0.030, 10.0%
+==>>> it: 99, loss: ins 15.57 + ce 12.935 + distill 2.059 + align 35.913 + ts_feat 0.345 = 66.818016, main_u 0.031, 20.0%
+==>>> it: 149, loss: ins 14.86 + ce 11.267 + distill 1.979 + align 35.722 + ts_feat 0.329 = 64.161995, main_u 0.031, 30.0%
+==>>> it: 199, loss: ins 14.11 + ce 9.456 + distill 1.869 + align 35.695 + ts_feat 0.260 = 61.388424, main_u 0.031, 40.0%
+==>>> it: 249, loss: ins 15.86 + ce 14.143 + distill 2.210 + align 35.663 + ts_feat 0.331 = 68.211418, main_u 0.031, 50.0%
+==>>> it: 299, loss: ins 15.95 + ce 13.430 + distill 2.548 + align 35.551 + ts_feat 0.303 = 67.781883, main_u 0.030, 60.0%
+==>>> it: 349, loss: ins 15.35 + ce 8.512 + distill 2.131 + align 35.324 + ts_feat 0.303 = 61.624706, main_u 0.031, 70.0%
+==>>> it: 399, loss: ins 13.96 + ce 7.643 + distill 2.188 + align 35.439 + ts_feat 0.296 = 59.523376, main_u 0.031, 80.0%
+==>>> it: 449, loss: ins 15.30 + ce 8.532 + distill 2.414 + align 35.151 + ts_feat 0.378 = 61.777466, main_u 0.030, 90.0%
+==>>> it: 499, loss: ins 14.21 + ce 7.218 + distill 1.779 + align 35.360 + ts_feat 0.296 = 58.860638, main_u 0.030, 100.0%
+
+-----------------------------run 3 task id:3 start training-----------------------------
+==>>> it: 1, loss: ins 13.73 + ce 29.334 + distill 0.640 + align 35.396 + ts_feat 0.079 = 79.182007, main_u 0.030, 0.4%
+==>>> it: 49, loss: ins 13.98 + ce 15.147 + distill 1.665 + align 36.275 + ts_feat 0.227 = 67.290154, main_u 0.032, 10.0%
+==>>> it: 99, loss: ins 14.25 + ce 12.991 + distill 1.934 + align 36.456 + ts_feat 0.249 = 65.883369, main_u 0.030, 20.0%
+==>>> it: 149, loss: ins 13.72 + ce 11.633 + distill 1.743 + align 36.381 + ts_feat 0.235 = 63.711979, main_u 0.031, 30.0%
+==>>> it: 199, loss: ins 13.81 + ce 10.973 + distill 1.651 + align 36.172 + ts_feat 0.233 = 62.840645, main_u 0.031, 40.0%
+==>>> it: 249, loss: ins 14.31 + ce 12.028 + distill 1.964 + align 35.647 + ts_feat 0.281 = 64.226738, main_u 0.031, 50.0%
+==>>> it: 299, loss: ins 14.77 + ce 10.610 + distill 2.109 + align 35.973 + ts_feat 0.267 = 63.733711, main_u 0.031, 60.0%
+==>>> it: 349, loss: ins 13.55 + ce 8.728 + distill 1.985 + align 36.119 + ts_feat 0.263 = 60.642651, main_u 0.030, 70.0%
+==>>> it: 399, loss: ins 14.37 + ce 11.294 + distill 1.763 + align 36.128 + ts_feat 0.273 = 63.826183, main_u 0.031, 80.0%
+==>>> it: 449, loss: ins 13.75 + ce 9.707 + distill 1.785 + align 35.823 + ts_feat 0.272 = 61.337589, main_u 0.030, 90.0%
+==>>> it: 499, loss: ins 14.08 + ce 11.422 + distill 1.809 + align 35.925 + ts_feat 0.300 = 63.536114, main_u 0.032, 100.0%
+
+-----------------------------run 3 task id:4 start training-----------------------------
+==>>> it: 1, loss: ins 13.96 + ce 31.276 + distill 0.945 + align 35.918 + ts_feat 0.092 = 82.192055, main_u 0.032, 0.4%
+==>>> it: 49, loss: ins 12.07 + ce 11.134 + distill 1.755 + align 36.995 + ts_feat 0.229 = 62.184807, main_u 0.031, 10.0%
+==>>> it: 99, loss: ins 13.58 + ce 11.720 + distill 1.755 + align 36.869 + ts_feat 0.252 = 64.171303, main_u 0.031, 20.0%
+==>>> it: 149, loss: ins 13.94 + ce 9.113 + distill 1.913 + align 36.843 + ts_feat 0.271 = 62.078255, main_u 0.032, 30.0%
+==>>> it: 199, loss: ins 12.36 + ce 9.008 + distill 1.975 + align 36.683 + ts_feat 0.283 = 60.303955, main_u 0.030, 40.0%
+==>>> it: 249, loss: ins 12.31 + ce 12.561 + distill 1.827 + align 36.530 + ts_feat 0.245 = 63.474091, main_u 0.031, 50.0%
+==>>> it: 299, loss: ins 12.57 + ce 7.570 + distill 1.786 + align 36.530 + ts_feat 0.247 = 58.699589, main_u 0.031, 60.0%
+==>>> it: 349, loss: ins 12.84 + ce 7.557 + distill 1.836 + align 36.516 + ts_feat 0.242 = 58.988575, main_u 0.031, 70.0%
+==>>> it: 399, loss: ins 12.79 + ce 7.457 + distill 1.760 + align 36.319 + ts_feat 0.246 = 58.574074, main_u 0.031, 80.0%
+==>>> it: 449, loss: ins 12.95 + ce 7.947 + distill 1.878 + align 36.300 + ts_feat 0.266 = 59.341839, main_u 0.031, 90.0%
+==>>> it: 499, loss: ins 13.20 + ce 7.764 + distill 1.907 + align 36.367 + ts_feat 0.282 = 59.519836, main_u 0.031, 100.0%
+
+-----------------------------run 3 task id:5 start training-----------------------------
+==>>> it: 1, loss: ins 12.96 + ce 26.817 + distill 1.407 + align 36.341 + ts_feat 0.127 = 77.653740, main_u 0.031, 0.4%
+==>>> it: 49, loss: ins 12.15 + ce 12.322 + distill 1.843 + align 37.365 + ts_feat 0.230 = 63.910183, main_u 0.030, 10.0%
+==>>> it: 99, loss: ins 11.65 + ce 8.325 + distill 1.847 + align 37.343 + ts_feat 0.256 = 59.422852, main_u 0.031, 20.0%
+==>>> it: 149, loss: ins 11.35 + ce 11.570 + distill 1.555 + align 37.375 + ts_feat 0.215 = 62.066406, main_u 0.032, 30.0%
+==>>> it: 199, loss: ins 12.35 + ce 8.639 + distill 1.497 + align 37.045 + ts_feat 0.227 = 59.756905, main_u 0.031, 40.0%
+==>>> it: 249, loss: ins 13.01 + ce 8.289 + distill 2.014 + align 36.981 + ts_feat 0.239 = 60.537716, main_u 0.031, 50.0%
+==>>> it: 299, loss: ins 11.94 + ce 7.823 + distill 1.712 + align 36.833 + ts_feat 0.230 = 58.541992, main_u 0.031, 60.0%
+==>>> it: 349, loss: ins 11.69 + ce 8.099 + distill 1.827 + align 36.761 + ts_feat 0.247 = 58.623585, main_u 0.029, 70.0%
+==>>> it: 399, loss: ins 12.16 + ce 10.634 + distill 1.893 + align 36.831 + ts_feat 0.264 = 61.777153, main_u 0.029, 80.0%
+==>>> it: 449, loss: ins 12.65 + ce 7.893 + distill 1.772 + align 36.834 + ts_feat 0.281 = 59.429005, main_u 0.030, 90.0%
+==>>> it: 499, loss: ins 11.88 + ce 6.330 + distill 2.079 + align 36.896 + ts_feat 0.269 = 57.456501, main_u 0.029, 100.0%
+
+-----------------------------run 3 task id:6 start training-----------------------------
+==>>> it: 1, loss: ins 9.98 + ce 25.925 + distill 0.872 + align 36.590 + ts_feat 0.091 = 73.458298, main_u 0.029, 0.4%
+==>>> it: 49, loss: ins 11.51 + ce 13.093 + distill 1.522 + align 37.593 + ts_feat 0.242 = 63.961124, main_u 0.030, 10.0%
+==>>> it: 99, loss: ins 10.78 + ce 7.875 + distill 1.546 + align 37.760 + ts_feat 0.222 = 58.177219, main_u 0.030, 20.0%
+==>>> it: 149, loss: ins 11.52 + ce 8.266 + distill 1.679 + align 37.475 + ts_feat 0.207 = 59.151642, main_u 0.031, 30.0%
+==>>> it: 199, loss: ins 10.73 + ce 7.480 + distill 1.592 + align 37.349 + ts_feat 0.226 = 57.374027, main_u 0.031, 40.0%
+==>>> it: 249, loss: ins 10.63 + ce 7.656 + distill 1.501 + align 37.335 + ts_feat 0.200 = 57.320866, main_u 0.029, 50.0%
+==>>> it: 299, loss: ins 10.93 + ce 7.373 + distill 1.799 + align 37.143 + ts_feat 0.253 = 57.500080, main_u 0.030, 60.0%
+==>>> it: 349, loss: ins 11.42 + ce 8.609 + distill 1.800 + align 37.205 + ts_feat 0.238 = 59.274765, main_u 0.029, 70.0%
+==>>> it: 399, loss: ins 11.38 + ce 5.451 + distill 1.576 + align 37.038 + ts_feat 0.243 = 55.691017, main_u 0.030, 80.0%
+==>>> it: 449, loss: ins 10.95 + ce 6.455 + distill 1.600 + align 37.118 + ts_feat 0.214 = 56.333027, main_u 0.030, 90.0%
+==>>> it: 499, loss: ins 11.77 + ce 6.989 + distill 1.900 + align 37.202 + ts_feat 0.240 = 58.099735, main_u 0.029, 100.0%
+
+-----------------------------run 3 task id:7 start training-----------------------------
+==>>> it: 1, loss: ins 10.45 + ce 23.388 + distill 0.798 + align 37.179 + ts_feat 0.098 = 71.908928, main_u 0.029, 0.4%
+==>>> it: 49, loss: ins 9.83 + ce 10.148 + distill 1.268 + align 38.229 + ts_feat 0.217 = 59.697575, main_u 0.029, 10.0%
+==>>> it: 99, loss: ins 11.17 + ce 10.380 + distill 1.774 + align 37.959 + ts_feat 0.245 = 61.529385, main_u 0.030, 20.0%
+==>>> it: 149, loss: ins 10.50 + ce 6.222 + distill 1.496 + align 37.841 + ts_feat 0.236 = 56.295387, main_u 0.030, 30.0%
+==>>> it: 199, loss: ins 10.96 + ce 10.794 + distill 1.772 + align 37.774 + ts_feat 0.239 = 61.535313, main_u 0.028, 40.0%
+==>>> it: 249, loss: ins 10.89 + ce 8.089 + distill 1.871 + align 37.855 + ts_feat 0.243 = 58.949791, main_u 0.030, 50.0%
+==>>> it: 299, loss: ins 10.28 + ce 4.425 + distill 1.531 + align 37.823 + ts_feat 0.211 = 54.272984, main_u 0.029, 60.0%
+==>>> it: 349, loss: ins 11.79 + ce 9.383 + distill 1.839 + align 37.520 + ts_feat 0.229 = 60.762440, main_u 0.029, 70.0%
+==>>> it: 399, loss: ins 10.34 + ce 8.087 + distill 1.436 + align 37.459 + ts_feat 0.199 = 57.521172, main_u 0.029, 80.0%
+==>>> it: 449, loss: ins 10.09 + ce 10.634 + distill 1.547 + align 37.559 + ts_feat 0.230 = 60.058220, main_u 0.029, 90.0%
+==>>> it: 499, loss: ins 10.55 + ce 7.998 + distill 1.509 + align 37.442 + ts_feat 0.220 = 57.719662, main_u 0.028, 100.0%
+
+-----------------------------run 3 task id:8 start training-----------------------------
+==>>> it: 1, loss: ins 11.01 + ce 25.446 + distill 1.487 + align 37.406 + ts_feat 0.134 = 75.480042, main_u 0.028, 0.4%
+==>>> it: 49, loss: ins 10.03 + ce 13.043 + distill 1.899 + align 38.334 + ts_feat 0.272 = 63.573116, main_u 0.028, 10.0%
+==>>> it: 99, loss: ins 9.92 + ce 7.930 + distill 1.749 + align 38.364 + ts_feat 0.262 = 58.226654, main_u 0.030, 20.0%
+==>>> it: 149, loss: ins 10.69 + ce 8.405 + distill 1.790 + align 38.293 + ts_feat 0.241 = 59.422554, main_u 0.031, 30.0%
+==>>> it: 199, loss: ins 9.94 + ce 6.229 + distill 1.738 + align 38.040 + ts_feat 0.251 = 56.195782, main_u 0.030, 40.0%
+==>>> it: 249, loss: ins 10.14 + ce 7.284 + distill 1.699 + align 37.841 + ts_feat 0.223 = 57.190269, main_u 0.030, 50.0%
+==>>> it: 299, loss: ins 10.40 + ce 6.948 + distill 1.739 + align 37.990 + ts_feat 0.234 = 57.306896, main_u 0.030, 60.0%
+==>>> it: 349, loss: ins 9.38 + ce 5.347 + distill 1.743 + align 38.030 + ts_feat 0.243 = 54.742897, main_u 0.029, 70.0%
+==>>> it: 399, loss: ins 11.28 + ce 6.250 + distill 1.689 + align 37.877 + ts_feat 0.227 = 57.326492, main_u 0.030, 80.0%
+==>>> it: 449, loss: ins 9.94 + ce 4.640 + distill 1.506 + align 37.842 + ts_feat 0.222 = 54.145508, main_u 0.030, 90.0%
+==>>> it: 499, loss: ins 10.95 + ce 5.674 + distill 1.652 + align 37.749 + ts_feat 0.239 = 56.262016, main_u 0.031, 100.0%
+
+-----------------------------run 3 task id:9 start training-----------------------------
+==>>> it: 1, loss: ins 9.90 + ce 22.056 + distill 0.474 + align 37.721 + ts_feat 0.053 = 70.202438, main_u 0.031, 0.4%
+==>>> it: 49, loss: ins 10.40 + ce 11.459 + distill 1.552 + align 38.391 + ts_feat 0.202 = 62.000896, main_u 0.029, 10.0%
+==>>> it: 99, loss: ins 9.05 + ce 6.959 + distill 1.698 + align 38.586 + ts_feat 0.235 = 56.524368, main_u 0.030, 20.0%
+==>>> it: 149, loss: ins 9.43 + ce 6.116 + distill 1.561 + align 38.545 + ts_feat 0.235 = 55.885170, main_u 0.030, 30.0%
+==>>> it: 199, loss: ins 9.82 + ce 5.316 + distill 1.469 + align 38.170 + ts_feat 0.209 = 54.987389, main_u 0.030, 40.0%
+==>>> it: 249, loss: ins 10.18 + ce 6.085 + distill 1.426 + align 38.283 + ts_feat 0.188 = 56.162392, main_u 0.030, 50.0%
+==>>> it: 299, loss: ins 9.23 + ce 3.983 + distill 1.695 + align 38.327 + ts_feat 0.234 = 53.472740, main_u 0.029, 60.0%
+==>>> it: 349, loss: ins 9.77 + ce 4.717 + distill 1.630 + align 38.159 + ts_feat 0.209 = 54.487633, main_u 0.030, 70.0%
+==>>> it: 399, loss: ins 8.89 + ce 4.576 + distill 1.427 + align 38.048 + ts_feat 0.182 = 53.127705, main_u 0.028, 80.0%
+==>>> it: 449, loss: ins 9.83 + ce 5.818 + distill 1.665 + align 37.971 + ts_feat 0.211 = 55.498581, main_u 0.029, 90.0%
+==>>> it: 499, loss: ins 9.54 + ce 6.271 + distill 1.885 + align 38.052 + ts_feat 0.208 = 55.954563, main_u 0.029, 100.0%
+
+Calculating class means for NCM classifier...
+
+****************************************************************************************************
+Test with the output of layer: 1
+
+Test Task 0: Accuracy: 266/1000 (26.60%)
+Test Task 1: Accuracy: 270/1000 (27.00%)
+Test Task 2: Accuracy: 330/1000 (33.00%)
+Test Task 3: Accuracy: 284/1000 (28.40%)
+Test Task 4: Accuracy: 320/1000 (32.00%)
+Test Task 5: Accuracy: 376/1000 (37.60%)
+Test Task 6: Accuracy: 379/1000 (37.90%)
+Test Task 7: Accuracy: 370/1000 (37.00%)
+Test Task 8: Accuracy: 425/1000 (42.50%)
+Test Task 9: Accuracy: 452/1000 (45.20%)
+Tasks Acc: [26.60000038 27.         33.         28.39999962 32.         37.59999847
+ 37.90000153 37.         42.5        45.20000076]
+Tasks Avg Acc: 34.72%
+****************************************************************************************************
+Test with the output of layer: 2
+
+Test Task 0: Accuracy: 291/1000 (29.10%)
+Test Task 1: Accuracy: 276/1000 (27.60%)
+Test Task 2: Accuracy: 360/1000 (36.00%)
+Test Task 3: Accuracy: 306/1000 (30.60%)
+Test Task 4: Accuracy: 379/1000 (37.90%)
+Test Task 5: Accuracy: 423/1000 (42.30%)
+Test Task 6: Accuracy: 423/1000 (42.30%)
+Test Task 7: Accuracy: 407/1000 (40.70%)
+Test Task 8: Accuracy: 488/1000 (48.80%)
+Test Task 9: Accuracy: 495/1000 (49.50%)
+Tasks Acc: [29.10000038 27.60000038 36.         30.60000038 37.90000153 42.29999924
+ 42.29999924 40.70000076 48.79999924 49.5       ]
+Tasks Avg Acc: 38.48%
+****************************************************************************************************
+Test with the output of layer: 3
+
+Test Task 0: Accuracy: 268/1000 (26.80%)
+Test Task 1: Accuracy: 273/1000 (27.30%)
+Test Task 2: Accuracy: 335/1000 (33.50%)
+Test Task 3: Accuracy: 290/1000 (29.00%)
+Test Task 4: Accuracy: 357/1000 (35.70%)
+Test Task 5: Accuracy: 444/1000 (44.40%)
+Test Task 6: Accuracy: 430/1000 (43.00%)
+Test Task 7: Accuracy: 453/1000 (45.30%)
+Test Task 8: Accuracy: 542/1000 (54.20%)
+Test Task 9: Accuracy: 615/1000 (61.50%)
+Tasks Acc: [26.79999924 27.29999924 33.5        29.         35.70000076 44.40000153
+ 43.         45.29999924 54.20000076 61.5       ]
+Tasks Avg Acc: 40.07%
+****************************************************************************************************
+Test with the output of layer: 4
+
+Test Task 0: Accuracy: 252/1000 (25.20%)
+Test Task 1: Accuracy: 261/1000 (26.10%)
+Test Task 2: Accuracy: 355/1000 (35.50%)
+Test Task 3: Accuracy: 271/1000 (27.10%)
+Test Task 4: Accuracy: 327/1000 (32.70%)
+Test Task 5: Accuracy: 424/1000 (42.40%)
+Test Task 6: Accuracy: 408/1000 (40.80%)
+Test Task 7: Accuracy: 468/1000 (46.80%)
+Test Task 8: Accuracy: 559/1000 (55.90%)
+Test Task 9: Accuracy: 649/1000 (64.90%)
+Tasks Acc: [25.20000076 26.10000038 35.5        27.10000038 32.70000076 42.40000153
+ 40.79999924 46.79999924 55.90000153 64.90000153]
+Tasks Avg Acc: 39.74%
+****************************************************************************************************
+Test with the mean dists output of each layer:
+
+Test Task 0 (Mean): Accuracy: 283/1000 (28.30%)
+Test Task 1 (Mean): Accuracy: 287/1000 (28.70%)
+Test Task 2 (Mean): Accuracy: 375/1000 (37.50%)
+Test Task 3 (Mean): Accuracy: 300/1000 (30.00%)
+Test Task 4 (Mean): Accuracy: 374/1000 (37.40%)
+Test Task 5 (Mean): Accuracy: 447/1000 (44.70%)
+Test Task 6 (Mean): Accuracy: 433/1000 (43.30%)
+Test Task 7 (Mean): Accuracy: 456/1000 (45.60%)
+Test Task 8 (Mean): Accuracy: 565/1000 (56.50%)
+Test Task 9 (Mean): Accuracy: 612/1000 (61.20%)
+Tasks Acc: [28.29999924 28.70000076 37.5        30.         37.40000153 44.70000076
+ 43.29999924 45.59999847 56.5        61.20000076]
+Tasks Avg Acc: 41.32%
+{'test/final_avg_acc': 41.320000076293944, 'test/final_avg_fgt': 0.0, 'test/final_avg_bwt': 0.0, 'metrics/buffer_n_bits': 24.6154, 'metrics/model_n_params': 13.013556}
+task_accs_table
+accs_array shape: (1, 10)
+          task0      task1  task2  task3      task4      task5      task6      task7  task8      task9
+row0  28.299999  28.700001   37.5   30.0  37.400002  44.700001  43.299999  45.599998   56.5  61.200001
+{'test/last_final_avg_acc': 39.740000534057614, 'test/last_final_avg_fgt': 0.0, 'test/last_final_avg_bwt': 0.0}
+last_task_accs_table
+accs_array shape: (1, 10)
+          task0  task1  task2  task3      task4      task5      task6      task7      task8      task9
+row0  25.200001   26.1   35.5   27.1  32.700001  42.400002  40.799999  46.799999  55.900002  64.900002
+====================================================================================================
+3th run's Test result: Accuracy: 41.32%
+====================================================================================================
+====================================================================================================
+-----------------------------run 4 start--------------------------
+2026-01-05 18:16:51
+====================================================================================================
+Task order = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Data and loader is prepared
+
+Run 4: tmp run_04 **************************************************
+
+buffer has 1000 slots
+bx torch.Size([1000, 3, 32, 32])
+创新点C
+number of classifier parameters:	 13.01M
+buffer parameters (image size prod):	 3.07M
+
+-----------------------------run 4 task id:0 start training-----------------------------
+==>>> it: 1, loss: ins 16.97 + ce 18.540 + align 0.000 + ts_feat 0.000 = 35.512798, main_u 0.000, 0.4%
+==>>> it: 49, loss: ins 20.95 + ce 5.298 + align 0.000 + ts_feat 0.000 = 26.243713, main_u 0.061, 10.0%
+==>>> it: 99, loss: ins 20.44 + ce 4.706 + align 0.000 + ts_feat 0.000 = 25.142931, main_u 0.064, 20.0%
+==>>> it: 149, loss: ins 20.02 + ce 4.418 + align 0.000 + ts_feat 0.000 = 24.437265, main_u 0.068, 30.0%
+==>>> it: 199, loss: ins 19.96 + ce 4.236 + align 0.000 + ts_feat 0.000 = 24.196394, main_u 0.070, 40.0%
+==>>> it: 249, loss: ins 19.02 + ce 3.233 + align 0.000 + ts_feat 0.000 = 22.256184, main_u 0.071, 50.0%
+==>>> it: 299, loss: ins 18.82 + ce 3.540 + align 0.000 + ts_feat 0.000 = 22.363264, main_u 0.071, 60.0%
+==>>> it: 349, loss: ins 18.12 + ce 2.741 + align 0.000 + ts_feat 0.000 = 20.861609, main_u 0.073, 70.0%
+==>>> it: 399, loss: ins 18.37 + ce 2.705 + align 0.000 + ts_feat 0.000 = 21.077232, main_u 0.072, 80.0%
+==>>> it: 449, loss: ins 16.54 + ce 1.465 + align 0.000 + ts_feat 0.000 = 18.007421, main_u 0.074, 90.0%
+==>>> it: 499, loss: ins 17.33 + ce 1.958 + align 0.000 + ts_feat 0.000 = 19.291695, main_u 0.073, 100.0%
+
+-----------------------------run 4 task id:1 start training-----------------------------
+==>>> it: 1, loss: ins 16.92 + ce 25.280 + distill 1.956 + align 58.552 + ts_feat 0.272 = 102.979607, main_u 0.071, 0.4%
+==>>> it: 49, loss: ins 17.35 + ce 16.939 + distill 2.700 + align 37.609 + ts_feat 0.784 = 75.379204, main_u 0.016, 10.0%
+==>>> it: 99, loss: ins 18.60 + ce 19.164 + distill 2.728 + align 36.746 + ts_feat 0.586 = 77.825455, main_u 0.025, 20.0%
+==>>> it: 149, loss: ins 16.95 + ce 14.165 + distill 2.380 + align 36.177 + ts_feat 0.470 = 70.144936, main_u 0.026, 30.0%
+==>>> it: 199, loss: ins 17.00 + ce 13.473 + distill 2.895 + align 35.965 + ts_feat 0.490 = 69.826118, main_u 0.029, 40.0%
+==>>> it: 249, loss: ins 16.54 + ce 10.970 + distill 2.541 + align 35.511 + ts_feat 0.493 = 66.055527, main_u 0.027, 50.0%
+==>>> it: 299, loss: ins 17.30 + ce 12.014 + distill 2.292 + align 35.046 + ts_feat 0.411 = 67.060913, main_u 0.030, 60.0%
+==>>> it: 349, loss: ins 16.79 + ce 11.564 + distill 1.967 + align 35.639 + ts_feat 0.341 = 66.302910, main_u 0.029, 70.0%
+==>>> it: 399, loss: ins 16.67 + ce 9.540 + distill 2.495 + align 35.092 + ts_feat 0.378 = 64.173271, main_u 0.029, 80.0%
+==>>> it: 449, loss: ins 17.07 + ce 11.873 + distill 2.114 + align 35.164 + ts_feat 0.422 = 66.646500, main_u 0.029, 90.0%
+==>>> it: 499, loss: ins 15.88 + ce 8.631 + distill 2.359 + align 35.319 + ts_feat 0.348 = 62.541348, main_u 0.028, 100.0%
+
+-----------------------------run 4 task id:2 start training-----------------------------
+==>>> it: 1, loss: ins 15.39 + ce 29.806 + distill 1.016 + align 35.154 + ts_feat 0.101 = 81.467979, main_u 0.029, 0.4%
+==>>> it: 49, loss: ins 14.89 + ce 12.159 + distill 1.938 + align 36.275 + ts_feat 0.274 = 65.535522, main_u 0.029, 10.0%
+==>>> it: 99, loss: ins 16.72 + ce 16.402 + distill 1.822 + align 35.875 + ts_feat 0.289 = 71.110878, main_u 0.030, 20.0%
+==>>> it: 149, loss: ins 15.73 + ce 13.009 + distill 1.953 + align 35.791 + ts_feat 0.273 = 66.756264, main_u 0.031, 30.0%
+==>>> it: 199, loss: ins 14.57 + ce 11.658 + distill 1.753 + align 35.862 + ts_feat 0.264 = 64.103806, main_u 0.030, 40.0%
+==>>> it: 249, loss: ins 15.51 + ce 12.333 + distill 1.862 + align 35.515 + ts_feat 0.268 = 65.489273, main_u 0.030, 50.0%
+==>>> it: 299, loss: ins 15.08 + ce 9.686 + distill 1.796 + align 35.433 + ts_feat 0.299 = 62.298885, main_u 0.030, 60.0%
+==>>> it: 349, loss: ins 16.45 + ce 16.653 + distill 2.204 + align 35.606 + ts_feat 0.313 = 71.227699, main_u 0.029, 70.0%
+==>>> it: 399, loss: ins 13.81 + ce 8.728 + distill 1.749 + align 35.561 + ts_feat 0.276 = 60.124836, main_u 0.029, 80.0%
+==>>> it: 449, loss: ins 14.34 + ce 7.808 + distill 1.778 + align 35.553 + ts_feat 0.258 = 59.735035, main_u 0.029, 90.0%
+==>>> it: 499, loss: ins 13.99 + ce 6.900 + distill 1.869 + align 35.610 + ts_feat 0.295 = 58.664043, main_u 0.029, 100.0%
+
+-----------------------------run 4 task id:3 start training-----------------------------
+==>>> it: 1, loss: ins 14.29 + ce 32.819 + distill 0.722 + align 35.273 + ts_feat 0.071 = 83.177101, main_u 0.029, 0.4%
+==>>> it: 49, loss: ins 14.76 + ce 20.015 + distill 1.597 + align 36.334 + ts_feat 0.246 = 72.950348, main_u 0.030, 10.0%
+==>>> it: 99, loss: ins 13.29 + ce 11.187 + distill 1.860 + align 36.645 + ts_feat 0.241 = 63.219185, main_u 0.032, 20.0%
+==>>> it: 149, loss: ins 15.04 + ce 10.214 + distill 1.760 + align 36.325 + ts_feat 0.224 = 63.559532, main_u 0.030, 30.0%
+==>>> it: 199, loss: ins 13.36 + ce 10.871 + distill 1.660 + align 36.156 + ts_feat 0.223 = 62.264931, main_u 0.030, 40.0%
+==>>> it: 249, loss: ins 13.64 + ce 12.660 + distill 1.633 + align 36.320 + ts_feat 0.225 = 64.478157, main_u 0.030, 50.0%
+==>>> it: 299, loss: ins 13.67 + ce 9.913 + distill 1.829 + align 36.180 + ts_feat 0.267 = 61.859314, main_u 0.030, 60.0%
+==>>> it: 349, loss: ins 13.05 + ce 9.764 + distill 1.650 + align 36.242 + ts_feat 0.249 = 60.957378, main_u 0.031, 70.0%
+==>>> it: 399, loss: ins 13.55 + ce 9.366 + distill 1.609 + align 36.079 + ts_feat 0.250 = 60.857239, main_u 0.030, 80.0%
+==>>> it: 449, loss: ins 13.14 + ce 8.656 + distill 1.635 + align 36.140 + ts_feat 0.235 = 59.805286, main_u 0.029, 90.0%
+==>>> it: 499, loss: ins 14.81 + ce 12.228 + distill 1.671 + align 35.891 + ts_feat 0.274 = 64.872612, main_u 0.029, 100.0%
+
+-----------------------------run 4 task id:4 start training-----------------------------
+==>>> it: 1, loss: ins 12.85 + ce 29.187 + distill 0.714 + align 35.760 + ts_feat 0.084 = 78.591682, main_u 0.029, 0.4%
+==>>> it: 49, loss: ins 13.73 + ce 14.124 + distill 1.620 + align 37.015 + ts_feat 0.255 = 66.746498, main_u 0.029, 10.0%
+==>>> it: 99, loss: ins 12.00 + ce 9.979 + distill 1.673 + align 37.066 + ts_feat 0.253 = 60.965858, main_u 0.031, 20.0%
+==>>> it: 149, loss: ins 12.68 + ce 11.494 + distill 1.667 + align 36.922 + ts_feat 0.228 = 62.989410, main_u 0.030, 30.0%
+==>>> it: 199, loss: ins 12.99 + ce 10.040 + distill 2.055 + align 36.746 + ts_feat 0.266 = 62.096523, main_u 0.029, 40.0%
+==>>> it: 249, loss: ins 12.60 + ce 7.319 + distill 1.690 + align 36.618 + ts_feat 0.256 = 58.481163, main_u 0.030, 50.0%
+==>>> it: 299, loss: ins 12.64 + ce 8.908 + distill 2.141 + align 36.536 + ts_feat 0.273 = 60.501789, main_u 0.029, 60.0%
+==>>> it: 349, loss: ins 12.27 + ce 12.362 + distill 1.710 + align 36.571 + ts_feat 0.229 = 63.145523, main_u 0.030, 70.0%
+==>>> it: 399, loss: ins 12.57 + ce 7.609 + distill 1.667 + align 36.478 + ts_feat 0.242 = 58.567787, main_u 0.030, 80.0%
+==>>> it: 449, loss: ins 12.34 + ce 8.677 + distill 1.993 + align 36.596 + ts_feat 0.238 = 59.846191, main_u 0.030, 90.0%
+==>>> it: 499, loss: ins 12.60 + ce 9.425 + distill 1.741 + align 36.437 + ts_feat 0.256 = 60.456680, main_u 0.029, 100.0%
+
+-----------------------------run 4 task id:5 start training-----------------------------
+==>>> it: 1, loss: ins 12.94 + ce 26.883 + distill 0.696 + align 36.301 + ts_feat 0.084 = 76.903381, main_u 0.029, 0.4%
+==>>> it: 49, loss: ins 11.58 + ce 11.979 + distill 1.616 + align 37.378 + ts_feat 0.244 = 62.798843, main_u 0.029, 10.0%
+==>>> it: 99, loss: ins 11.80 + ce 10.450 + distill 1.921 + align 37.388 + ts_feat 0.245 = 61.806351, main_u 0.030, 20.0%
+==>>> it: 149, loss: ins 11.62 + ce 8.686 + distill 1.982 + align 37.328 + ts_feat 0.254 = 59.872959, main_u 0.029, 30.0%
+==>>> it: 199, loss: ins 11.64 + ce 7.135 + distill 1.831 + align 37.003 + ts_feat 0.262 = 57.874493, main_u 0.029, 40.0%
+==>>> it: 249, loss: ins 11.07 + ce 5.574 + distill 1.702 + align 37.062 + ts_feat 0.248 = 55.660080, main_u 0.029, 50.0%
+==>>> it: 299, loss: ins 12.05 + ce 7.427 + distill 1.761 + align 37.154 + ts_feat 0.264 = 58.658897, main_u 0.029, 60.0%
+==>>> it: 349, loss: ins 11.02 + ce 6.287 + distill 1.830 + align 36.909 + ts_feat 0.247 = 56.289730, main_u 0.028, 70.0%
+==>>> it: 399, loss: ins 12.02 + ce 10.138 + distill 1.746 + align 36.902 + ts_feat 0.226 = 61.036549, main_u 0.029, 80.0%
+==>>> it: 449, loss: ins 10.81 + ce 6.588 + distill 1.698 + align 36.860 + ts_feat 0.233 = 56.186703, main_u 0.029, 90.0%
+==>>> it: 499, loss: ins 12.31 + ce 8.412 + distill 1.858 + align 36.832 + ts_feat 0.269 = 59.684940, main_u 0.029, 100.0%
+
+-----------------------------run 4 task id:6 start training-----------------------------
+==>>> it: 1, loss: ins 11.20 + ce 28.684 + distill 0.627 + align 37.008 + ts_feat 0.068 = 77.587425, main_u 0.029, 0.4%
+==>>> it: 49, loss: ins 10.99 + ce 15.477 + distill 1.508 + align 37.640 + ts_feat 0.268 = 65.885139, main_u 0.028, 10.0%
+==>>> it: 99, loss: ins 12.05 + ce 9.735 + distill 1.534 + align 37.487 + ts_feat 0.235 = 61.038273, main_u 0.029, 20.0%
+==>>> it: 149, loss: ins 10.74 + ce 7.067 + distill 1.402 + align 37.576 + ts_feat 0.201 = 56.989906, main_u 0.028, 30.0%
+==>>> it: 199, loss: ins 11.09 + ce 6.365 + distill 1.612 + align 37.590 + ts_feat 0.232 = 56.884628, main_u 0.030, 40.0%
+==>>> it: 249, loss: ins 11.51 + ce 8.009 + distill 1.818 + align 37.303 + ts_feat 0.240 = 58.881001, main_u 0.029, 50.0%
+==>>> it: 299, loss: ins 11.35 + ce 7.675 + distill 1.766 + align 37.462 + ts_feat 0.255 = 58.506832, main_u 0.030, 60.0%
+==>>> it: 349, loss: ins 11.13 + ce 5.303 + distill 1.574 + align 37.320 + ts_feat 0.228 = 55.558796, main_u 0.029, 70.0%
+==>>> it: 399, loss: ins 10.91 + ce 6.065 + distill 1.475 + align 37.301 + ts_feat 0.224 = 55.975834, main_u 0.028, 80.0%
+==>>> it: 449, loss: ins 12.19 + ce 12.349 + distill 1.559 + align 37.169 + ts_feat 0.211 = 63.477474, main_u 0.029, 90.0%
+==>>> it: 499, loss: ins 10.84 + ce 6.099 + distill 1.589 + align 37.193 + ts_feat 0.242 = 55.965031, main_u 0.028, 100.0%
+
+-----------------------------run 4 task id:7 start training-----------------------------
+==>>> it: 1, loss: ins 10.01 + ce 20.542 + distill 0.655 + align 37.138 + ts_feat 0.082 = 68.429321, main_u 0.028, 0.4%
+==>>> it: 49, loss: ins 10.95 + ce 11.673 + distill 1.418 + align 37.849 + ts_feat 0.235 = 62.125450, main_u 0.028, 10.0%
+==>>> it: 99, loss: ins 12.21 + ce 10.700 + distill 1.717 + align 37.938 + ts_feat 0.237 = 62.799019, main_u 0.029, 20.0%
+==>>> it: 149, loss: ins 10.20 + ce 8.299 + distill 1.612 + align 37.936 + ts_feat 0.236 = 58.284046, main_u 0.028, 30.0%
+==>>> it: 199, loss: ins 10.77 + ce 12.025 + distill 1.721 + align 37.681 + ts_feat 0.218 = 62.413403, main_u 0.029, 40.0%
+==>>> it: 249, loss: ins 11.22 + ce 8.567 + distill 1.464 + align 37.666 + ts_feat 0.212 = 59.130478, main_u 0.029, 50.0%
+==>>> it: 299, loss: ins 10.12 + ce 8.474 + distill 1.731 + align 37.437 + ts_feat 0.216 = 57.974567, main_u 0.029, 60.0%
+==>>> it: 349, loss: ins 11.18 + ce 9.892 + distill 1.705 + align 37.458 + ts_feat 0.212 = 60.449894, main_u 0.029, 70.0%
+==>>> it: 399, loss: ins 11.26 + ce 8.152 + distill 1.731 + align 37.469 + ts_feat 0.239 = 58.850887, main_u 0.028, 80.0%
+==>>> it: 449, loss: ins 11.07 + ce 7.681 + distill 1.679 + align 37.406 + ts_feat 0.237 = 58.069229, main_u 0.029, 90.0%
+==>>> it: 499, loss: ins 10.70 + ce 5.836 + distill 1.613 + align 37.382 + ts_feat 0.267 = 55.797630, main_u 0.028, 100.0%
+
+-----------------------------run 4 task id:8 start training-----------------------------
+==>>> it: 1, loss: ins 10.64 + ce 22.816 + distill 0.803 + align 37.418 + ts_feat 0.095 = 71.767784, main_u 0.028, 0.4%
+==>>> it: 49, loss: ins 10.97 + ce 12.283 + distill 1.492 + align 38.025 + ts_feat 0.262 = 63.027592, main_u 0.028, 10.0%
+==>>> it: 99, loss: ins 10.28 + ce 7.669 + distill 1.540 + align 38.226 + ts_feat 0.211 = 57.925610, main_u 0.027, 20.0%
+==>>> it: 149, loss: ins 10.80 + ce 9.152 + distill 1.656 + align 38.129 + ts_feat 0.249 = 59.986000, main_u 0.028, 30.0%
+==>>> it: 199, loss: ins 10.34 + ce 8.971 + distill 1.529 + align 37.999 + ts_feat 0.237 = 59.079269, main_u 0.029, 40.0%
+==>>> it: 249, loss: ins 10.34 + ce 4.951 + distill 1.574 + align 37.786 + ts_feat 0.226 = 54.881596, main_u 0.028, 50.0%
+==>>> it: 299, loss: ins 10.16 + ce 7.510 + distill 1.482 + align 37.644 + ts_feat 0.232 = 57.028954, main_u 0.029, 60.0%
+==>>> it: 349, loss: ins 10.47 + ce 7.716 + distill 1.552 + align 37.796 + ts_feat 0.215 = 57.751907, main_u 0.029, 70.0%
+==>>> it: 399, loss: ins 10.90 + ce 7.939 + distill 1.710 + align 37.529 + ts_feat 0.247 = 58.326321, main_u 0.029, 80.0%
+==>>> it: 449, loss: ins 9.95 + ce 7.535 + distill 1.731 + align 37.600 + ts_feat 0.246 = 57.064648, main_u 0.029, 90.0%
+==>>> it: 499, loss: ins 9.92 + ce 5.458 + distill 1.711 + align 37.661 + ts_feat 0.241 = 54.994904, main_u 0.029, 100.0%
+
+-----------------------------run 4 task id:9 start training-----------------------------
+==>>> it: 1, loss: ins 9.74 + ce 19.564 + distill 0.529 + align 37.819 + ts_feat 0.067 = 67.714638, main_u 0.028, 0.4%
+==>>> it: 49, loss: ins 10.25 + ce 8.513 + distill 1.273 + align 38.217 + ts_feat 0.200 = 58.448711, main_u 0.028, 10.0%
+==>>> it: 99, loss: ins 9.97 + ce 5.906 + distill 1.654 + align 38.417 + ts_feat 0.254 = 56.201336, main_u 0.029, 20.0%
+==>>> it: 149, loss: ins 10.10 + ce 7.330 + distill 1.500 + align 38.144 + ts_feat 0.214 = 57.289623, main_u 0.029, 30.0%
+==>>> it: 199, loss: ins 9.02 + ce 6.453 + distill 1.222 + align 38.046 + ts_feat 0.195 = 54.938656, main_u 0.029, 40.0%
+==>>> it: 249, loss: ins 9.55 + ce 6.664 + distill 1.622 + align 37.881 + ts_feat 0.212 = 55.926380, main_u 0.029, 50.0%
+==>>> it: 299, loss: ins 10.49 + ce 3.976 + distill 1.457 + align 37.899 + ts_feat 0.201 = 54.025791, main_u 0.029, 60.0%
+==>>> it: 349, loss: ins 9.12 + ce 6.678 + distill 1.422 + align 37.853 + ts_feat 0.190 = 55.267113, main_u 0.029, 70.0%
+==>>> it: 399, loss: ins 9.85 + ce 5.806 + distill 1.402 + align 37.818 + ts_feat 0.221 = 55.098980, main_u 0.029, 80.0%
+==>>> it: 449, loss: ins 9.93 + ce 6.207 + distill 1.481 + align 37.722 + ts_feat 0.203 = 55.537727, main_u 0.028, 90.0%
+==>>> it: 499, loss: ins 10.69 + ce 7.777 + distill 1.496 + align 37.788 + ts_feat 0.229 = 57.984047, main_u 0.028, 100.0%
+
+Calculating class means for NCM classifier...
+
+****************************************************************************************************
+Test with the output of layer: 1
+
+Test Task 0: Accuracy: 234/1000 (23.40%)
+Test Task 1: Accuracy: 244/1000 (24.40%)
+Test Task 2: Accuracy: 336/1000 (33.60%)
+Test Task 3: Accuracy: 238/1000 (23.80%)
+Test Task 4: Accuracy: 327/1000 (32.70%)
+Test Task 5: Accuracy: 372/1000 (37.20%)
+Test Task 6: Accuracy: 393/1000 (39.30%)
+Test Task 7: Accuracy: 414/1000 (41.40%)
+Test Task 8: Accuracy: 413/1000 (41.30%)
+Test Task 9: Accuracy: 512/1000 (51.20%)
+Tasks Acc: [23.39999962 24.39999962 33.59999847 23.79999924 32.70000076 37.20000076
+ 39.29999924 41.40000153 41.29999924 51.20000076]
+Tasks Avg Acc: 34.83%
+****************************************************************************************************
+Test with the output of layer: 2
+
+Test Task 0: Accuracy: 316/1000 (31.60%)
+Test Task 1: Accuracy: 250/1000 (25.00%)
+Test Task 2: Accuracy: 381/1000 (38.10%)
+Test Task 3: Accuracy: 270/1000 (27.00%)
+Test Task 4: Accuracy: 343/1000 (34.30%)
+Test Task 5: Accuracy: 372/1000 (37.20%)
+Test Task 6: Accuracy: 430/1000 (43.00%)
+Test Task 7: Accuracy: 486/1000 (48.60%)
+Test Task 8: Accuracy: 483/1000 (48.30%)
+Test Task 9: Accuracy: 577/1000 (57.70%)
+Tasks Acc: [31.60000038 25.         38.09999847 27.         34.29999924 37.20000076
+ 43.         48.59999847 48.29999924 57.70000076]
+Tasks Avg Acc: 39.08%
+****************************************************************************************************
+Test with the output of layer: 3
+
+Test Task 0: Accuracy: 294/1000 (29.40%)
+Test Task 1: Accuracy: 237/1000 (23.70%)
+Test Task 2: Accuracy: 386/1000 (38.60%)
+Test Task 3: Accuracy: 262/1000 (26.20%)
+Test Task 4: Accuracy: 336/1000 (33.60%)
+Test Task 5: Accuracy: 406/1000 (40.60%)
+Test Task 6: Accuracy: 420/1000 (42.00%)
+Test Task 7: Accuracy: 491/1000 (49.10%)
+Test Task 8: Accuracy: 554/1000 (55.40%)
+Test Task 9: Accuracy: 636/1000 (63.60%)
+Tasks Acc: [29.39999962 23.70000076 38.59999847 26.20000076 33.59999847 40.59999847
+ 42.         49.09999847 55.40000153 63.59999847]
+Tasks Avg Acc: 40.22%
+****************************************************************************************************
+Test with the output of layer: 4
+
+Test Task 0: Accuracy: 270/1000 (27.00%)
+Test Task 1: Accuracy: 239/1000 (23.90%)
+Test Task 2: Accuracy: 362/1000 (36.20%)
+Test Task 3: Accuracy: 246/1000 (24.60%)
+Test Task 4: Accuracy: 338/1000 (33.80%)
+Test Task 5: Accuracy: 394/1000 (39.40%)
+Test Task 6: Accuracy: 404/1000 (40.40%)
+Test Task 7: Accuracy: 506/1000 (50.60%)
+Test Task 8: Accuracy: 565/1000 (56.50%)
+Test Task 9: Accuracy: 676/1000 (67.60%)
+Tasks Acc: [27.         23.89999962 36.20000076 24.60000038 33.79999924 39.40000153
+ 40.40000153 50.59999847 56.5        67.59999847]
+Tasks Avg Acc: 40.00%
+****************************************************************************************************
+Test with the mean dists output of each layer:
+
+Test Task 0 (Mean): Accuracy: 310/1000 (31.00%)
+Test Task 1 (Mean): Accuracy: 255/1000 (25.50%)
+Test Task 2 (Mean): Accuracy: 389/1000 (38.90%)
+Test Task 3 (Mean): Accuracy: 272/1000 (27.20%)
+Test Task 4 (Mean): Accuracy: 365/1000 (36.50%)
+Test Task 5 (Mean): Accuracy: 411/1000 (41.10%)
+Test Task 6 (Mean): Accuracy: 434/1000 (43.40%)
+Test Task 7 (Mean): Accuracy: 512/1000 (51.20%)
+Test Task 8 (Mean): Accuracy: 560/1000 (56.00%)
+Test Task 9 (Mean): Accuracy: 649/1000 (64.90%)
+Tasks Acc: [31.         25.5        38.90000153 27.20000076 36.5        41.09999847
+ 43.40000153 51.20000076 56.         64.90000153]
+Tasks Avg Acc: 41.57%
+{'test/final_avg_acc': 41.57000045776367, 'test/final_avg_fgt': 0.0, 'test/final_avg_bwt': 0.0, 'metrics/buffer_n_bits': 24.6154, 'metrics/model_n_params': 13.013556}
+task_accs_table
+accs_array shape: (1, 10)
+      task0  task1      task2      task3  task4      task5      task6      task7  task8      task9
+row0   31.0   25.5  38.900002  27.200001   36.5  41.099998  43.400002  51.200001   56.0  64.900002
+{'test/last_final_avg_acc': 40.0, 'test/last_final_avg_fgt': 0.0, 'test/last_final_avg_bwt': 0.0}
+last_task_accs_table
+accs_array shape: (1, 10)
+      task0  task1      task2  task3      task4      task5      task6      task7  task8      task9
+row0   27.0   23.9  36.200001   24.6  33.799999  39.400002  40.400002  50.599998   56.5  67.599998
+====================================================================================================
+4th run's Test result: Accuracy: 41.57%
+====================================================================================================
+
+====================================================================================================
+total 5runs last test acc results: tensor([39.2900, 39.7200, 39.9000, 39.7400, 40.0000])
+----------- Avg_End_Acc (39.73000022888184, 0.3375407889406267) Avg_End_Fgt (0.0, 0.0) Avg_Acc (27.660000228881835, 2.5379800962303825) Avg_Bwtp (nan, nan) Avg_Fwt (inf, nan)-----------
+====================================================================================================
+
+====================================================================================================
+total 5runs test acc results: tensor([40.8900, 41.8400, 41.6900, 41.3200, 41.5700])
+----------- Avg_End_Acc (41.46200004577637, 0.4620426567161726) Avg_End_Fgt (0.0, 0.0) Avg_Acc (30.299999237060547, 2.747137526818231) Avg_Bwtp (nan, nan) Avg_Fwt (inf, nan)-----------
+====================================================================================================
+====================================================================================================
+结束时间: 2026-01-05 18:35:07
+日志已保存至: /root/autodl-tmp/MOSE-master/MOSE-master/logs/cifar100_mose_bs1000_20260105_170353.log
